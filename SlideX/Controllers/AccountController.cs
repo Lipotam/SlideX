@@ -25,7 +25,7 @@ namespace SlideX.Controllers
 
         [HttpPost]
         public ActionResult LogOn(LogOnModel model, string returnUrl)
-        {
+        {  
             if (ModelState.IsValid)
             {
                 if (Membership.ValidateUser(model.UserName, model.Password))
