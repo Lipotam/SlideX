@@ -1,0 +1,7 @@
+c:\SlideX\SlideX\SlideX\bin\SlideX.dll
+c:\SlideX\SlideX\SlideX\bin\SlideX.pdb
+c:\SlideX\SlideX\SlideX\bin\EntityFramework.dll
+c:\SlideX\SlideX\SlideX\bin\EntityFramework.xml
+c:\SlideX\SlideX\SlideX\obj\Debug\ResolveAssemblyReference.cache
+c:\SlideX\SlideX\SlideX\obj\Debug\SlideX.dll
+c:\SlideX\SlideX\SlideX\obj\Debug\SlideX.pdb
