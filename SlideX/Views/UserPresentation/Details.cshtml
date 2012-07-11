@@ -23,13 +23,9 @@
     <div class="display-field">
         @Html.DisplayFor(model => model.Description)
     </div>
-
-    <div class="display-label">presentationContent</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.presentationContent)
-    </div>
+        
 </fieldset>
 <p>
     @Html.ActionLink("Edit", "Edit", new { id=Model.PresentationId }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "PresentationList")
 </p>

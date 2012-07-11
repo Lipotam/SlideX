@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
@@ -14,11 +15,6 @@ namespace SlideX.Controllers
     {
         ASPNETDBEntities db = new ASPNETDBEntities();
 
-        public ActionResult Index()
-        {
-            return View();
-        }
-
         public ActionResult Create()
         {
             return View();
@@ -27,28 +23,21 @@ namespace SlideX.Controllers
         [HttpPost]
         public ActionResult Create(Presentation model)
         {
-            MembershipUser currentUser = Membership.GetUser();
-            Guid currentUserId = (Guid) currentUser.ProviderUserKey;
-
-            Presentation newPresentation = new Presentation();
-            newPresentation.PresentationId = Guid.NewGuid();
-            newPresentation.Title = model.Title;
-            newPresentation.Description = model.Description;
-
-            newPresentation.UserId = currentUserId;
+            Presentation newPresentation = new Presentation()
+                                               {
+                                                   PresentationId = Guid.NewGuid(),
+                                                   Title = model.Title,
+                                                   Description = model.Description,
+                                                   UserId = (Guid)Membership.GetUser().ProviderUserKey
+                                               };
             db.Presentations.AddObject(newPresentation);
             db.SaveChanges();
-
             return RedirectToAction("PresentationList");
         }
 
         public ActionResult PresentationList()
         {
-            var foundPresentation = GetPresentationsByCurrentUserId();
-            if (foundPresentation == null)
-            {
-                return View();
-            }
+            IEnumerable<Presentation> foundPresentation = GetPresentationsByCurrentUserId();
             return View(foundPresentation);
         }
 
@@ -59,11 +48,11 @@ namespace SlideX.Controllers
             {
                 return View("Error", new ErrorPageModels { Title = "Presentation not found.", Message = "Presentation wasn't found. May be it was deleted or bad request string.", ShowGotoBack = true });
             }
-            return View(foundPresentation);
+            return View(new SlideX.Models.PresentationWithTags(foundPresentation));
         }
 
         [HttpPost]
-        public ActionResult Edit(Presentation model)
+        public ActionResult Edit(PresentationWithTags model)
         {
             if (ModelState.IsValid)
             {
@@ -71,19 +60,18 @@ namespace SlideX.Controllers
                 if (currentUser != null)
                 {
                     Guid currentUserId = (Guid)currentUser.ProviderUserKey;
-                    var foundPresentation = db.Presentations.SingleOrDefault(p => p.PresentationId == model.PresentationId && p.UserId == currentUserId);
+                    var foundPresentation = db.Presentations.SingleOrDefault(p => p.PresentationId == model.presentation.PresentationId && p.UserId == currentUserId);
                     if (foundPresentation == null)
                     {
                         return View("Error", new ErrorPageModels { Title = "Presentation not found.", Message = "Presentation wasn't found. Do you want to edit another's prasentation ?", ShowGotoBack = true });
                     }
-                    foundPresentation.Title = model.Title;
-                    foundPresentation.Description = model.Description;
+                    foundPresentation.Title = model.presentation.Title;
+                    foundPresentation.Description = model.presentation.Description;
                     db.SaveChanges();
                 }
             }
             return View(model);
         }
-
 
         public ActionResult Details(Guid id)
         {
@@ -95,26 +83,40 @@ namespace SlideX.Controllers
             return View(foundPresentation);
         }
 
+        public ActionResult Delete(Guid id)
+        {
+            Presentation foundPresentation = GetPresentationByCurrentUserIdAndByPreasentationId(id);
+            if (foundPresentation != null)
+            {
+                db.Presentations.DeleteObject(foundPresentation);
+                db.SaveChanges();
+                return RedirectToAction("PresentationList");
+            } 
+            else
+            {
+                return View("Error", new ErrorPageModels { Title = "Presentation not found.", Message = "Presentation wasn't found. Do you want to delete another's prasentation ?", ShowGotoBack = true });
+            }
+        }
 
-        private System.Object GetPresentationsByCurrentUserId()
+        private IEnumerable<Presentation> GetPresentationsByCurrentUserId()
         {
             MembershipUser currentUser = Membership.GetUser();
             if (currentUser != null)
             {
-                return db.Presentations.Where(P => P.UserId == (Guid)currentUser.ProviderUserKey);
+                return db.Presentations.Where(P => P.UserId == (Guid)currentUser.ProviderUserKey).AsEnumerable();
             }
             else return null;
         }
 
-        private System.Object GetPresentationsByCurrentUserIdAndByPreasentationId(Guid id)
+        private Presentation GetPresentationByCurrentUserIdAndByPreasentationId(Guid presentationId)
         {
             MembershipUser currentUser = Membership.GetUser();
             if (currentUser != null)
             {
                 Guid currentUserId = (Guid)currentUser.ProviderUserKey;
-                return db.Presentations.Where(P => P.UserId == currentUserId).Where(P => P.PresentationId == id).First();
+                return db.Presentations.Where(P => P.UserId == currentUserId).Where(P => P.PresentationId == presentationId).First();
             }
-            else return null;
+           else return null;
         }
 
         private Presentation GetPresentationByPresentationId(Guid id)

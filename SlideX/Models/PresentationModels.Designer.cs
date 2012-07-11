@@ -18,8 +18,8 @@ using System.Runtime.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
-[assembly: EdmRelationshipAttribute("ASPNETDBModel", "FK_tagsToPresentation_Presentations", "Presentations", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SlideX.Models.Presentation), "tagsToPresentation", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SlideX.Models.tagsToPresentation), true)]
-[assembly: EdmRelationshipAttribute("ASPNETDBModel", "FK_tagsToPresentation_PresentationTags", "PresentationTags", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SlideX.Models.PresentationTag), "tagsToPresentation", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SlideX.Models.tagsToPresentation), true)]
+[assembly: EdmRelationshipAttribute("ASPNETDBModel", "FK_TagsToPresentation_Presentations", "Presentations", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SlideX.Models.Presentation), "TagsToPresentation", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SlideX.Models.TagsToPresentation), true)]
+[assembly: EdmRelationshipAttribute("ASPNETDBModel", "FK_TagsToPresentation_PresentationTags", "PresentationTags", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SlideX.Models.PresentationTag), "TagsToPresentation", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SlideX.Models.TagsToPresentation), true)]
 
 #endregion
 
@@ -106,18 +106,18 @@ namespace SlideX.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<tagsToPresentation> tagsToPresentations
+        public ObjectSet<TagsToPresentation> TagsToPresentations
         {
             get
             {
-                if ((_tagsToPresentations == null))
+                if ((_TagsToPresentations == null))
                 {
-                    _tagsToPresentations = base.CreateObjectSet<tagsToPresentation>("tagsToPresentations");
+                    _TagsToPresentations = base.CreateObjectSet<TagsToPresentation>("TagsToPresentations");
                 }
-                return _tagsToPresentations;
+                return _TagsToPresentations;
             }
         }
-        private ObjectSet<tagsToPresentation> _tagsToPresentations;
+        private ObjectSet<TagsToPresentation> _TagsToPresentations;
 
         #endregion
         #region AddTo Methods
@@ -139,11 +139,11 @@ namespace SlideX.Models
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the tagsToPresentations EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the TagsToPresentations EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddTotagsToPresentations(tagsToPresentation tagsToPresentation)
+        public void AddToTagsToPresentations(TagsToPresentation tagsToPresentation)
         {
-            base.AddObject("tagsToPresentations", tagsToPresentation);
+            base.AddObject("TagsToPresentations", tagsToPresentation);
         }
 
         #endregion
@@ -315,18 +315,18 @@ namespace SlideX.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ASPNETDBModel", "FK_tagsToPresentation_Presentations", "tagsToPresentation")]
-        public EntityCollection<tagsToPresentation> tagsToPresentations
+        [EdmRelationshipNavigationPropertyAttribute("ASPNETDBModel", "FK_TagsToPresentation_Presentations", "TagsToPresentation")]
+        public EntityCollection<TagsToPresentation> TagsToPresentations
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<tagsToPresentation>("ASPNETDBModel.FK_tagsToPresentation_Presentations", "tagsToPresentation");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<TagsToPresentation>("ASPNETDBModel.FK_TagsToPresentation_Presentations", "TagsToPresentation");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<tagsToPresentation>("ASPNETDBModel.FK_tagsToPresentation_Presentations", "tagsToPresentation", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<TagsToPresentation>("ASPNETDBModel.FK_TagsToPresentation_Presentations", "TagsToPresentation", value);
                 }
             }
         }
@@ -421,18 +421,18 @@ namespace SlideX.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ASPNETDBModel", "FK_tagsToPresentation_PresentationTags", "tagsToPresentation")]
-        public EntityCollection<tagsToPresentation> tagsToPresentations
+        [EdmRelationshipNavigationPropertyAttribute("ASPNETDBModel", "FK_TagsToPresentation_PresentationTags", "TagsToPresentation")]
+        public EntityCollection<TagsToPresentation> TagsToPresentations
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<tagsToPresentation>("ASPNETDBModel.FK_tagsToPresentation_PresentationTags", "tagsToPresentation");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<TagsToPresentation>("ASPNETDBModel.FK_TagsToPresentation_PresentationTags", "TagsToPresentation");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<tagsToPresentation>("ASPNETDBModel.FK_tagsToPresentation_PresentationTags", "tagsToPresentation", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<TagsToPresentation>("ASPNETDBModel.FK_TagsToPresentation_PresentationTags", "TagsToPresentation", value);
                 }
             }
         }
@@ -443,22 +443,22 @@ namespace SlideX.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="ASPNETDBModel", Name="tagsToPresentation")]
+    [EdmEntityTypeAttribute(NamespaceName="ASPNETDBModel", Name="TagsToPresentation")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class tagsToPresentation : EntityObject
+    public partial class TagsToPresentation : EntityObject
     {
         #region Factory Method
     
         /// <summary>
-        /// Create a new tagsToPresentation object.
+        /// Create a new TagsToPresentation object.
         /// </summary>
         /// <param name="matchId">Initial value of the MatchId property.</param>
         /// <param name="presentationId">Initial value of the PresentationId property.</param>
         /// <param name="tagId">Initial value of the TagId property.</param>
-        public static tagsToPresentation CreatetagsToPresentation(global::System.Guid matchId, global::System.Guid presentationId, global::System.Guid tagId)
+        public static TagsToPresentation CreateTagsToPresentation(global::System.Guid matchId, global::System.Guid presentationId, global::System.Guid tagId)
         {
-            tagsToPresentation tagsToPresentation = new tagsToPresentation();
+            TagsToPresentation tagsToPresentation = new TagsToPresentation();
             tagsToPresentation.MatchId = matchId;
             tagsToPresentation.PresentationId = presentationId;
             tagsToPresentation.TagId = tagId;
@@ -553,16 +553,16 @@ namespace SlideX.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ASPNETDBModel", "FK_tagsToPresentation_Presentations", "Presentations")]
+        [EdmRelationshipNavigationPropertyAttribute("ASPNETDBModel", "FK_TagsToPresentation_Presentations", "Presentations")]
         public Presentation Presentation
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Presentation>("ASPNETDBModel.FK_tagsToPresentation_Presentations", "Presentations").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Presentation>("ASPNETDBModel.FK_TagsToPresentation_Presentations", "Presentations").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Presentation>("ASPNETDBModel.FK_tagsToPresentation_Presentations", "Presentations").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Presentation>("ASPNETDBModel.FK_TagsToPresentation_Presentations", "Presentations").Value = value;
             }
         }
         /// <summary>
@@ -574,13 +574,13 @@ namespace SlideX.Models
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Presentation>("ASPNETDBModel.FK_tagsToPresentation_Presentations", "Presentations");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Presentation>("ASPNETDBModel.FK_TagsToPresentation_Presentations", "Presentations");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Presentation>("ASPNETDBModel.FK_tagsToPresentation_Presentations", "Presentations", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Presentation>("ASPNETDBModel.FK_TagsToPresentation_Presentations", "Presentations", value);
                 }
             }
         }
@@ -591,16 +591,16 @@ namespace SlideX.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ASPNETDBModel", "FK_tagsToPresentation_PresentationTags", "PresentationTags")]
+        [EdmRelationshipNavigationPropertyAttribute("ASPNETDBModel", "FK_TagsToPresentation_PresentationTags", "PresentationTags")]
         public PresentationTag PresentationTag
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PresentationTag>("ASPNETDBModel.FK_tagsToPresentation_PresentationTags", "PresentationTags").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PresentationTag>("ASPNETDBModel.FK_TagsToPresentation_PresentationTags", "PresentationTags").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PresentationTag>("ASPNETDBModel.FK_tagsToPresentation_PresentationTags", "PresentationTags").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PresentationTag>("ASPNETDBModel.FK_TagsToPresentation_PresentationTags", "PresentationTags").Value = value;
             }
         }
         /// <summary>
@@ -612,13 +612,13 @@ namespace SlideX.Models
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PresentationTag>("ASPNETDBModel.FK_tagsToPresentation_PresentationTags", "PresentationTags");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PresentationTag>("ASPNETDBModel.FK_TagsToPresentation_PresentationTags", "PresentationTags");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<PresentationTag>("ASPNETDBModel.FK_tagsToPresentation_PresentationTags", "PresentationTags", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<PresentationTag>("ASPNETDBModel.FK_TagsToPresentation_PresentationTags", "PresentationTags", value);
                 }
             }
         }

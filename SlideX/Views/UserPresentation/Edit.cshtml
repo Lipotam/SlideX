@@ -1,4 +1,4 @@
-﻿@model SlideX.Models.Presentation
+﻿@model SlideX.Models.PresentationWithTags
 @{
     ViewBag.Title = "Edit";
 }
@@ -12,25 +12,80 @@
     <fieldset>
         <legend>presentation</legend>
         <div class="editor-label">
-            @Html.LabelFor(model => model.Title)
+            @Html.LabelFor(model => model.presentation.Title)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Title)
-            @Html.ValidationMessageFor(model => model.Title)
+            @Html.EditorFor(model => model.presentation.Title)
+            @Html.ValidationMessageFor(model => model.presentation.Title)
         </div>
         <div class="editor-label">
-            @Html.LabelFor(model => model.Description)
+            @Html.LabelFor(model => model.presentation.Description)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Description)
-            @Html.ValidationMessageFor(model => model.Description)
+            @Html.EditorFor(model => model.presentation.Description)
+            @Html.ValidationMessageFor(model => model.presentation.Description)
+        </div>
+        <div>
+            <textarea id="textarea" class="example" rows="1"></textarea>
+            <div class="text-tags">
+                @if (Model.tags != null)
+                {
+                    foreach (var name in Model.tags)
+                    {
+                    <div class="text-tag"> 
+                        <div class="text-button">        
+                           <span class="text-label"> @Html.LabelFor(model => name )
+                               
+                           </span> 
+                           <a class="text-remove"></a>
+                         </div>
+                    </div>
+                    }
+                }
+            </div>
+            <script type="text/javascript">
+                $('#textarea')
+        .textext({
+            plugins: 'tags autocomplete'
+        })
+        .bind('getSuggestions', function (e, data) {
+            var list = [
+                    'Basic',
+                    'Closure',
+                    'Cobol',
+                    'Delphi',
+                    'Erlang',
+                    'Fortran',
+                    'Go',
+                    'Groovy',
+                    'Haskel',
+                    'Java',
+                    'JavaScript',
+                    'OCAML',
+                    'PHP',
+                    'Perl',
+                    'Python',
+                    'Ruby',
+                    'Scala'
+                ],
+                textext = $(e.target).textext()[0],
+                query = (data ? data.query : '') || ''
+                ;
+
+            $(this).trigger(
+                'setSuggestions',
+                { result: textext.itemManager().filter(list, query) }
+            );
+        })
+        ;
+            </script>
         </div>
         <p>
-        @Html.HiddenFor(model=>model.PresentationId)
+            @Html.HiddenFor(model => model.presentation.PresentationId)
             <input type="submit" value="Save" />
         </p>
     </fieldset>
 }
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Back to List", "PresentationList")
 </div>
