@@ -4,88 +4,87 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="ASPNETDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
-        <EntityContainer Name="ASPNETDBModelStoreContainer">
-          <EntitySet Name="presentations" EntityType="ASPNETDBModel.Store.presentations" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="presentationTags" EntityType="ASPNETDBModel.Store.presentationTags" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="tagsToPresentation" EntityType="ASPNETDBModel.Store.tagsToPresentation" store:Type="Tables" Schema="dbo" />
-          <AssociationSet Name="FK_tagsToPresentation_presentations" Association="ASPNETDBModel.Store.FK_tagsToPresentation_presentations">
-            <End Role="presentations" EntitySet="presentations" />
-            <End Role="tagsToPresentation" EntitySet="tagsToPresentation" />
-          </AssociationSet>
-          <AssociationSet Name="FK_tagsToPresentation_presentationTags" Association="ASPNETDBModel.Store.FK_tagsToPresentation_presentationTags">
-            <End Role="presentationTags" EntitySet="presentationTags" />
-            <End Role="tagsToPresentation" EntitySet="tagsToPresentation" />
-          </AssociationSet>
-        </EntityContainer>
-        <EntityType Name="presentations">
-          <Key>
-            <PropertyRef Name="PresentationId" />
-          </Key>
-          <Property Name="PresentationId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="50" />
-          <Property Name="Description" Type="text" />
-          <Property Name="presentationContent" Type="text" />
-        </EntityType>
-        <EntityType Name="presentationTags">
-          <Key>
-            <PropertyRef Name="TagId" />
-          </Key>
-          <Property Name="TagId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="TagTitle" Type="nvarchar" Nullable="false" MaxLength="50" />
-        </EntityType>
-        <EntityType Name="tagsToPresentation">
-          <Key>
-            <PropertyRef Name="MatchId" />
-          </Key>
-          <Property Name="MatchId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="presentationId" Type="uniqueidentifier" Nullable="false" />
-          <Property Name="TagId" Type="uniqueidentifier" Nullable="false" />
-        </EntityType>
-        <Association Name="FK_tagsToPresentation_presentations">
-          <End Role="presentations" Type="ASPNETDBModel.Store.presentations" Multiplicity="1" />
-          <End Role="tagsToPresentation" Type="ASPNETDBModel.Store.tagsToPresentation" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="presentations">
-              <PropertyRef Name="PresentationId" />
-            </Principal>
-            <Dependent Role="tagsToPresentation">
-              <PropertyRef Name="presentationId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_tagsToPresentation_presentationTags">
-          <End Role="presentationTags" Type="ASPNETDBModel.Store.presentationTags" Multiplicity="1" />
-          <End Role="tagsToPresentation" Type="ASPNETDBModel.Store.tagsToPresentation" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="presentationTags">
-              <PropertyRef Name="TagId" />
-            </Principal>
-            <Dependent Role="tagsToPresentation">
-              <PropertyRef Name="TagId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-      </Schema>
-    </edmx:StorageModels>
+    <Schema Namespace="ASPNETDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="ASPNETDBModelStoreContainer">
+    <EntitySet Name="Presentations" EntityType="ASPNETDBModel.Store.Presentations" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PresentationTags" EntityType="ASPNETDBModel.Store.PresentationTags" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="tagsToPresentations" EntityType="ASPNETDBModel.Store.tagsToPresentations" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_tagsToPresentation_Presentations" Association="ASPNETDBModel.Store.FK_tagsToPresentation_Presentations">
+      <End Role="Presentations" EntitySet="Presentations" />
+      <End Role="tagsToPresentation" EntitySet="tagsToPresentations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tagsToPresentation_PresentationTags" Association="ASPNETDBModel.Store.FK_tagsToPresentation_PresentationTags">
+      <End Role="PresentationTags" EntitySet="PresentationTags" />
+      <End Role="tagsToPresentation" EntitySet="tagsToPresentations" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Presentations">
+    <Key>
+      <PropertyRef Name="PresentationId" />
+    </Key>
+    <Property Name="PresentationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="UserId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Description" Type="varchar(max)" Nullable="true" />
+    <Property Name="PresentationContent" Type="varchar(max)" Nullable="true" />
+  </EntityType>
+  <EntityType Name="PresentationTags">
+    <Key>
+      <PropertyRef Name="TagId" />
+    </Key>
+    <Property Name="TagId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TagTitle" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="tagsToPresentations">
+    <Key>
+      <PropertyRef Name="MatchId" />
+    </Key>
+    <Property Name="MatchId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="PresentationId" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="TagId" Type="uniqueidentifier" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_tagsToPresentation_Presentations">
+    <End Role="Presentations" Type="ASPNETDBModel.Store.Presentations" Multiplicity="1" />
+    <End Role="tagsToPresentation" Type="ASPNETDBModel.Store.tagsToPresentations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Presentations">
+        <PropertyRef Name="PresentationId" />
+      </Principal>
+      <Dependent Role="tagsToPresentation">
+        <PropertyRef Name="PresentationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tagsToPresentation_PresentationTags">
+    <End Role="PresentationTags" Type="ASPNETDBModel.Store.PresentationTags" Multiplicity="1" />
+    <End Role="tagsToPresentation" Type="ASPNETDBModel.Store.tagsToPresentations" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PresentationTags">
+        <PropertyRef Name="TagId" />
+      </Principal>
+      <Dependent Role="tagsToPresentation">
+        <PropertyRef Name="TagId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="ASPNETDBModel" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
         <EntityContainer Name="ASPNETDBEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="presentations" EntityType="ASPNETDBModel.presentation" />
-          <EntitySet Name="presentationTags" EntityType="ASPNETDBModel.presentationTag" />
+          <EntitySet Name="Presentations" EntityType="ASPNETDBModel.Presentation" />
+          <EntitySet Name="PresentationTags" EntityType="ASPNETDBModel.PresentationTag" />
           <EntitySet Name="tagsToPresentations" EntityType="ASPNETDBModel.tagsToPresentation" />
-          <AssociationSet Name="FK_tagsToPresentation_presentations" Association="ASPNETDBModel.FK_tagsToPresentation_presentations">
-            <End Role="presentations" EntitySet="presentations" />
+          <AssociationSet Name="FK_tagsToPresentation_Presentations" Association="ASPNETDBModel.FK_tagsToPresentation_Presentations">
+            <End Role="Presentations" EntitySet="Presentations" />
             <End Role="tagsToPresentation" EntitySet="tagsToPresentations" />
           </AssociationSet>
-          <AssociationSet Name="FK_tagsToPresentation_presentationTags" Association="ASPNETDBModel.FK_tagsToPresentation_presentationTags">
-            <End Role="presentationTags" EntitySet="presentationTags" />
+          <AssociationSet Name="FK_tagsToPresentation_PresentationTags" Association="ASPNETDBModel.FK_tagsToPresentation_PresentationTags">
+            <End Role="PresentationTags" EntitySet="PresentationTags" />
             <End Role="tagsToPresentation" EntitySet="tagsToPresentations" />
           </AssociationSet>
         </EntityContainer>
-        <EntityType Name="presentation">
+        <EntityType Name="Presentation">
           <Key>
             <PropertyRef Name="PresentationId" />
           </Key>
@@ -93,44 +92,44 @@
           <Property Name="UserId" Type="Guid" Nullable="false" />
           <Property Name="Title" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
           <Property Name="Description" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
-          <Property Name="presentationContent" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
-          <NavigationProperty Name="tagsToPresentations" Relationship="ASPNETDBModel.FK_tagsToPresentation_presentations" FromRole="presentations" ToRole="tagsToPresentation" />
+          <Property Name="PresentationContent" Type="String" MaxLength="Max" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="tagsToPresentations" Relationship="ASPNETDBModel.FK_tagsToPresentation_Presentations" FromRole="Presentations" ToRole="tagsToPresentation" />
         </EntityType>
-        <EntityType Name="presentationTag">
+        <EntityType Name="PresentationTag">
           <Key>
             <PropertyRef Name="TagId" />
           </Key>
           <Property Name="TagId" Type="Guid" Nullable="false" />
           <Property Name="TagTitle" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
-          <NavigationProperty Name="tagsToPresentations" Relationship="ASPNETDBModel.FK_tagsToPresentation_presentationTags" FromRole="presentationTags" ToRole="tagsToPresentation" />
+          <NavigationProperty Name="tagsToPresentations" Relationship="ASPNETDBModel.FK_tagsToPresentation_PresentationTags" FromRole="PresentationTags" ToRole="tagsToPresentation" />
         </EntityType>
         <EntityType Name="tagsToPresentation">
           <Key>
             <PropertyRef Name="MatchId" />
           </Key>
           <Property Name="MatchId" Type="Guid" Nullable="false" />
-          <Property Name="presentationId" Type="Guid" Nullable="false" />
+          <Property Name="PresentationId" Type="Guid" Nullable="false" />
           <Property Name="TagId" Type="Guid" Nullable="false" />
-          <NavigationProperty Name="presentation" Relationship="ASPNETDBModel.FK_tagsToPresentation_presentations" FromRole="tagsToPresentation" ToRole="presentations" />
-          <NavigationProperty Name="presentationTag" Relationship="ASPNETDBModel.FK_tagsToPresentation_presentationTags" FromRole="tagsToPresentation" ToRole="presentationTags" />
+          <NavigationProperty Name="Presentation" Relationship="ASPNETDBModel.FK_tagsToPresentation_Presentations" FromRole="tagsToPresentation" ToRole="Presentations" />
+          <NavigationProperty Name="PresentationTag" Relationship="ASPNETDBModel.FK_tagsToPresentation_PresentationTags" FromRole="tagsToPresentation" ToRole="PresentationTags" />
         </EntityType>
-        <Association Name="FK_tagsToPresentation_presentations">
-          <End Role="presentations" Type="ASPNETDBModel.presentation" Multiplicity="1" />
+        <Association Name="FK_tagsToPresentation_Presentations">
+          <End Role="Presentations" Type="ASPNETDBModel.Presentation" Multiplicity="1" />
           <End Role="tagsToPresentation" Type="ASPNETDBModel.tagsToPresentation" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="presentations">
+            <Principal Role="Presentations">
               <PropertyRef Name="PresentationId" />
             </Principal>
             <Dependent Role="tagsToPresentation">
-              <PropertyRef Name="presentationId" />
+              <PropertyRef Name="PresentationId" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_tagsToPresentation_presentationTags">
-          <End Role="presentationTags" Type="ASPNETDBModel.presentationTag" Multiplicity="1" />
+        <Association Name="FK_tagsToPresentation_PresentationTags">
+          <End Role="PresentationTags" Type="ASPNETDBModel.PresentationTag" Multiplicity="1" />
           <End Role="tagsToPresentation" Type="ASPNETDBModel.tagsToPresentation" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="presentationTags">
+            <Principal Role="PresentationTags">
               <PropertyRef Name="TagId" />
             </Principal>
             <Dependent Role="tagsToPresentation">
@@ -142,27 +141,38 @@
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="ASPNETDBModelStoreContainer" CdmEntityContainer="ASPNETDBEntities">
-          <EntitySetMapping Name="presentations"><EntityTypeMapping TypeName="ASPNETDBModel.presentation"><MappingFragment StoreEntitySet="presentations">
-            <ScalarProperty Name="PresentationId" ColumnName="PresentationId" />
-            <ScalarProperty Name="UserId" ColumnName="UserId" />
-            <ScalarProperty Name="Title" ColumnName="Title" />
-            <ScalarProperty Name="Description" ColumnName="Description" />
-            <ScalarProperty Name="presentationContent" ColumnName="presentationContent" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="presentationTags"><EntityTypeMapping TypeName="ASPNETDBModel.presentationTag"><MappingFragment StoreEntitySet="presentationTags">
-            <ScalarProperty Name="TagId" ColumnName="TagId" />
-            <ScalarProperty Name="TagTitle" ColumnName="TagTitle" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-          <EntitySetMapping Name="tagsToPresentations"><EntityTypeMapping TypeName="ASPNETDBModel.tagsToPresentation"><MappingFragment StoreEntitySet="tagsToPresentation">
-            <ScalarProperty Name="MatchId" ColumnName="MatchId" />
-            <ScalarProperty Name="presentationId" ColumnName="presentationId" />
-            <ScalarProperty Name="TagId" ColumnName="TagId" />
-          </MappingFragment></EntityTypeMapping></EntitySetMapping>
-        </EntityContainerMapping>
-      </Mapping>
-    </edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ASPNETDBModelStoreContainer" CdmEntityContainer="ASPNETDBEntities">
+    <EntitySetMapping Name="Presentations">
+      <EntityTypeMapping TypeName="IsTypeOf(ASPNETDBModel.Presentation)">
+        <MappingFragment StoreEntitySet="Presentations">
+          <ScalarProperty Name="PresentationId" ColumnName="PresentationId" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="PresentationContent" ColumnName="PresentationContent" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PresentationTags">
+      <EntityTypeMapping TypeName="IsTypeOf(ASPNETDBModel.PresentationTag)">
+        <MappingFragment StoreEntitySet="PresentationTags">
+          <ScalarProperty Name="TagId" ColumnName="TagId" />
+          <ScalarProperty Name="TagTitle" ColumnName="TagTitle" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tagsToPresentations">
+      <EntityTypeMapping TypeName="IsTypeOf(ASPNETDBModel.tagsToPresentation)">
+        <MappingFragment StoreEntitySet="tagsToPresentations">
+          <ScalarProperty Name="MatchId" ColumnName="MatchId" />
+          <ScalarProperty Name="PresentationId" ColumnName="PresentationId" />
+          <ScalarProperty Name="TagId" ColumnName="TagId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
   <Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
@@ -181,14 +191,14 @@
     <!-- Diagram content (shape and connector positions) -->
     <Diagrams>
       <Diagram Name="PresentationModels">
-        <EntityTypeShape EntityType="ASPNETDBModel.presentation" Width="1.5" PointX="0.75" PointY="0.875" Height="2.1725878906250005" IsExpanded="true" />
-        <EntityTypeShape EntityType="ASPNETDBModel.presentationTag" Width="1.5" PointX="0.875" PointY="3.75" Height="1.5956835937499996" IsExpanded="true" />
+        <EntityTypeShape EntityType="ASPNETDBModel.Presentation" Width="1.5" PointX="0.75" PointY="0.875" Height="2.1725878906250005" IsExpanded="true" />
+        <EntityTypeShape EntityType="ASPNETDBModel.PresentationTag" Width="1.5" PointX="0.875" PointY="3.75" Height="1.5956835937499996" IsExpanded="true" />
         <EntityTypeShape EntityType="ASPNETDBModel.tagsToPresentation" Width="2" PointX="3" PointY="1" Height="1.9802864583333326" IsExpanded="true" />
-        <AssociationConnector Association="ASPNETDBModel.FK_tagsToPresentation_presentations" ManuallyRouted="false">
+        <AssociationConnector Association="ASPNETDBModel.FK_tagsToPresentation_Presentations" ManuallyRouted="false">
           <ConnectorPoint PointX="2.25" PointY="1.9901432291666663" />
           <ConnectorPoint PointX="3" PointY="1.9901432291666663" />
         </AssociationConnector>
-        <AssociationConnector Association="ASPNETDBModel.FK_tagsToPresentation_presentationTags" ManuallyRouted="false">
+        <AssociationConnector Association="ASPNETDBModel.FK_tagsToPresentation_PresentationTags" ManuallyRouted="false">
           <ConnectorPoint PointX="2.375" PointY="4.547841796875" />
           <ConnectorPoint PointX="4" PointY="4.547841796875" />
           <ConnectorPoint PointX="4" PointY="2.9802864583333326" />

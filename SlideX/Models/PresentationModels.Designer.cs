@@ -18,8 +18,8 @@ using System.Runtime.Serialization;
 [assembly: EdmSchemaAttribute()]
 #region EDM Relationship Metadata
 
-[assembly: EdmRelationshipAttribute("ASPNETDBModel", "FK_tagsToPresentation_presentations", "presentations", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SlideX.Models.presentation), "tagsToPresentation", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SlideX.Models.tagsToPresentation), true)]
-[assembly: EdmRelationshipAttribute("ASPNETDBModel", "FK_tagsToPresentation_presentationTags", "presentationTags", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SlideX.Models.presentationTag), "tagsToPresentation", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SlideX.Models.tagsToPresentation), true)]
+[assembly: EdmRelationshipAttribute("ASPNETDBModel", "FK_tagsToPresentation_Presentations", "Presentations", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SlideX.Models.Presentation), "tagsToPresentation", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SlideX.Models.tagsToPresentation), true)]
+[assembly: EdmRelationshipAttribute("ASPNETDBModel", "FK_tagsToPresentation_PresentationTags", "PresentationTags", System.Data.Metadata.Edm.RelationshipMultiplicity.One, typeof(SlideX.Models.PresentationTag), "tagsToPresentation", System.Data.Metadata.Edm.RelationshipMultiplicity.Many, typeof(SlideX.Models.tagsToPresentation), true)]
 
 #endregion
 
@@ -74,34 +74,34 @@ namespace SlideX.Models
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<presentation> presentations
+        public ObjectSet<Presentation> Presentations
         {
             get
             {
-                if ((_presentations == null))
+                if ((_Presentations == null))
                 {
-                    _presentations = base.CreateObjectSet<presentation>("presentations");
+                    _Presentations = base.CreateObjectSet<Presentation>("Presentations");
                 }
-                return _presentations;
+                return _Presentations;
             }
         }
-        private ObjectSet<presentation> _presentations;
+        private ObjectSet<Presentation> _Presentations;
     
         /// <summary>
         /// No Metadata Documentation available.
         /// </summary>
-        public ObjectSet<presentationTag> presentationTags
+        public ObjectSet<PresentationTag> PresentationTags
         {
             get
             {
-                if ((_presentationTags == null))
+                if ((_PresentationTags == null))
                 {
-                    _presentationTags = base.CreateObjectSet<presentationTag>("presentationTags");
+                    _PresentationTags = base.CreateObjectSet<PresentationTag>("PresentationTags");
                 }
-                return _presentationTags;
+                return _PresentationTags;
             }
         }
-        private ObjectSet<presentationTag> _presentationTags;
+        private ObjectSet<PresentationTag> _PresentationTags;
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -123,19 +123,19 @@ namespace SlideX.Models
         #region AddTo Methods
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the presentations EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the Presentations EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddTopresentations(presentation presentation)
+        public void AddToPresentations(Presentation presentation)
         {
-            base.AddObject("presentations", presentation);
+            base.AddObject("Presentations", presentation);
         }
     
         /// <summary>
-        /// Deprecated Method for adding a new object to the presentationTags EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+        /// Deprecated Method for adding a new object to the PresentationTags EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
         /// </summary>
-        public void AddTopresentationTags(presentationTag presentationTag)
+        public void AddToPresentationTags(PresentationTag presentationTag)
         {
-            base.AddObject("presentationTags", presentationTag);
+            base.AddObject("PresentationTags", presentationTag);
         }
     
         /// <summary>
@@ -157,22 +157,22 @@ namespace SlideX.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="ASPNETDBModel", Name="presentation")]
+    [EdmEntityTypeAttribute(NamespaceName="ASPNETDBModel", Name="Presentation")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class presentation : EntityObject
+    public partial class Presentation : EntityObject
     {
         #region Factory Method
     
         /// <summary>
-        /// Create a new presentation object.
+        /// Create a new Presentation object.
         /// </summary>
         /// <param name="presentationId">Initial value of the PresentationId property.</param>
         /// <param name="userId">Initial value of the UserId property.</param>
         /// <param name="title">Initial value of the Title property.</param>
-        public static presentation Createpresentation(global::System.Guid presentationId, global::System.Guid userId, global::System.String title)
+        public static Presentation CreatePresentation(global::System.Guid presentationId, global::System.Guid userId, global::System.String title)
         {
-            presentation presentation = new presentation();
+            Presentation presentation = new Presentation();
             presentation.PresentationId = presentationId;
             presentation.UserId = userId;
             presentation.Title = title;
@@ -286,24 +286,24 @@ namespace SlideX.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=true)]
         [DataMemberAttribute()]
-        public global::System.String presentationContent
+        public global::System.String PresentationContent
         {
             get
             {
-                return _presentationContent;
+                return _PresentationContent;
             }
             set
             {
-                OnpresentationContentChanging(value);
-                ReportPropertyChanging("presentationContent");
-                _presentationContent = StructuralObject.SetValidValue(value, true);
-                ReportPropertyChanged("presentationContent");
-                OnpresentationContentChanged();
+                OnPresentationContentChanging(value);
+                ReportPropertyChanging("PresentationContent");
+                _PresentationContent = StructuralObject.SetValidValue(value, true);
+                ReportPropertyChanged("PresentationContent");
+                OnPresentationContentChanged();
             }
         }
-        private global::System.String _presentationContent;
-        partial void OnpresentationContentChanging(global::System.String value);
-        partial void OnpresentationContentChanged();
+        private global::System.String _PresentationContent;
+        partial void OnPresentationContentChanging(global::System.String value);
+        partial void OnPresentationContentChanged();
 
         #endregion
     
@@ -315,18 +315,18 @@ namespace SlideX.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ASPNETDBModel", "FK_tagsToPresentation_presentations", "tagsToPresentation")]
+        [EdmRelationshipNavigationPropertyAttribute("ASPNETDBModel", "FK_tagsToPresentation_Presentations", "tagsToPresentation")]
         public EntityCollection<tagsToPresentation> tagsToPresentations
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<tagsToPresentation>("ASPNETDBModel.FK_tagsToPresentation_presentations", "tagsToPresentation");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<tagsToPresentation>("ASPNETDBModel.FK_tagsToPresentation_Presentations", "tagsToPresentation");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<tagsToPresentation>("ASPNETDBModel.FK_tagsToPresentation_presentations", "tagsToPresentation", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<tagsToPresentation>("ASPNETDBModel.FK_tagsToPresentation_Presentations", "tagsToPresentation", value);
                 }
             }
         }
@@ -337,21 +337,21 @@ namespace SlideX.Models
     /// <summary>
     /// No Metadata Documentation available.
     /// </summary>
-    [EdmEntityTypeAttribute(NamespaceName="ASPNETDBModel", Name="presentationTag")]
+    [EdmEntityTypeAttribute(NamespaceName="ASPNETDBModel", Name="PresentationTag")]
     [Serializable()]
     [DataContractAttribute(IsReference=true)]
-    public partial class presentationTag : EntityObject
+    public partial class PresentationTag : EntityObject
     {
         #region Factory Method
     
         /// <summary>
-        /// Create a new presentationTag object.
+        /// Create a new PresentationTag object.
         /// </summary>
         /// <param name="tagId">Initial value of the TagId property.</param>
         /// <param name="tagTitle">Initial value of the TagTitle property.</param>
-        public static presentationTag CreatepresentationTag(global::System.Guid tagId, global::System.String tagTitle)
+        public static PresentationTag CreatePresentationTag(global::System.Guid tagId, global::System.String tagTitle)
         {
-            presentationTag presentationTag = new presentationTag();
+            PresentationTag presentationTag = new PresentationTag();
             presentationTag.TagId = tagId;
             presentationTag.TagTitle = tagTitle;
             return presentationTag;
@@ -421,18 +421,18 @@ namespace SlideX.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ASPNETDBModel", "FK_tagsToPresentation_presentationTags", "tagsToPresentation")]
+        [EdmRelationshipNavigationPropertyAttribute("ASPNETDBModel", "FK_tagsToPresentation_PresentationTags", "tagsToPresentation")]
         public EntityCollection<tagsToPresentation> tagsToPresentations
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<tagsToPresentation>("ASPNETDBModel.FK_tagsToPresentation_presentationTags", "tagsToPresentation");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedCollection<tagsToPresentation>("ASPNETDBModel.FK_tagsToPresentation_PresentationTags", "tagsToPresentation");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<tagsToPresentation>("ASPNETDBModel.FK_tagsToPresentation_presentationTags", "tagsToPresentation", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedCollection<tagsToPresentation>("ASPNETDBModel.FK_tagsToPresentation_PresentationTags", "tagsToPresentation", value);
                 }
             }
         }
@@ -454,13 +454,13 @@ namespace SlideX.Models
         /// Create a new tagsToPresentation object.
         /// </summary>
         /// <param name="matchId">Initial value of the MatchId property.</param>
-        /// <param name="presentationId">Initial value of the presentationId property.</param>
+        /// <param name="presentationId">Initial value of the PresentationId property.</param>
         /// <param name="tagId">Initial value of the TagId property.</param>
         public static tagsToPresentation CreatetagsToPresentation(global::System.Guid matchId, global::System.Guid presentationId, global::System.Guid tagId)
         {
             tagsToPresentation tagsToPresentation = new tagsToPresentation();
             tagsToPresentation.MatchId = matchId;
-            tagsToPresentation.presentationId = presentationId;
+            tagsToPresentation.PresentationId = presentationId;
             tagsToPresentation.TagId = tagId;
             return tagsToPresentation;
         }
@@ -500,24 +500,24 @@ namespace SlideX.Models
         /// </summary>
         [EdmScalarPropertyAttribute(EntityKeyProperty=false, IsNullable=false)]
         [DataMemberAttribute()]
-        public global::System.Guid presentationId
+        public global::System.Guid PresentationId
         {
             get
             {
-                return _presentationId;
+                return _PresentationId;
             }
             set
             {
-                OnpresentationIdChanging(value);
-                ReportPropertyChanging("presentationId");
-                _presentationId = StructuralObject.SetValidValue(value);
-                ReportPropertyChanged("presentationId");
-                OnpresentationIdChanged();
+                OnPresentationIdChanging(value);
+                ReportPropertyChanging("PresentationId");
+                _PresentationId = StructuralObject.SetValidValue(value);
+                ReportPropertyChanged("PresentationId");
+                OnPresentationIdChanged();
             }
         }
-        private global::System.Guid _presentationId;
-        partial void OnpresentationIdChanging(global::System.Guid value);
-        partial void OnpresentationIdChanged();
+        private global::System.Guid _PresentationId;
+        partial void OnPresentationIdChanging(global::System.Guid value);
+        partial void OnPresentationIdChanged();
     
         /// <summary>
         /// No Metadata Documentation available.
@@ -553,16 +553,16 @@ namespace SlideX.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ASPNETDBModel", "FK_tagsToPresentation_presentations", "presentations")]
-        public presentation presentation
+        [EdmRelationshipNavigationPropertyAttribute("ASPNETDBModel", "FK_tagsToPresentation_Presentations", "Presentations")]
+        public Presentation Presentation
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<presentation>("ASPNETDBModel.FK_tagsToPresentation_presentations", "presentations").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Presentation>("ASPNETDBModel.FK_tagsToPresentation_Presentations", "Presentations").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<presentation>("ASPNETDBModel.FK_tagsToPresentation_presentations", "presentations").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Presentation>("ASPNETDBModel.FK_tagsToPresentation_Presentations", "Presentations").Value = value;
             }
         }
         /// <summary>
@@ -570,17 +570,17 @@ namespace SlideX.Models
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<presentation> presentationReference
+        public EntityReference<Presentation> PresentationReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<presentation>("ASPNETDBModel.FK_tagsToPresentation_presentations", "presentations");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<Presentation>("ASPNETDBModel.FK_tagsToPresentation_Presentations", "Presentations");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<presentation>("ASPNETDBModel.FK_tagsToPresentation_presentations", "presentations", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<Presentation>("ASPNETDBModel.FK_tagsToPresentation_Presentations", "Presentations", value);
                 }
             }
         }
@@ -591,16 +591,16 @@ namespace SlideX.Models
         [XmlIgnoreAttribute()]
         [SoapIgnoreAttribute()]
         [DataMemberAttribute()]
-        [EdmRelationshipNavigationPropertyAttribute("ASPNETDBModel", "FK_tagsToPresentation_presentationTags", "presentationTags")]
-        public presentationTag presentationTag
+        [EdmRelationshipNavigationPropertyAttribute("ASPNETDBModel", "FK_tagsToPresentation_PresentationTags", "PresentationTags")]
+        public PresentationTag PresentationTag
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<presentationTag>("ASPNETDBModel.FK_tagsToPresentation_presentationTags", "presentationTags").Value;
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PresentationTag>("ASPNETDBModel.FK_tagsToPresentation_PresentationTags", "PresentationTags").Value;
             }
             set
             {
-                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<presentationTag>("ASPNETDBModel.FK_tagsToPresentation_presentationTags", "presentationTags").Value = value;
+                ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PresentationTag>("ASPNETDBModel.FK_tagsToPresentation_PresentationTags", "PresentationTags").Value = value;
             }
         }
         /// <summary>
@@ -608,17 +608,17 @@ namespace SlideX.Models
         /// </summary>
         [BrowsableAttribute(false)]
         [DataMemberAttribute()]
-        public EntityReference<presentationTag> presentationTagReference
+        public EntityReference<PresentationTag> PresentationTagReference
         {
             get
             {
-                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<presentationTag>("ASPNETDBModel.FK_tagsToPresentation_presentationTags", "presentationTags");
+                return ((IEntityWithRelationships)this).RelationshipManager.GetRelatedReference<PresentationTag>("ASPNETDBModel.FK_tagsToPresentation_PresentationTags", "PresentationTags");
             }
             set
             {
                 if ((value != null))
                 {
-                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<presentationTag>("ASPNETDBModel.FK_tagsToPresentation_presentationTags", "presentationTags", value);
+                    ((IEntityWithRelationships)this).RelationshipManager.InitializeRelatedReference<PresentationTag>("ASPNETDBModel.FK_tagsToPresentation_PresentationTags", "PresentationTags", value);
                 }
             }
         }

@@ -1,4 +1,4 @@
-﻿@model IEnumerable<SlideX.Models.presentation>
+﻿@model IEnumerable<SlideX.Models.Presentation>
 @{
     ViewBag.Title = "PresentationList";
 }
@@ -9,39 +9,39 @@
     <p>
         @Html.ActionLink("Create New", "Create")
     </p>
-    <table>
-        <tr>
-            <th>
-                Title
-            </th>
-            <th>
-                Description
-            </th>
-            <th>
-                Options
-            </th>
-        </tr>
-        @foreach (var item in Model)
-        {
+        <table>
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Title)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.PresentationId }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.PresentationId }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.PresentationId })
-                </td>
+                <th>
+                    Title
+                </th>
+                <th>
+                    Description
+                </th>
+                <th>
+                    Options
+                </th>
             </tr>
-        }
-    </table>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.PresentationId }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.PresentationId }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.PresentationId })
+                    </td>
+                </tr>
+            }
+        </table>
 }
 else
 {
     <div>
-    Please,  @Html.ActionLink("Log in", "LogOn", "Account")
+        Please, @Html.ActionLink("Log in", "LogOn", "Account")
     </div>
 }

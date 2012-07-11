@@ -12,8 +12,6 @@ namespace SlideX.Controllers
 {
     public class UserPresentationController : Controller
     {
-        //
-        // GET: /UserPresentation/
         ASPNETDBEntities db = new ASPNETDBEntities();
 
         public ActionResult Index()
@@ -21,29 +19,68 @@ namespace SlideX.Controllers
             return View();
         }
 
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Create(Presentation model)
+        {
+            MembershipUser currentUser = Membership.GetUser();
+            Guid currentUserId = (Guid) currentUser.ProviderUserKey;
+
+            Presentation newPresentation = new Presentation();
+            newPresentation.PresentationId = Guid.NewGuid();
+            newPresentation.Title = model.Title;
+            newPresentation.Description = model.Description;
+
+            newPresentation.UserId = currentUserId;
+            db.Presentations.AddObject(newPresentation);
+            db.SaveChanges();
+
+            return RedirectToAction("PresentationList");
+        }
+
         public ActionResult PresentationList()
         {
-            return View(GetPresentationsByCurrentUserId());
+            var foundPresentation = GetPresentationsByCurrentUserId();
+            if (foundPresentation == null)
+            {
+                return View();
+            }
+            return View(foundPresentation);
         }
 
         public ActionResult Edit(Guid id)
         {
-            return View(GetPresentationByPresentationId(id));
+            var foundPresentation = GetPresentationByPresentationId(id);
+            if (foundPresentation == null)
+            {
+                return View("Error", new ErrorPageModels { Title = "Presentation not found.", Message = "Presentation wasn't found. May be it was deleted or bad request string.", ShowGotoBack = true });
+            }
+            return View(foundPresentation);
         }
 
         [HttpPost]
-        public ActionResult Edit(presentation model)
+        public ActionResult Edit(Presentation model)
         {
-
             if (ModelState.IsValid)
             {
-                var pp = db.presentations.SingleOrDefault(p => p.PresentationId == model.PresentationId);
-                Debug.Assert(model != null);
-                pp.Title = model.Title;
-                pp.Description = model.Description;
-                db.SaveChanges();
+                MembershipUser currentUser = Membership.GetUser();
+                if (currentUser != null)
+                {
+                    Guid currentUserId = (Guid)currentUser.ProviderUserKey;
+                    var foundPresentation = db.Presentations.SingleOrDefault(p => p.PresentationId == model.PresentationId && p.UserId == currentUserId);
+                    if (foundPresentation == null)
+                    {
+                        return View("Error", new ErrorPageModels { Title = "Presentation not found.", Message = "Presentation wasn't found. Do you want to edit another's prasentation ?", ShowGotoBack = true });
+                    }
+                    foundPresentation.Title = model.Title;
+                    foundPresentation.Description = model.Description;
+                    db.SaveChanges();
+                }
             }
-
             return View(model);
         }
 
@@ -53,13 +90,9 @@ namespace SlideX.Controllers
             var foundPresentation = GetPresentationByPresentationId(id);
             if (foundPresentation == null)
             {
-                return View("Error");
-
-                // TODO error model
+                return View("Error", new ErrorPageModels { Title = "Presentation not found.", Message = "Presentation wasn't found. May be it was deleted or bad request string.", ShowGotoBack = true });
             }
-
             return View(foundPresentation);
-
         }
 
 
@@ -68,8 +101,7 @@ namespace SlideX.Controllers
             MembershipUser currentUser = Membership.GetUser();
             if (currentUser != null)
             {
-
-                return db.presentations.Where(P => P.UserId == (Guid)currentUser.ProviderUserKey);
+                return db.Presentations.Where(P => P.UserId == (Guid)currentUser.ProviderUserKey);
             }
             else return null;
         }
@@ -80,14 +112,14 @@ namespace SlideX.Controllers
             if (currentUser != null)
             {
                 Guid currentUserId = (Guid)currentUser.ProviderUserKey;
-                return db.presentations.Where(P => P.UserId == currentUserId).Where(P => P.PresentationId == id).First();
+                return db.Presentations.Where(P => P.UserId == currentUserId).Where(P => P.PresentationId == id).First();
             }
             else return null;
         }
 
-        private presentation GetPresentationByPresentationId(Guid id)
+        private Presentation GetPresentationByPresentationId(Guid id)
         {
-            return db.presentations.SingleOrDefault(P => P.PresentationId == id);
+            return db.Presentations.SingleOrDefault(P => P.PresentationId == id);
         }
     }
 }
