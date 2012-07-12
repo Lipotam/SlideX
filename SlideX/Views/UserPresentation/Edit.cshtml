@@ -1,9 +1,8 @@
-﻿@model SlideX.Models.PresentationWithTags
+﻿@model SlideX.Models.Presentation
 @{
     ViewBag.Title = "Edit";
 }
-<h2>
-    Edit</h2>
+<h2>Edit</h2>
 <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
 <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
 @using (Html.BeginForm())
@@ -12,80 +11,85 @@
     <fieldset>
         <legend>presentation</legend>
         <div class="editor-label">
-            @Html.LabelFor(model => model.presentation.Title)
+            @Html.LabelFor(model => model.Title)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.presentation.Title)
-            @Html.ValidationMessageFor(model => model.presentation.Title)
+            @Html.EditorFor(model => model.Title)
+            @Html.ValidationMessageFor(model => model.Title)
         </div>
         <div class="editor-label">
-            @Html.LabelFor(model => model.presentation.Description)
+            @Html.LabelFor(model => model.Description)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.presentation.Description)
-            @Html.ValidationMessageFor(model => model.presentation.Description)
+            @Html.EditorFor(model => model.Description)
+            @Html.ValidationMessageFor(model => model.Description)
         </div>
-        <div>
-            <textarea id="textarea" class="example" rows="1"></textarea>
-            <div class="text-tags">
-                @if (Model.tags != null)
+        <div class="editor-label">
+            Tags
+        </div>
+        <div class="editor-field">
+            <textarea id="textarea" rows="1"></textarea>
+            @*<div class="text-tags">
+                @foreach (var tag in Model.Tags)
                 {
-                    foreach (var name in Model.tags)
-                    {
-                    <div class="text-tag"> 
-                        <div class="text-button">        
-                           <span class="text-label"> @Html.LabelFor(model => name )
-                               
-                           </span> 
-                           <a class="text-remove"></a>
-                         </div>
+                    <div class="text-tag">
+                        <div class="text-button">
+                            <span class="text-label">@Html.Label(tag.Name)
+                            </span>
+                            <a class="text-remove"></a>
+                        </div>
                     </div>
-                    }
                 }
-            </div>
-            <script type="text/javascript">
-                $('#textarea')
-        .textext({
-            plugins: 'tags autocomplete'
-        })
-        .bind('getSuggestions', function (e, data) {
-            var list = [
-                    'Basic',
-                    'Closure',
-                    'Cobol',
-                    'Delphi',
-                    'Erlang',
-                    'Fortran',
-                    'Go',
-                    'Groovy',
-                    'Haskel',
-                    'Java',
-                    'JavaScript',
-                    'OCAML',
-                    'PHP',
-                    'Perl',
-                    'Python',
-                    'Ruby',
-                    'Scala'
-                ],
-                textext = $(e.target).textext()[0],
-                query = (data ? data.query : '') || ''
-                ;
-
-            $(this).trigger(
-                'setSuggestions',
-                { result: textext.itemManager().filter(list, query) }
-            );
-        })
-        ;
-            </script>
+            </div>*@
         </div>
         <p>
-            @Html.HiddenFor(model => model.presentation.PresentationId)
+            @Html.HiddenFor(model => model.Id)
             <input type="submit" value="Save" />
         </p>
     </fieldset>
 }
 <div>
-    @Html.ActionLink("Back to List", "PresentationList")
+    @Html.ActionLink("Back to List", "Index")
 </div>
+
+@section scripts
+{
+<script type="text/javascript">
+    $(function() {
+        $('#textarea')
+            .textext({
+                plugins: 'tags autocomplete'
+            })
+            .bind('getSuggestions', function (e, data) {
+                var list = [
+                        'Basic',
+                        'Closure',
+                        'Cobol',
+                        'Delphi',
+                        'Erlang',
+                        'Fortran',
+                        'Go',
+                        'Groovy',
+                        'Haskel',
+                        'Java',
+                        'JavaScript',
+                        'OCAML',
+                        'PHP',
+                        'Perl',
+                        'Python',
+                        'Ruby',
+                        'Scala'
+                ],
+                    textext = $(e.target).textext()[0],
+                    query = (data ? data.query : '') || ''
+                ;
+
+                $(this).trigger(
+                    'setSuggestions',
+                    { result: textext.itemManager().filter(list, query) }
+                );
+            })
+        ;
+    });
+</script>
+}
