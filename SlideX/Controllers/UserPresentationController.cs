@@ -45,12 +45,12 @@ namespace SlideX.Controllers
             {
                 return View("Error", new ErrorPageModels { Title = "Presentation not found.", Message = "Presentation wasn't found. May be it was deleted or bad request string.", ShowGotoBack = true });
             }
-            return View(foundPresentation);
+            return View(new PresentationDataModel { CurrentPresentation = foundPresentation });
         }
 
         [HttpPost]
         [Authorize]
-        public ActionResult Edit(Presentation model)
+        public ActionResult Edit(PresentationDataModel model)
         {
             if (ModelState.IsValid)
             {
@@ -58,13 +58,41 @@ namespace SlideX.Controllers
                 if (currentUser != null)
                 {
                     var currentUserId = (Guid)currentUser.ProviderUserKey;
-                    var foundPresentation = db.Presentations.SingleOrDefault(p => p.Id == model.Id && p.UserId == currentUserId);
+                    var foundPresentation = db.Presentations.SingleOrDefault(p => p.Id == model.CurrentPresentation.Id && p.UserId == currentUserId);
                     if (foundPresentation == null)
                     {
                         return View("Error", new ErrorPageModels { Title = "Presentation not found.", Message = "Presentation wasn't found. Do you want to edit another's prasentation ?", ShowGotoBack = true });
                     }
-                    foundPresentation.Title = model.Title;
-                    foundPresentation.Description = model.Description;
+                    foundPresentation.Title = model.CurrentPresentation.Title;
+                    foundPresentation.Description = model.CurrentPresentation.Description;
+
+                    //foundPresentation.Tags = model.CurrentPresentation.Tags;
+
+                    List<Tag> nonExistingTags = new List<Tag>();
+                    foreach (var temp in foundPresentation.Tags.AsEnumerable())
+                    {
+                        if (model.CurrentPresentation.Tags.SingleOrDefault(p => p.Name == temp.Name) == null)
+                        {
+                            nonExistingTags.Add(temp);
+                        }
+                    }
+
+                    foreach (var temp in nonExistingTags)
+                    {
+                        foundPresentation.Tags.Remove(temp);
+                    }
+
+                    
+
+
+                    foreach (var temp in model.CurrentPresentation.Tags.AsEnumerable())
+                    {
+                        if (foundPresentation.Tags.SingleOrDefault(p => p.Name == temp.Name) == null)
+                        {
+                            foundPresentation.Tags.Add(db.Tags.SingleOrDefault(p => p.Name == temp.Name));
+                        }
+                    }
+
                     db.SaveChanges();
                 }
             }

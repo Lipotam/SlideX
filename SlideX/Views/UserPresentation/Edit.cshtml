@@ -1,47 +1,36 @@
-﻿@model SlideX.Models.Presentation
+﻿@model SlideX.Models.PresentationDataModel
 @{
     ViewBag.Title = "Edit";
 }
-<h2>Edit</h2>
+<h2>
+    Edit</h2>
 @using (Html.BeginForm())
 {
     @Html.ValidationSummary(true)
     <fieldset>
         <legend>presentation</legend>
         <div class="editor-label">
-            @Html.LabelFor(model => model.Title)
-        </div>
+            @Html.LabelFor(model => model.CurrentPresentation.Title)
+        </div> 
         <div class="editor-field">
-            @Html.EditorFor(model => model.Title)
-            @Html.ValidationMessageFor(model => model.Title)
+            @Html.EditorFor(model => model.CurrentPresentation.Title)
+            @Html.ValidationMessageFor(model => model.CurrentPresentation.Title)
         </div>
         <div class="editor-label">
-            @Html.LabelFor(model => model.Description)
+            @Html.LabelFor(model => model.CurrentPresentation.Description)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.Description)
-            @Html.ValidationMessageFor(model => model.Description)
+            @Html.EditorFor(model => model.CurrentPresentation.Description)
+            @Html.ValidationMessageFor(model => model.CurrentPresentation.Description)
         </div>
         <div class="editor-label">
             Tags
         </div>
         <div class="editor-field">
-            <textarea id="textarea" name="tags" rows="1"></textarea>
-            @*<div class="text-tags">
-                @foreach (var tag in Model.Tags)
-                {
-                    <div class="text-tag">
-                        <div class="text-button">
-                            <span class="text-label">@Html.Label(tag.Name)
-                            </span>
-                            <a class="text-remove"></a>
-                        </div>
-                    </div>
-                }
-            </div>*@
-        </div>
+            <textarea id="textarea" name="TagsJson" rows="1"></textarea>
+                 </div>
         <p>
-            @Html.HiddenFor(model => model.Id)
+            @Html.HiddenFor(model => model.CurrentPresentation.Id)
             <input type="submit" value="Save" />
         </p>
     </fieldset>
@@ -49,22 +38,25 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
-
 @section scripts
 {
-<script type="text/javascript">
-    $(function() {
-    $('#textarea')
+    <script type="text/javascript">
+        $(function () {
+            $('#textarea')
         .textext({
-            plugins : 'autocomplete tags ajax',
-            ajax : {
-                url : '@Url.Action("GetTagsJson")',
-                dataType : 'json',
-                cacheResults : true
+            plugins: 'autocomplete tags ajax',
+            ajax: {
+                url: '@Url.Action("GetTagsJson")',
+                dataType: 'json',
+                cacheResults: true
+            },
+            tags: {
+                items:  @Html.Raw(@Model.TagsJson )
+                
             }
         });
-    });
-</script>
-<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
-<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+        });
+    </script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+    <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
 }
