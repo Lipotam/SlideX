@@ -22,10 +22,10 @@ namespace SlideX.Controllers
         {
             var newPresentation = new Presentation
                 {
-                                                   Title = model.Title,
-                                                   Description = model.Description,
-                                                   UserId = (Guid)Membership.GetUser().ProviderUserKey
-                                               };
+                    Title = model.Title,
+                    Description = model.Description,
+                    UserId = (Guid)Membership.GetUser().ProviderUserKey
+                };
             db.Presentations.AddObject(newPresentation);
             db.SaveChanges();
             return RedirectToAction("Index");
@@ -91,6 +91,12 @@ namespace SlideX.Controllers
                 return RedirectToAction("Index");
             }
             return View("Error", new ErrorPageModels { Title = "Presentation not found.", Message = "Presentation wasn't found. Do you want to delete another's prasentation ?", ShowGotoBack = true });
+        }
+
+        [OutputCache(Duration = 300)]
+        public JsonResult GetTagsJson()
+        {
+            return Json(db.Tags.Select(t => t.Name).ToArray(), JsonRequestBehavior.AllowGet);
         }
 
         private IEnumerable<Presentation> GetPresentationsByCurrentUserId()
