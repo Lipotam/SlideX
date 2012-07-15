@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using SlideX.Models;
 
 namespace SlideX.Controllers
 {
@@ -11,8 +12,10 @@ namespace SlideX.Controllers
         public ActionResult Index()
         {
             ViewBag.Message = "Welcome to ASP.NET MVC!";
+            SlideXDatabaseContext db = new SlideXDatabaseContext();
 
-            return View();
+            
+            return View(db.Tags.AsEnumerable());
         }
 
         public ActionResult About()

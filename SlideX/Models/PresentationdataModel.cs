@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text.RegularExpressions;
-using System.Web.Mvc;
-using System.Web.Script.Serialization;
 using Newtonsoft.Json;
 
 namespace SlideX.Models
 {
     public class PresentationDataModel
     {
-        SlideXDatabaseContext db = new SlideXDatabaseContext();
+        private readonly SlideXDatabaseContext DB = new SlideXDatabaseContext();
         public Presentation CurrentPresentation { get; set; }
 
         public string TagsJson
@@ -19,21 +15,11 @@ namespace SlideX.Models
             {
                 if (CurrentPresentation != null)
                 {
-
                     var tags = CurrentPresentation.Tags.ToArray();
-                    if (tags != null)
+                    if (tags.LongCount() != 0)
                     {
-                        List<String> tagsToJson = new List<String>();
-                        foreach (var temp in tags)
-                        {
-                            tagsToJson.Add(temp.Name);
-                        }
-
-
+                        var tagsToJson = tags.Select(temp => temp.Name).ToList();
                         return JsonConvert.SerializeObject(tagsToJson); 
-                        
-
-
                     }
 
                 }
@@ -41,14 +27,14 @@ namespace SlideX.Models
             }
             set
             {
-                List<string> receivedTags = Newtonsoft.Json.JsonConvert.DeserializeObject<List<string>>(value);
+                var receivedTags = JsonConvert.DeserializeObject<List<string>>(value);
 
 
                 foreach (var temp in receivedTags)
                 {
-                    if (db.Tags.SingleOrDefault(p => p.Name == temp) == null)
+                    if (DB.Tags.SingleOrDefault(p => p.Name == temp) == null)
                     {
-                        db.Tags.AddObject(new Tag { Name = temp });
+                        DB.Tags.AddObject(new Tag { Name = temp });
                     }
 
                     if (CurrentPresentation.Tags.SingleOrDefault(p => p.Name == temp) == null)
@@ -65,11 +51,13 @@ namespace SlideX.Models
                     }
                 }
 
-                db.SaveChanges();
+                DB.SaveChanges();
             }
 
         }
 
 
     }
+
+    
 }

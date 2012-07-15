@@ -57,17 +57,14 @@ namespace SlideX.Controllers
                 MembershipUser currentUser = Membership.GetUser();
                 if (currentUser != null)
                 {
-                    var currentUserId = (Guid)currentUser.ProviderUserKey;
-                    var foundPresentation = db.Presentations.SingleOrDefault(p => p.Id == model.CurrentPresentation.Id && p.UserId == currentUserId);
+                    var foundPresentation = db.Presentations.SingleOrDefault(p => p.Id == model.CurrentPresentation.Id && p.UserId == (Guid)currentUser.ProviderUserKey );
                     if (foundPresentation == null)
                     {
                         return View("Error", new ErrorPageModels { Title = "Presentation not found.", Message = "Presentation wasn't found. Do you want to edit another's prasentation ?", ShowGotoBack = true });
                     }
                     foundPresentation.Title = model.CurrentPresentation.Title;
                     foundPresentation.Description = model.CurrentPresentation.Description;
-
-                    //foundPresentation.Tags = model.CurrentPresentation.Tags;
-
+                    
                     List<Tag> nonExistingTags = new List<Tag>();
                     foreach (var temp in foundPresentation.Tags.AsEnumerable())
                     {
@@ -81,10 +78,6 @@ namespace SlideX.Controllers
                     {
                         foundPresentation.Tags.Remove(temp);
                     }
-
-                    
-
-
                     foreach (var temp in model.CurrentPresentation.Tags.AsEnumerable())
                     {
                         if (foundPresentation.Tags.SingleOrDefault(p => p.Name == temp.Name) == null)
@@ -114,6 +107,7 @@ namespace SlideX.Controllers
             Presentation foundPresentation = GetPresentationByCurrentUserIdAndByPreasentationId(id);
             if (foundPresentation != null)
             {
+                foundPresentation.Tags.Clear();
                 db.Presentations.DeleteObject(foundPresentation);
                 db.SaveChanges();
                 return RedirectToAction("Index");

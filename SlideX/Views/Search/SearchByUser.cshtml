@@ -1,0 +1,37 @@
+﻿@model IEnumerable<SlideX.Models.Presentation>
+@{
+    ViewBag.Title = "Search pesentions by user's name";
+}
+<h2>
+    Search presention by User's name</h2>
+<legend>Presentation</legend>
+@if (Model != null)
+{  <table>
+      <tr>
+          <th>
+              Title
+          </th>
+          <th>
+              Description
+          </th>
+          <th>
+              Options
+          </th>
+      </tr>
+      @foreach (var item in Model)
+      {
+          <tr>
+              <td>
+                  @Html.DisplayFor(modelItem => item.Title)
+              </td>
+              <td>
+                  @Html.DisplayFor(modelItem => item.Description)
+              </td>
+              <td>
+                  @Html.ActionLink("Details", "Details", "UserPresentation", new { id = item.Id }, null)
+              </td>
+          </tr>
+      }
+  </table>
+
+}
