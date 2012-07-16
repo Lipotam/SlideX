@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+using System.Web.Mvc;
 using System.Web.Security;
 
 namespace SlideX.Models
 {
+    [Authorize(Roles = "AdminUser")]
     public class UserEditModel
     {
         private readonly PresentationDataAccessModel presentationData = new PresentationDataAccessModel();
@@ -16,15 +16,27 @@ namespace SlideX.Models
             {  
                 return presentationData.GetUserById(UserId).Roles.Contains(presentationData.GetRoleByName("AdminUser"));
             }
-            set { }
+            set
+            {
+                if (presentationData.IsCurrentUserIsAdmin())
+                {
+                    presentationData.SetAdminToUser(UserId, value);
+                }
+            }
         }
         public bool BannStatus 
         {
             get
             {
-                return Membership.GetUser(UserId).IsApproved;
+                return ! Membership.GetUser(UserId).IsApproved;
             }
-            set { }
+            set
+            {
+                if (presentationData.IsCurrentUserIsAdmin())
+                {
+                    Membership.GetUser(UserId).IsApproved = !value;
+                }
+            }
         }
         public   IEnumerable<Presentation> FoundPresentations 
         {

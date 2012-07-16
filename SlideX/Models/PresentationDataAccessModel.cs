@@ -9,34 +9,51 @@ namespace SlideX.Models
     {
         private readonly SlideXDatabaseContext DB = new SlideXDatabaseContext();
 
-        public IEnumerable<Presentation> GetPresentationsByName(string name)
+        public IEnumerable<Presentation> GetPresentationsByNameTemplate(string name)
         {
-            return DB.Presentations.Where(p => p.Title == name);
+            return DB.Presentations.Where(p => p.Title.Contains(name));
         }
 
-        public IEnumerable<Presentation> GetPresentationsByUserName(string name)
+        public IEnumerable<Presentation> GetPresentationsByUserNameTemplate(string name)
         {
-            var user = DB.Users.SingleOrDefault(u => u.Name == name);
-            if (user == null)
+            var foundUser = DB.Users.Where(u => u.Name.Contains(name));
+            if (foundUser.Count() == 0)
             {
                 return null;
             }
-            return DB.Presentations.Where(p => p.UserId == user.Id);
+            List<Presentation> foundPresentations = new List<Presentation>();
+            foreach (var user in foundUser)
+            {
+                foreach (var presentation in DB.Presentations.Where(p => p.UserId == user.Id))
+                {
+                    foundPresentations.Add(presentation);
+                }
+            }
+            return foundPresentations;
         }
 
-        public IEnumerable<Presentation> GetPresentationsByUserId(Guid  userId)
+        public IEnumerable<Presentation> GetPresentationsByUserId(Guid userId)
         {
             return DB.Presentations.Where(p => p.UserId == userId);
         }
 
-        public IEnumerable<Presentation> GetPresentationsByTag(string name)
+        public IEnumerable<Presentation> GetPresentationsByTagTemplate(string name)
         {
-            Tag currentTag = DB.Tags.SingleOrDefault(t => t.Name == name);
-            if (currentTag == null)
+            var foundTags = DB.Tags.Where(t => t.Name.Contains(name));
+            if (foundTags.Count() == 0)
             {
                 return null;
             }
-            return DB.Presentations.Where(p => p.Tags.Contains(currentTag));
+
+            List<Presentation> foundPresentations = new List<Presentation>();
+            foreach (var tag in foundTags)
+            {
+                foreach (var presentation in tag.Presentations)
+                {
+                    foundPresentations.Add(presentation);
+                }
+            }
+            return foundPresentations;
         }
 
         public bool IsTagExist(string tagName)
@@ -62,9 +79,24 @@ namespace SlideX.Models
 
         public void DeletePresentation(Presentation deletePresentation)
         {
+            deletePresentation.Tags.Clear();
             DB.Presentations.DeleteObject(deletePresentation);
             DB.SaveChanges();
         }
+
+        public bool DeletePresentationById(Guid presentationId)
+        {
+            Presentation foundPresentation = GetPresentationByPresentationId(presentationId);
+            if (foundPresentation != null)
+            {
+                foundPresentation.Tags.Clear();
+                DB.Presentations.DeleteObject(foundPresentation);
+                DB.SaveChanges();
+                return false;
+            }
+            return true;
+        }
+
 
 
         public Presentation GetPresentationByPresentationId(Guid id)
@@ -126,6 +158,44 @@ namespace SlideX.Models
         public Role GetRoleByName(string roleName)
         {
             return DB.Roles.SingleOrDefault(r => r.Name == roleName);
+        }
+
+        public Guid GetUserIdByPresentationId(Guid PresentationId)
+        {
+            Presentation foundPresentation = DB.Presentations.SingleOrDefault(p => p.Id == PresentationId);
+            if (foundPresentation != null)
+            {
+                return foundPresentation.UserId;
+            }
+            return PresentationId;
+        }
+
+        public bool IsCurrentUserIsAdmin()
+        {
+
+            MembershipUser currentUser = Membership.GetUser();
+            if (currentUser != null && GetUserById((Guid)currentUser.ProviderUserKey).Roles.Contains(GetRoleByName("AdminUser")))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public void SetAdminToUser(Guid userId, bool adminSet)
+        {
+            User adminCandidate = GetUserById(userId);
+            Role adminRole = GetRoleByName("AdminUser");
+            if (adminSet && (!adminCandidate.Roles.Contains(adminRole)))
+            {
+                adminCandidate.Roles.Add(adminRole);
+                DB.SaveChanges();
+                return;
+            }
+            if ((!adminSet) && adminCandidate.Roles.Contains(adminRole))
+            {
+                adminCandidate.Roles.Remove(adminRole);
+                DB.SaveChanges();
+            }
         }
     }
 }

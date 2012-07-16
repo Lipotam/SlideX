@@ -33,26 +33,22 @@ namespace SlideX.Controllers
 
         [HttpPost]
         [Authorize(Roles="AdminUser")]
-        public ActionResult Edit(PresentationWithTagsModel model)
+        public ActionResult Edit(UserEditModel model)
         {
             return View(model);
         }
 
         [Authorize(Roles = "AdminUser")]
+
         public ActionResult Delete(Guid id)
         {
-            Presentation foundPresentation = presentationData.GetPresentationByPresentationId(id);
-            if (foundPresentation != null)
+            Guid userEditId = presentationData.GetUserIdByPresentationId(id);
+            
+            if (presentationData.DeletePresentationById(id) || userEditId == id)
             {
-                foundPresentation.Tags.Clear();
-                presentationData.DeletePresentation(foundPresentation);
-
-                return RedirectToAction("Index");
-                //TODO: back to userEdit page
+                return View("Error", new ErrorPageModels { Title = "Presentation not found.", Message = "Presentation wasn't found. Do you want to delete another's prasentation ?", ShowGotoBack = true });
             }
-            return View("Error", new ErrorPageModels { Title = "Presentation not found.", Message = "Presentation wasn't found. Do you want to delete another's prasentation ?", ShowGotoBack = true });
+            return RedirectToAction("Edit",new {id = userEditId});
         }
-
-      
     }
 }

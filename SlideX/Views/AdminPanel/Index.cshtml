@@ -18,7 +18,7 @@
         </p>
     </fieldset>
 }
-@if (Model.FoundUsers.Count()!= 0)
+@if (Model.FoundUsers.Count() != 0)
 {
     <table>
         <tr>
@@ -30,7 +30,7 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Name)
+                    @Html.ActionLink(item.Name, "Edit", new { id = item.Id })
                 </td>
             </tr>
         }

@@ -4,7 +4,27 @@
 }
 <h2>
     PresentationList</h2>
-@if (User.IsInRole("AdminUser"))
+
+    
+
+    
+    @using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+   
+    <fieldset>
+     Admin
+    @Html.CheckBoxFor(model => Model.AdminStatus)
+    Banned
+    @Html.CheckBoxFor(model => Model.BannStatus)
+            @Html.HiddenFor(model => model.UserId)
+            <p>
+            <input type="submit" value="Edit" />
+        </p></fieldset>
+      
+    
+
+if (User.IsInRole("AdminUser"))
 {
     
         <table>
@@ -42,4 +62,5 @@ else
     <div>
         Please, @Html.ActionLink("Log in", "LogOn", "Account")
     </div>
+}
 }

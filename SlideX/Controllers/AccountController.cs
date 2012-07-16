@@ -26,6 +26,10 @@ namespace SlideX.Controllers
             {
                 if (Membership.ValidateUser(model.UserName, model.Password))
                 {
+
+                    // TODO checking Email Authorization
+
+
                     FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
                     if (Url.IsLocalUrl(returnUrl) && returnUrl.Length > 1 && returnUrl.StartsWith("/")
                         && !returnUrl.StartsWith("//") && !returnUrl.StartsWith("/\\"))
@@ -74,6 +78,8 @@ namespace SlideX.Controllers
                 if (createStatus == MembershipCreateStatus.Success)
                 {
                     FormsAuthentication.SetAuthCookie(model.UserName, false /* createPersistentCookie */);
+
+                    ///TODO: Email sending
                     return RedirectToAction("Index", "Home");
                 }
                 ModelState.AddModelError("", ErrorCodeToString(createStatus));
