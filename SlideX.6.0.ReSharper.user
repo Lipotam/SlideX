@@ -1,9 +1,6 @@
 <Configuration>
   <RecentFiles>
     <RecentFiles>
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/f:Web.config" caret="0" fromTop="0" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:Account/f:Register.cshtml" caret="0" fromTop="0" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:Shared/f:Error.cshtml" caret="448" fromTop="22" />
       <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/f:Web.config" caret="1837" fromTop="23" />
       <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:AccountController.cs" caret="374" fromTop="0" />
       <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/f:MicrosoftAjax.debug.js" caret="47393" fromTop="31" />
@@ -16,53 +13,56 @@
       <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:UserPresentation/f:Edit.cshtml" caret="587" fromTop="12" />
       <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:Search/f:SearchByUser.cshtml" caret="272" fromTop="11" />
       <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:UserPresentation/f:Create.cshtml" caret="247" fromTop="4" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:UserPresentation/f:Details.cshtml" caret="0" fromTop="0" />
       <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:Search/f:SearchByTag.cshtml" caret="914" fromTop="31" />
       <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:AccountModels.cs" caret="0" fromTop="0" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:Search/f:SearchByPresention.cshtml" caret="914" fromTop="31" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:Search/f:Index.cshtml" caret="115" fromTop="7" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:Shared/f:_Layout.cshtml" caret="1097" fromTop="24" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:Search/f:Index.cshtml" caret="0" fromTop="0" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:Shared/f:_Layout.cshtml" caret="985" fromTop="19" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:UserPresentation/f:Index.cshtml" caret="1220" fromTop="42" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:Search/f:SearchByPresention.cshtml" caret="914" fromTop="37" />
       <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:SearchModel.cs" caret="0" fromTop="0" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:PresentationDataAccessModel.cs" caret="3625" fromTop="13" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:PresentationWithTagsModel.cs" caret="417" fromTop="16" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:AdminPanelController.cs" caret="479" fromTop="23" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:UserSearchModel.cs" caret="200" fromTop="7" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:Shared/f:Error.cshtml" caret="448" fromTop="19" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:UserPresentation/f:Details.cshtml" caret="923" fromTop="27" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:UserPresentationController.cs" caret="4706" fromTop="23" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:AdminPanel/f:Edit.cshtml" caret="1111" fromTop="26" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:PresentationDataAccessModel.cs" caret="3411" fromTop="13" />
       <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:SearchController.cs" caret="302" fromTop="13" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:UserPresentationController.cs" caret="4903" fromTop="114" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:UserPresentation/f:Index.cshtml" caret="707" fromTop="11" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:AdminPanel/f:Index.cshtml" caret="505" fromTop="20" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:UserSearchModel.cs" caret="681" fromTop="24" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:UserEditModel.cs" caret="986" fromTop="31" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:AdminPanel/f:Index.cshtml" caret="94" fromTop="4" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:PresentationWithTagsModel.cs" caret="1425" fromTop="17" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:AdminPanelController.cs" caret="940" fromTop="21" />
     </RecentFiles>
     <RecentEdits>
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:UserPresentationController.cs" caret="4904" fromTop="14" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:UserPresentationController.cs" caret="4904" fromTop="9" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:UserPresentationController.cs" caret="4904" fromTop="14" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:UserPresentationController.cs" caret="4904" fromTop="29" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:UserPresentationController.cs" caret="4904" fromTop="0" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:UserPresentationController.cs" caret="2284" fromTop="17" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:PresentationDataAccessModel.cs" caret="700" fromTop="20" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:UserPresentationController.cs" caret="3487" fromTop="20" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:UserPresentationController.cs" caret="2832" fromTop="8" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:UserPresentationController.cs" caret="4052" fromTop="15" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:UserPresentationController.cs" caret="4903" fromTop="22" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:PresentationDataAccessModel.cs" caret="3402" fromTop="6" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:PresentationDataAccessModel.cs" caret="3625" fromTop="13" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:AdminPanel/f:Index.cshtml" caret="859" fromTop="24" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:AdminPanel/f:Index.cshtml" caret="859" fromTop="12" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:AdminPanel/f:Index.cshtml" caret="859" fromTop="8" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:AdminPanel/f:Index.cshtml" caret="36" fromTop="0" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:AdminPanel/f:Index.cshtml" caret="859" fromTop="13" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:AdminPanel/f:Index.cshtml" caret="859" fromTop="12" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:AdminPanel/f:Index.cshtml" caret="859" fromTop="24" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:AdminPanel/f:Index.cshtml" caret="859" fromTop="10" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:AdminPanel/f:Index.cshtml" caret="859" fromTop="10" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:AdminPanel/f:Index.cshtml" caret="620" fromTop="8" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:Shared/f:_Layout.cshtml" caret="1096" fromTop="24" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:UserSearchModel.cs" caret="175" fromTop="9" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:UserSearchModel.cs" caret="621" fromTop="20" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:AdminPanelController.cs" caret="510" fromTop="24" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:AdminPanel/f:Index.cshtml" caret="505" fromTop="20" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:UserSearchModel.cs" caret="568" fromTop="18" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:UserSearchModel.cs" caret="585" fromTop="19" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:UserSearchModel.cs" caret="539" fromTop="20" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:UserSearchModel.cs" caret="486" fromTop="18" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:AdminPanel/f:Index.cshtml" caret="517" fromTop="20" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:UserSearchModel.cs" caret="33" fromTop="0" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:UserSearchModel.cs" caret="262" fromTop="11" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:UserSearchModel.cs" caret="572" fromTop="15" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:AdminPanelController.cs" caret="929" fromTop="21" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:AdminPanelController.cs" caret="842" fromTop="15" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:PresentationDataAccessModel.cs" caret="3960" fromTop="12" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:PresentationDataAccessModel.cs" caret="844" fromTop="26" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:PresentationDataAccessModel.cs" caret="875" fromTop="28" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:UserEditModel.cs" caret="894" fromTop="27" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:UserEditModel.cs" caret="551" fromTop="13" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:UserEditModel.cs" caret="239" fromTop="10" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:AdminPanelController.cs" caret="773" fromTop="16" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:AdminPanel/f:Edit.cshtml" caret="1212" fromTop="31" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:AdminPanel/f:Edit.cshtml" caret="75" fromTop="2" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:AdminPanel/f:Edit.cshtml" caret="618" fromTop="22" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:AdminPanel/f:Edit.cshtml" caret="494" fromTop="18" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:AdminPanelController.cs" caret="647" fromTop="12" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:AdminPanel/f:Edit.cshtml" caret="144" fromTop="6" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:UserPresentation/f:Details.cshtml" caret="923" fromTop="18" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:Shared/f:Error.cshtml" caret="448" fromTop="19" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:AdminPanel/f:Edit.cshtml" caret="916" fromTop="19" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:AdminPanelController.cs" caret="1680" fromTop="30" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:AdminPanelController.cs" caret="353" fromTop="12" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:AdminPanelController.cs" caret="1167" fromTop="12" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:AdminPanelController.cs" caret="1452" fromTop="19" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:UserEditModel.cs" caret="787" fromTop="16" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:AdminPanelController.cs" caret="940" fromTop="15" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>

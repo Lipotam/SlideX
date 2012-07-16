@@ -24,6 +24,11 @@ namespace SlideX.Models
             return DB.Presentations.Where(p => p.UserId == user.Id);
         }
 
+        public IEnumerable<Presentation> GetPresentationsByUserId(Guid  userId)
+        {
+            return DB.Presentations.Where(p => p.UserId == userId);
+        }
+
         public IEnumerable<Presentation> GetPresentationsByTag(string name)
         {
             Tag currentTag = DB.Tags.SingleOrDefault(t => t.Name == name);
@@ -88,7 +93,7 @@ namespace SlideX.Models
             return null;
         }
 
-        public Array GetTagNames ()
+        public Array GetTagNames()
         {
             return DB.Tags.Select(t => t.Name).ToArray();
         }
@@ -112,6 +117,15 @@ namespace SlideX.Models
         public IEnumerable<User> GetAllUsers()
         {
             return DB.Users.ToArray();
+        }
+        public User GetUserById(Guid id)
+        {
+            return DB.Users.SingleOrDefault(u => u.Id == id);
+        }
+
+        public Role GetRoleByName(string roleName)
+        {
+            return DB.Roles.SingleOrDefault(r => r.Name == roleName);
         }
     }
 }

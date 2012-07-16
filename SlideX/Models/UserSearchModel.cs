@@ -1,26 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 
 namespace SlideX.Models
 {
     public class UserSearchModel
     {
         public  string SearchTemlate { get; set;}
-        public IEnumerable<User> FoundUsers { 
-            
+        public IEnumerable<User> FoundUsers
+        {
             get
             {
-                PresentationDataAccessModel presentationData = new PresentationDataAccessModel();
-                if (SearchTemlate == "")
+                var presentationData = new PresentationDataAccessModel();
+                if (SearchTemlate == null)
                 {
                     return presentationData.GetAllUsers();
                 }
                 return  presentationData.GetUsersByTemplate(SearchTemlate);
             }
-            set { }
+            set { FoundUsers = value; }
         }
-      
     }
 }

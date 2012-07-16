@@ -1,0 +1,45 @@
+﻿@model SlideX.Models.UserEditModel
+@{
+    ViewBag.Title = "User Edit Page";
+}
+<h2>
+    PresentationList</h2>
+@if (User.IsInRole("AdminUser"))
+{
+    
+        <table>
+            <tr>
+                <th>
+                    Title
+                </th>
+                <th>
+                    Description
+                </th>
+                <th>
+                    Options
+                </th>
+            </tr>
+            @foreach (var item in Model.FoundPresentations)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Title)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Details", "Details", "UserPresentation", new { id = item.Id }, null)|
+                        @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                      
+                    </td>
+                </tr>
+            }
+        </table>
+}
+else
+{
+    <div>
+        Please, @Html.ActionLink("Log in", "LogOn", "Account")
+    </div>
+}
