@@ -1,0 +1,38 @@
+﻿@model SlideX.Models.UserSearchModel
+@{
+    ViewBag.Title = "Search Users by name";
+}
+<h2>
+    SearchByPresention</h2>
+<legend>Presentation</legend>
+@using (Html.BeginForm())
+{
+    @Html.ValidationSummary(true)
+    <fieldset>
+        <legend>presentation</legend>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.SearchTemlate)
+        </div>
+        <p>
+            <input type="submit" value="Find" />
+        </p>
+    </fieldset>
+}
+@if (Model.FoundUsers != null)
+{
+    <table>
+        <tr>
+            <th>
+                User's name
+            </th>
+        </tr>
+        @foreach (var item in Model.FoundUsers)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+            </tr>
+        }
+    </table>
+}

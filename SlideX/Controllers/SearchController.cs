@@ -23,20 +23,17 @@ namespace SlideX.Controllers
 
         public ActionResult SearchByPresention(string id)
         {
-
-            return View((new PresentationSearchModel()).GetPresentationsByName(id));
+            return View((new PresentationDataAccessModel()).GetPresentationsByName(id));
         }
 
         public ActionResult SearchByTag(string id)
         {
-            return View((new PresentationSearchModel()).GetPresentationsByTag(id));
+            return View((new PresentationDataAccessModel()).GetPresentationsByTag(id));
         }
+
         public ActionResult SearchByUser(string id)
         {
-
-            var p = (new PresentationSearchModel()).GetPresentationsByUserName(id);
-            
-            return View(p);
+            return View((new PresentationDataAccessModel()).GetPresentationsByUserName(id));
         }
     }
 }
