@@ -115,7 +115,7 @@ namespace SlideX.Models
             return null;
         }
 
-        public IEnumerable<Presentation> GetPresentationsByCurrentUserId()
+        public IEnumerable<Presentation> GetPresentationsByCurrentUser()
         {
             MembershipUser currentUser = Membership.GetUser();
             if (currentUser != null)

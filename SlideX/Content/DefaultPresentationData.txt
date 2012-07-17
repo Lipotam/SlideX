@@ -1,0 +1,1 @@
+{"slides":[{"num":0,"components":[],"z":0,"impScale":1,"rotateX":0,"rotateY":0,"rotateZ":0,"selected":true,"active":true,"x":30,"y":80}],"activeSlide":{"num":0,"components":[],"z":0,"impScale":1,"rotateX":0,"rotateY":0,"rotateZ":0,"selected":true,"active":true,"x":30,"y":80},"fileName":"<%Title%>"}

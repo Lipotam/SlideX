@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using Newtonsoft.Json;
@@ -16,7 +15,7 @@ namespace SlideX.Controllers
 
             var randomNumber = new Random();
             string url = Request.Url.GetLeftPart(UriPartial.Authority) + Request.ApplicationPath + "Search/SearchByTag/";
-            var tagsForCloud = new PresentationDataAccessModel().GetAllTags().Select(tag => new TagCloudModel {Text = tag.Name, Link = url + tag.Name, Weight = randomNumber.Next(13).ToString()}).ToList();
+            var tagsForCloud = new PresentationDataAccessModel().GetAllTags().Select(tag => new TagCloudModel { Text = tag.Name, Link = url + tag.Name, Weight = randomNumber.Next(7).ToString() }).ToList();
             ViewBag.TagsCloudString = JsonConvert.SerializeObject(tagsForCloud, Formatting.Indented,
                                           new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
 

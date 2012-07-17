@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Web.Mvc;
 using System.Web.Security;
@@ -24,15 +25,17 @@ namespace SlideX.Controllers
                 {
                     Title = model.Title,
                     Description = model.Description,
-                    UserId = (Guid)Membership.GetUser().ProviderUserKey
+                    UserId = (Guid)Membership.GetUser().ProviderUserKey,
+                    Data =  new StreamReader(Server.MapPath("/Content/DefaultPresentationData.txt")).ReadToEnd()
                 };
+            newPresentation.Data = newPresentation.Data.Replace("<%Title%>", model.Title);
             presentationData.AddPresentation(newPresentation);
             return RedirectToAction("Index");
         }
 
         public ActionResult Index()
         {
-            IEnumerable<Presentation> foundPresentation = presentationData.GetPresentationsByCurrentUserId();
+            IEnumerable<Presentation> foundPresentation = presentationData.GetPresentationsByCurrentUser();
             return View(foundPresentation);
         }
 
@@ -112,5 +115,11 @@ namespace SlideX.Controllers
         {
             return Json(presentationData.GetTagNames(), JsonRequestBehavior.AllowGet);
         }
+
+        public ActionResult Editor(Guid id)
+        {
+            return View(new PresentationDataAccessModel().GetPresentationByPresentationId(id));
+        }
+
     }
 }
