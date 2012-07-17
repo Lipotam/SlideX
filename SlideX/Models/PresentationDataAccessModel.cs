@@ -197,5 +197,30 @@ namespace SlideX.Models
                 DB.SaveChanges();
             }
         }
+
+        public Guid GetUserIdByUserName(string userName)
+        {
+            return DB.Users.SingleOrDefault(u => u.Name == userName).Id;
+        }
+
+        public bool IsUserPassEmailConfirm(string userName)
+        {
+            MembershipUser currentUser = Membership.GetUser(userName);
+            if (currentUser != null && GetUserById((Guid)currentUser.ProviderUserKey).Roles.Contains(GetRoleByName("User")))
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public void SetUserEmailConfirmed(Guid userId)
+        {
+            User user = GetUserById(userId);
+            Role role = GetRoleByName("User");
+            if (!user.Roles.Contains(role))
+            {
+                user.Roles.Add(role);
+            }
+        }
     }
 }

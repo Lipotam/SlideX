@@ -1,4 +1,7 @@
 ﻿using System;
+using System.IO;
+using System.Net.Mail;
+using System.Web.Configuration;
 using System.Web.Mvc;
 using System.Web.Security;
 using SlideX.Models;
@@ -21,26 +24,25 @@ namespace SlideX.Controllers
 
         [HttpPost]
         public ActionResult LogOn(LogOnModel model, string returnUrl)
-        {  
+        {
             if (ModelState.IsValid)
             {
                 if (Membership.ValidateUser(model.UserName, model.Password))
                 {
-
-                    // TODO checking Email Authorization
-
-
-                    FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
-                    if (Url.IsLocalUrl(returnUrl) && returnUrl.Length > 1 && returnUrl.StartsWith("/")
-                        && !returnUrl.StartsWith("//") && !returnUrl.StartsWith("/\\"))
+                    if (new PresentationDataAccessModel().IsUserPassEmailConfirm(model.UserName))
                     {
-                        return Redirect(returnUrl);
+                        FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
+                        if (Url.IsLocalUrl(returnUrl) && returnUrl.Length > 1 && returnUrl.StartsWith("/")
+                            && !returnUrl.StartsWith("//") && !returnUrl.StartsWith("/\\"))
+                        {
+                            return Redirect(returnUrl);
+                        }
+                        return RedirectToAction("Index", "Home");
                     }
-                    return RedirectToAction("Index", "Home");
+                    return View("Error", new ErrorPageModels { Title = "Email not Confirmed.", Message = "Please, check you email for futher authentification", ShowGotoBack = true });
                 }
                 ModelState.AddModelError("", "The user name or password provided is incorrect.");
             }
-
             // If we got this far, something failed, redisplay form
             return View(model);
         }
@@ -77,9 +79,11 @@ namespace SlideX.Controllers
 
                 if (createStatus == MembershipCreateStatus.Success)
                 {
-                    FormsAuthentication.SetAuthCookie(model.UserName, false /* createPersistentCookie */);
+                    //FormsAuthentication.SetAuthCookie(model.UserName, false /* createPersistentCookie */);
 
-                    ///TODO: Email sending
+                    SendMail(model.Email, model.UserName,
+                             new PresentationDataAccessModel().GetUserIdByUserName(model.UserName));
+
                     return RedirectToAction("Index", "Home");
                 }
                 ModelState.AddModelError("", ErrorCodeToString(createStatus));
@@ -138,6 +142,39 @@ namespace SlideX.Controllers
         public ActionResult ChangePasswordSuccess()
         {
             return View();
+        }
+
+        
+        public ActionResult Verification(Guid id)
+        {
+            new PresentationDataAccessModel().SetUserEmailConfirmed(id);
+            return View();
+        }
+
+
+
+        private void SendMail(string emailTosend, string userName, Guid userId)
+        {
+            System.Configuration.Configuration config = WebConfigurationManager.OpenWebConfiguration(HttpContext.Request.ApplicationPath);
+            var settings = (System.Net.Configuration.MailSettingsSectionGroup)config.GetSectionGroup("system.net/mailSettings");
+            if (settings.Smtp.Network.UserName != string.Empty && settings.Smtp.Network.Password != string.Empty && settings.Smtp.Network.Host != string.Empty)
+            {
+                var message = new MailMessage(new MailAddress(settings.Smtp.Network.UserName), new MailAddress(emailTosend));
+                message.BodyEncoding = System.Text.Encoding.GetEncoding("KOI8-R");
+                message.SubjectEncoding = System.Text.Encoding.GetEncoding("KOI8-R");
+                message.Subject = (new StreamReader(Server.MapPath("/Content/EmailSubjectText.txt"))).ReadToEnd();
+                message.Body = new StreamReader(Server.MapPath("/Content/EmailBodyText.txt")).ReadToEnd();
+                message.Body = message.Body.Replace("<%VerificationUrl%>",
+                                                        Request.Url.GetLeftPart(UriPartial.Authority) + Request.ApplicationPath + "Account/Verification/" + userId.ToString());
+                message.Body = message.Body.Replace("<%UserName%>", userName);
+                message.IsBodyHtml = true;
+                SmtpClient client = new SmtpClient();
+                client.Credentials = new System.Net.NetworkCredential(settings.Smtp.Network.UserName, settings.Smtp.Network.Password);
+                client.Host = settings.Smtp.Network.Host;
+                client.Port = settings.Smtp.Network.Port;
+                client.EnableSsl = settings.Smtp.Network.EnableSsl;
+                client.Send(message);
+            }
         }
 
         #region Status Codes
