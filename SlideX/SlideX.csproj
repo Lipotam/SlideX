@@ -94,6 +94,7 @@
     </Compile>
     <Compile Include="Models\PresentationDataAccessModel.cs" />
     <Compile Include="Models\SearchModel.cs" />
+    <Compile Include="Models\TagCloudModel.cs" />
     <Compile Include="Models\UserEditModel.cs" />
     <Compile Include="Models\UserSearchModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -106,6 +107,7 @@
     <Content Include="Content\EmailBodyText.txt" />
     <Content Include="Content\EmailSubjectText.txt" />
     <Content Include="Content\images\index.jpg" />
+    <Content Include="Content\jqcloud.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -163,17 +165,10 @@
     <Content Include="Global.asax" />
     <Content Include="Models\PresentationModel.edmx.sql" />
     <Content Include="README.jQuery.vsdoc.txt" />
-    <None Include="Scripts\jquery-1.7.2.intellisense.js">
-      <DependentUpon>jquery-1.7.2.js</DependentUpon>
-    </None>
-    <Content Include="Scripts\cloud.js" />
+    <Content Include="Scripts\jqcloud-1.0.0.js" />
     <Content Include="Scripts\jquery-1.7.2.js" />
     <Content Include="Scripts\jquery-1.7.2.min.js">
       <DependentUpon>jquery-1.7.2.js</DependentUpon>
-    </Content>
-    <Content Include="Scripts\jquery-ui-1.8.20.js" />
-    <Content Include="Scripts\jquery-ui-1.8.20.min.js">
-      <DependentUpon>jquery-ui-1.8.20.js</DependentUpon>
     </Content>
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
@@ -184,7 +179,6 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js">
       <DependentUpon>jquery.validate.unobtrusive.js</DependentUpon>
     </Content>
-    <Content Include="Scripts\jsFW.js" />
     <Content Include="Scripts\modernizr-1.7.js" />
     <Content Include="Scripts\modernizr-1.7.min.js" />
     <Content Include="Scripts\textExt1.3.js" />

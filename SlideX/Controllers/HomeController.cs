@@ -1,8 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Mvc;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Serialization;
 using SlideX.Models;
 
 namespace SlideX.Controllers
@@ -12,10 +13,14 @@ namespace SlideX.Controllers
         public ActionResult Index()
         {
             ViewBag.Message = "Welcome to ASP.NET MVC!";
-            SlideXDatabaseContext db = new SlideXDatabaseContext();
 
-            
-            return View(db.Tags.AsEnumerable());
+            var randomNumber = new Random();
+            string url = Request.Url.GetLeftPart(UriPartial.Authority) + Request.ApplicationPath + "Search/SearchByTag/";
+            var tagsForCloud = new PresentationDataAccessModel().GetAllTags().Select(tag => new TagCloudModel {Text = tag.Name, Link = url + tag.Name, Weight = randomNumber.Next(13).ToString()}).ToList();
+            ViewBag.TagsCloudString = JsonConvert.SerializeObject(tagsForCloud, Formatting.Indented,
+                                          new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
+
+            return View();
         }
 
         public ActionResult About()

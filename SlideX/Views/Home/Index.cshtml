@@ -1,9 +1,22 @@
-﻿@model IEnumerable<SlideX.Models.Tag>
-@{
+﻿@{
     ViewBag.Title = "Home Page";
 }
+<link rel="stylesheet" type="text/css" href="/Content/jqcloud.css" />
 <h2>@ViewBag.Message</h2>
 <p>
-Welcome!
+    Welcome!
 </p>
+<div id="tagsCloud" class="jqcloud" style="width: 550px; height: 350px; border: 1px solid #ccc;">
+</div>
+@section tagCloud
+{
+    <script type="text/javascript">
 
+        var word_list = @Html.Raw( @ViewBag.TagsCloudString) ;
+       
+      
+        jQuery().ready(function () {
+            jQuery("#tagsCloud").jQCloud(word_list);
+        }); 
+    </script>
+}

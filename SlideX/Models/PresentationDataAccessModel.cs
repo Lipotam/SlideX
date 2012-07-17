@@ -220,7 +220,13 @@ namespace SlideX.Models
             if (!user.Roles.Contains(role))
             {
                 user.Roles.Add(role);
+                DB.SaveChanges();
             }
+        }
+
+        public IEnumerable<Tag> GetAllTags()
+        {
+            return DB.Tags.AsEnumerable();
         }
     }
 }
