@@ -121,5 +121,17 @@ namespace SlideX.Controllers
             return View(new PresentationDataAccessModel().GetPresentationByPresentationId(id));
         }
 
+
+        [HttpPost]
+        public ActionResult SavePresentationData(Presentation presentationForSaving)
+        {
+            PresentationDataAccessModel presentationData = new PresentationDataAccessModel();
+            if(presentationData.GetPresentationByCurrentUserIdAndByPreasentationId(presentationForSaving.Id) != null)
+            {
+                presentationData.s
+            }
+            return null;
+        }
+
     }
 }
