@@ -228,11 +228,5 @@ namespace SlideX.Models
         {
             return DB.Tags.AsEnumerable();
         }
-
-        public void SavePresentationData (Guid presentationId,string presentationData)
-        {
-            
-            ///TODO make saving
-        }
     }
 }

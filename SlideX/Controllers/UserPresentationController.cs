@@ -116,6 +116,13 @@ namespace SlideX.Controllers
             return Json(presentationData.GetTagNames(), JsonRequestBehavior.AllowGet);
         }
 
+        [OutputCache(Duration = 300)]
+        [HttpPost]
+        public JsonResult GetPresentationData(Guid id)
+        {
+            return Json(presentationData.GetPresentationByPresentationId(id).Data, JsonRequestBehavior.AllowGet);
+        }
+
         public ActionResult Editor(Guid id)
         {
             return View(new PresentationDataAccessModel().GetPresentationByPresentationId(id));
@@ -123,15 +130,19 @@ namespace SlideX.Controllers
 
 
         [HttpPost]
-        public ActionResult SavePresentationData(Presentation presentationForSaving)
+        [ValidateInput(false)]
+        public ActionResult SavePresentationData(Presentation fid)
         {
-            PresentationDataAccessModel presentationData = new PresentationDataAccessModel();
-            if(presentationData.GetPresentationByCurrentUserIdAndByPreasentationId(presentationForSaving.Id) != null)
+         
+            Presentation presentationToSave =
+                presentationData.GetPresentationByCurrentUserIdAndByPreasentationId(fid.Id);
+            
+            if(presentationToSave != null)
             {
-                presentationData.s
+                presentationToSave.Data = fid.Data;
+                presentationData.ApplyPresentation(presentationToSave);
             }
             return null;
         }
-
     }
 }
