@@ -1,66 +1,68 @@
 <Configuration>
   <RecentFiles>
     <RecentFiles>
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:preview_export/d:css/f:web-fonts.css" caret="1259" fromTop="16" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:preview_export/d:css/f:web-fonts-embedded.css" caret="373467" fromTop="59" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/d:ui/d:impress_renderer/f:Templates.js" caret="138" fromTop="4" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/d:vendor/d:amd_plugins/f:css.js" caret="0" fromTop="0" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/d:vendor/d:amd_plugins/f:text.js" caret="0" fromTop="0" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/d:vendor/d:amd/f:jszip.js" caret="0" fromTop="0" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/d:vendor/d:amd/f:Handlebars.js" caret="0" fromTop="0" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/d:ui/d:editor/d:res/d:css/f:SlideEditor.css" caret="0" fromTop="0" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/d:vendor/f:A-jquery-1.7-matt.js" caret="0" fromTop="0" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/f:Web.config" caret="1040" fromTop="9" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Content/f:DefaultPresentationData.txt" caret="206" fromTop="0" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/f:jquery-1.7.2.js" caret="226452" fromTop="17" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/f:jqcloud-1.0.0.js" caret="5436" fromTop="17" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:PresentationDataAccessModel.cs" caret="7376" fromTop="16" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:lib/f:shooter.js" caret="881" fromTop="17" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:preview_export/d:scripts/f:jquery.js" caret="87021" fromTop="3" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/f:jquery-1.7.2.min.js" caret="88595" fromTop="3" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:res/d:jqplugins/d:colorpicker/d:js/f:jquery.js" caret="79261" fromTop="0" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:UserPresentationController.cs" caret="6089" fromTop="28" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:UserPresentation/f:Edit.cshtml" caret="184" fromTop="9" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/d:storage/f:FileStorage.js" caret="1739" fromTop="20" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/f:main.js" caret="1860" fromTop="11" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:UserPresentation/f:Editor.cshtml" caret="2947" fromTop="14" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:UserPresentation/f:Details.cshtml" caret="966" fromTop="12" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/d:ui/d:widgets/d:res/d:css/f:OpenDialog.css" caret="11" fromTop="0" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/d:ui/d:widgets/f:Templates.js" caret="4285" fromTop="27" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/d:ui/d:editor/f:Templates.js" caret="2566" fromTop="14" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/d:ui/d:editor/f:Editor.js" caret="903" fromTop="0" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/f:jqcloud-1.0.0.js" caret="7080" fromTop="17" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:preview_export/d:scripts/f:impress.js" caret="31645" fromTop="17" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:UserPresentation/f:Editor.cshtml" caret="3301" fromTop="6" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:UserPresentation/f:Index.cshtml" caret="922" fromTop="16" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:UserPresentation/f:Edit.cshtml" caret="994" fromTop="28" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:UserPresentation/f:Create.cshtml" caret="616" fromTop="22" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:Search/f:Index.cshtml" caret="372" fromTop="14" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:AdminPanel/f:Index.cshtml" caret="302" fromTop="12" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:Account/f:Register.cshtml" caret="1713" fromTop="24" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:Account/f:LogOn.cshtml" caret="1241" fromTop="31" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:Account/f:ChangePassword.cshtml" caret="1469" fromTop="16" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/d:model/d:editor/d:button_bar/f:ButtonBarModel.js" caret="1725" fromTop="17" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/f:textExt1.3.js" caret="17238" fromTop="8" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:res/d:jqplugins/d:colorpicker/d:js/f:colorpicker.js" caret="423" fromTop="15" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/f:main.js" caret="1385" fromTop="31" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Content/f:Site.css" caret="4377" fromTop="17" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Content/d:themes/d:base/f:jquery.ui.tabs.css" caret="1376" fromTop="20" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:PresentationModel.edmx" caret="115949" fromTop="17" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:PresentationModel.Designer.cs" caret="258555" fromTop="24" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/f:MicrosoftAjax.debug.js" caret="266074" fromTop="17" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/f:MicrosoftAjax.js" caret="79452" fromTop="4" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/d:vendor/f:A-jquery-1.7-matt.js" caret="36773" fromTop="17" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/d:vendor/f:vendor-built.js" caret="18519" fromTop="14" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:preview_export/d:scripts/f:jquery.js" caret="18140" fromTop="1" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/f:jquery-1.7.2.min.js" caret="18140" fromTop="1" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/f:jquery-1.7.2.js" caret="37276" fromTop="17" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/d:ui/d:editor/d:res/d:css/f:SlideEditor.css" caret="798" fromTop="17" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/d:ui/d:editor/f:Templates.js" caret="10083" fromTop="8" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/d:ui/d:editor/f:Editor.js" caret="2812" fromTop="19" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:UserPresentation/f:Preview.cshtml" caret="3412" fromTop="17" />
     </RecentFiles>
     <RecentEdits>
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/f:Web.config" caret="1184" fromTop="16" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:UserPresentation/f:Editor.cshtml" caret="3298" fromTop="5" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:UserPresentationController.cs" caret="5595" fromTop="20" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:UserPresentation/f:Editor.cshtml" caret="3298" fromTop="10" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:UserPresentation/f:Editor.cshtml" caret="506" fromTop="14" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:UserPresentation/f:Editor.cshtml" caret="738" fromTop="17" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:UserPresentation/f:Editor.cshtml" caret="547" fromTop="10" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:UserPresentation/f:Editor.cshtml" caret="982" fromTop="20" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/d:storage/f:FileStorage.js" caret="2025" fromTop="17" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/d:storage/f:FileStorage.js" caret="2025" fromTop="26" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/d:storage/f:FileStorage.js" caret="1008" fromTop="8" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/d:storage/f:FileStorage.js" caret="1520" fromTop="17" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/d:ui/d:editor/f:Templates.js" caret="15635" fromTop="13" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/d:ui/d:editor/f:Templates.js" caret="1998" fromTop="25" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:UserPresentation/f:Editor.cshtml" caret="43" fromTop="2" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:UserPresentation/f:Editor.cshtml" caret="3296" fromTop="10" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/d:ui/d:editor/f:Editor.js" caret="7740" fromTop="33" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/d:ui/d:editor/f:Editor.js" caret="7740" fromTop="17" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/d:ui/d:editor/f:Editor.js" caret="7740" fromTop="6" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/d:ui/d:editor/f:Editor.js" caret="7740" fromTop="34" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/d:ui/d:editor/f:Editor.js" caret="3409" fromTop="21" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/d:ui/d:editor/f:Templates.js" caret="2566" fromTop="14" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/d:ui/d:editor/f:Editor.js" caret="3385" fromTop="27" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/d:ui/d:editor/f:Editor.js" caret="3385" fromTop="29" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/d:ui/d:editor/f:Editor.js" caret="590" fromTop="10" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/d:ui/d:editor/f:Editor.js" caret="938" fromTop="20" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/d:ui/d:editor/f:Editor.js" caret="2252" fromTop="40" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/d:ui/d:editor/f:Editor.js" caret="2490" fromTop="40" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/d:ui/d:editor/f:Editor.js" caret="7395" fromTop="43" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/d:ui/d:editor/f:Editor.js" caret="242" fromTop="5" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/d:ui/d:editor/f:Editor.js" caret="5118" fromTop="24" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:PresentationDataAccessModel.cs" caret="181" fromTop="11" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:PresentationDataAccessModel.cs" caret="189" fromTop="9" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/d:ui/d:editor/f:Editor.js" caret="5119" fromTop="17" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/f:main.js" caret="2090" fromTop="27" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/f:main.js" caret="958" fromTop="17" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/d:ui/d:editor/f:Editor.js" caret="4305" fromTop="8" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:preview_export/d:scripts/f:impress.js" caret="32822" fromTop="24" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:preview_export/d:scripts/f:impress.js" caret="32822" fromTop="29" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:preview_export/d:scripts/f:impress.js" caret="31397" fromTop="12" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:preview_export/d:scripts/f:impress.js" caret="31645" fromTop="17" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:UserPresentation/f:Editor.cshtml" caret="3301" fromTop="25" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:UserPresentation/f:Editor.cshtml" caret="3319" fromTop="8" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:UserPresentation/f:Editor.cshtml" caret="3301" fromTop="6" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:UserPresentation/f:Editor.cshtml" caret="3301" fromTop="10" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:UserPresentation/f:Editor.cshtml" caret="3301" fromTop="10" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:UserPresentation/f:Editor.cshtml" caret="3301" fromTop="6" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/d:ui/d:editor/f:Editor.js" caret="2751" fromTop="20" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/d:ui/d:editor/f:Templates.js" caret="2055" fromTop="15" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:UserPresentation/f:Preview.cshtml" caret="3991" fromTop="27" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:UserPresentation/f:Preview.cshtml" caret="3995" fromTop="28" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:UserPresentation/f:Preview.cshtml" caret="3995" fromTop="19" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/d:ui/d:editor/f:Editor.js" caret="2812" fromTop="19" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:UserPresentation/f:Preview.cshtml" caret="3243" fromTop="14" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:UserPresentation/f:Preview.cshtml" caret="3962" fromTop="24" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:UserPresentation/f:Preview.cshtml" caret="3995" fromTop="26" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/d:vendor/f:vendor-built.js" caret="18518" fromTop="14" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:UserPresentation/f:Preview.cshtml" caret="3452" fromTop="19" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/d:web/d:scripts/d:ui/d:editor/f:Templates.js" caret="10094" fromTop="8" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:UserPresentation/f:Preview.cshtml" caret="3799" fromTop="27" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
@@ -88,9 +90,15 @@
       <Item value=".." priority="5" />
       <Item value="footer" priority="5" />
       <Item value="SendPresentationToServer" priority="6" />
+      <Item value="ViewSlides" priority="6" />
+      <Item value="display" priority="6" />
     </ItemStatistics>
     <ItemStatistics item="JavaScriptSpecificContext">
       <Item value="SendPresentationToServer" priority="5" />
+      <Item value="ViewSlides" priority="5" />
+    </ItemStatistics>
+    <ItemStatistics item="CssCodeCompletionContext">
+      <Item value="display" priority="0" />
     </ItemStatistics>
   </CompletionStatisticsManager>
 </Configuration>

@@ -165,7 +165,6 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Global.asax" />
     <Content Include="Models\PresentationModel.edmx.sql" />
-    <Content Include="README.jQuery.vsdoc.txt" />
     <Content Include="Scripts\jqcloud-1.0.0.js" />
     <Content Include="Scripts\jquery-1.7.2.js" />
     <Content Include="Scripts\jquery-1.7.2.min.js">
@@ -188,8 +187,6 @@
     <Content Include="Scripts\web\preview_export\css\README.txt" />
     <Content Include="Scripts\web\preview_export\css\web-fonts-embedded.css" />
     <Content Include="Scripts\web\preview_export\css\web-fonts.css" />
-    <Content Include="Scripts\web\preview_export\demo.html" />
-    <Content Include="Scripts\web\preview_export\index.html" />
     <Content Include="Scripts\web\preview_export\scripts\impress.js" />
     <Content Include="Scripts\web\preview_export\scripts\jquery.js" />
     <Content Include="Scripts\web\preview_export\scripts\showPreview.js" />
@@ -255,7 +252,6 @@
     <Content Include="Scripts\web\scripts\model\editor\button_bar\ButtonBarModel.js" />
     <Content Include="Scripts\web\scripts\model\editor\transition_editor\TransitionEditorButtonBarModel.js" />
     <Content Include="Scripts\web\scripts\model\geom\SpatialObject.js" />
-    <Content Include="Scripts\web\scripts\model\presentation\Archiver.js" />
     <Content Include="Scripts\web\scripts\model\presentation\components\Component.js" />
     <Content Include="Scripts\web\scripts\model\presentation\components\ComponentFactory.js" />
     <Content Include="Scripts\web\scripts\model\presentation\components\Image.js" />
@@ -373,9 +369,8 @@
     <None Include="Scripts\web\preview_export\css\PressStart2P-Regular.woff" />
     <None Include="Scripts\web\preview_export\css\Ubuntu-Bold.woff" />
     <None Include="Scripts\web\preview_export\css\Ubuntu.woff" />
-    <None Include="Scripts\web\res\jqplugins\.DS_Store" />
     <None Include="Scripts\web\res\jqplugins\colorpicker\images\Thumbs.db" />
-    <None Include="Scripts\web\scripts\build.sh" />
+    <Content Include="Views\UserPresentation\Preview.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="Models\PresentationModel.edmx">

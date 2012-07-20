@@ -48,9 +48,7 @@ if (!(Function.bind != null) || (Function.prototype.bind != null)) {
   };
 }
 
-if (window.location.href.indexOf("preview=true") !== -1) {
 
-} else {
   continuation = function() {
     return requirejs(["ui/editor/Editor", "model/presentation/Deck", "storage/FileStorage"], function(Editor, Deck, FileStorage) {
       var deck, editor, lastPres, pres;
@@ -91,4 +89,4 @@ if (window.location.href.indexOf("preview=true") !== -1) {
     };
     return continuation();
   });
-}
+

@@ -3,12 +3,12 @@
 @author Matt Crinklaw-Vogt
 */
 
-define(["vendor/amd/backbone", "./SlideEditor", "./transition_editor/TransitionEditor", "./Templates", "ui/impress_renderer/ImpressRenderer", "ui/widgets/RawTextImporter", "storage/FileStorage", "ui/widgets/BackgroundPicker", "model/presentation/Archiver", "css!./res/css/Editor.css"], function (Backbone, SlideEditor, TransitionEditor, Templates, ImpressRenderer, RawTextModal, FileStorage, BackgroundPicker, Archiver, empty) {
+define(["vendor/amd/backbone", "./SlideEditor", "./transition_editor/TransitionEditor", "./Templates", "ui/impress_renderer/ImpressRenderer", "ui/widgets/RawTextImporter", "storage/FileStorage", "ui/widgets/BackgroundPicker", "css!./res/css/Editor.css"], function (Backbone, SlideEditor, TransitionEditor, Templates, ImpressRenderer, RawTextModal, FileStorage, BackgroundPicker, empty) {
     var editorId, menuOptions;
     editorId = 0;
     menuOptions = {
-        
-      
+
+
         save: function (e) {
             var fileName;
             fileName = this.model.get("fileName");
@@ -18,7 +18,7 @@ define(["vendor/amd/backbone", "./SlideEditor", "./transition_editor/TransitionE
                 return FileStorage.save(fileName, this.model.toJSON(false, true));
             }
         },
-      
+
         undo: function (e) {
             return this.model.undo();
         },
@@ -76,6 +76,8 @@ define(["vendor/amd/backbone", "./SlideEditor", "./transition_editor/TransitionE
             "click .menuBar .dropdown-menu > li": "menuItemSelected",
             "changePerspective": "changePerspective",
             "preview": "renderPreview"
+
+
         },
         initialize: function () {
             this.id = editorId++;
@@ -113,22 +115,25 @@ define(["vendor/amd/backbone", "./SlideEditor", "./transition_editor/TransitionE
             }
         },
         renderPreview: function () {
-            var cb, showStr, sourceWind;
-            showStr = ImpressRenderer.render(this.model.attributes);
-            window.previewWind = window.open("index.html?preview=true");
-            sourceWind = window;
-            cb = function () {
-                if (!(sourceWind.previewWind.startImpress != null)) {
-                    return setTimeout(cb, 200);
-                } else {
-                    sourceWind.previewWind.document.getElementsByTagName("html")[0].innerHTML = showStr;
-                    if (!sourceWind.previewWind.impressStarted) {
-                        sourceWind.previewWind.startImpress(sourceWind.previewWind.document, sourceWind.previewWind);
-                        return sourceWind.previewWind.impress().init();
+            if (window.location.href.indexOf("Editor") != -1) {
+                window.open("/UserPresentation/Preview/" + document.getElementById('currentPresentationId').value);
+
+            } else {
+                var cb, showStr;
+                showStr = ImpressRenderer.render(this.model.attributes);
+                cb = function () {
+                    if (!(window.startImpress != null)) {
+                        return setTimeout(cb, 200);
+                    } else {
+                        window.document.getElementsByTagName("html")[0].innerHTML = showStr;
+                        if (!window.impressStarted) {
+                            window.startImpress(window.document, window);
+                            return window.impress().init();
+                        }
                     }
-                }
-            };
-            return $(window.previewWind.document).ready(cb);
+                };
+                return $(window.document).ready(cb);
+            }
         },
         changePerspective: function (e, data) {
             var _this = this;

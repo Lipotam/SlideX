@@ -128,18 +128,23 @@ namespace SlideX.Controllers
             return View(new PresentationDataAccessModel().GetPresentationByPresentationId(id));
         }
 
+        public ActionResult Preview(Guid id)
+        {
+            return View(new PresentationDataAccessModel().GetPresentationByPresentationId(id));
+        }
+
 
         [HttpPost]
         [ValidateInput(false)]
-        public ActionResult SavePresentationData(Presentation fid)
+        public ActionResult SavePresentationData(Presentation inputPresentation)
         {
          
             Presentation presentationToSave =
-                presentationData.GetPresentationByCurrentUserIdAndByPreasentationId(fid.Id);
+                presentationData.GetPresentationByCurrentUserIdAndByPreasentationId(inputPresentation.Id);
             
             if(presentationToSave != null)
             {
-                presentationToSave.Data = fid.Data;
+                presentationToSave.Data = inputPresentation.Data;
                 presentationData.ApplyPresentation(presentationToSave);
             }
             return null;
