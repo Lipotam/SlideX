@@ -251,7 +251,6 @@
     <Content Include="Scripts\web\scripts\common\RemoteStorageWrapper.js" />
     <Content Include="Scripts\web\scripts\common\Throttler.js" />
     <Content Include="Scripts\web\scripts\main.js" />
-    <Content Include="Scripts\web\scripts\model\common_application\AutoSaver.js" />
     <Content Include="Scripts\web\scripts\model\common_application\UndoHistory.js" />
     <Content Include="Scripts\web\scripts\model\editor\button_bar\ButtonBarModel.js" />
     <Content Include="Scripts\web\scripts\model\editor\transition_editor\TransitionEditorButtonBarModel.js" />
@@ -310,11 +309,9 @@
     <Content Include="Scripts\web\scripts\ui\widgets\BackgroundPicker.js" />
     <Content Include="Scripts\web\scripts\ui\widgets\DeltaDragControl.js" />
     <Content Include="Scripts\web\scripts\ui\widgets\ItemGrabber.js" />
-    <Content Include="Scripts\web\scripts\ui\widgets\OpenDialog.js" />
     <Content Include="Scripts\web\scripts\ui\widgets\RawTextImporter.js" />
     <Content Include="Scripts\web\scripts\ui\widgets\res\css\BackgroundPicker.css" />
     <Content Include="Scripts\web\scripts\ui\widgets\res\css\OpenDialog.css" />
-    <Content Include="Scripts\web\scripts\ui\widgets\SaveAsDialog.js" />
     <Content Include="Scripts\web\scripts\ui\widgets\Templates.js" />
     <Content Include="Scripts\web\scripts\vendor\A-jquery-1.7-matt.js" />
     <Content Include="Scripts\web\scripts\vendor\amd\backbone.js" />

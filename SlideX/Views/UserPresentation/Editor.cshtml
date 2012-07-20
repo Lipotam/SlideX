@@ -1,6 +1,5 @@
 ﻿@model SlideX.Models.Presentation
 @{
-    //ViewBag.Title = "Editor";
     Layout = null;
 }
 <!DOCTYPE html>
@@ -60,23 +59,9 @@
     </script>
     <script type="text/javascript" data-main="/Scripts/web/scripts/main" src="/Scripts/web/scripts/require.js"></script>
     <script type="text/javascript" src="/Scripts/web/preview_export/scripts/impress.js"></script>
-    <script type="text/javascript">
-        function SendPresentationToServer() {
-            $.ajax({ type: 'POST', url: '/UserPresentation/SavePresentationData/',
-                data: {
-                    id: document.getElementById("currentPresentationId").value,
-                    title: localStorage.getItem("StrutLastPres"),
-
-                    data: localStorage.getItem("Strut_" + localStorage.getItem("StrutLastPres"))
-                }, traditional: true
-            });
-        }
-    </script>
+    
 </head>
 <body>
-    <button onclick="SendPresentationToServer()">
-        Кнопка с текстом
-    </button>
-    @Html.HiddenFor(model => model.Id, new { id = "currentPresentationId" });
+    @Html.HiddenFor(model => model.Id, new { id = "currentPresentationId" })
 </body>
 </html>
