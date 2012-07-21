@@ -83,7 +83,7 @@ namespace SlideX.Controllers
                     presentationData.ApplyPresentation(foundPresentation);
                 }
             }
-            return View(model);
+            return RedirectToAction("Index");
         }
 
         public ActionResult Details(Guid id)
@@ -125,12 +125,12 @@ namespace SlideX.Controllers
 
         public ActionResult Editor(Guid id)
         {
-            return View(new PresentationDataAccessModel().GetPresentationByPresentationId(id));
+            return View(presentationData.GetPresentationByPresentationId(id));
         }
 
         public ActionResult Preview(Guid id)
         {
-            return View(new PresentationDataAccessModel().GetPresentationByPresentationId(id));
+            return View(presentationData.GetPresentationByPresentationId(id));
         }
 
 

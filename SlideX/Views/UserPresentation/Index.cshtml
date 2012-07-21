@@ -34,7 +34,7 @@
                     @Html.DisplayFor(modelItem => item.Description)
                 </td>
                 <td>
-                <button onclick="ViewSlides()" >Кнопка</button>
+                    @Html.ActionLink("View Presentation", "Preview", new { id = item.Id }, new { target = "_blank" })|
                     @Html.ActionLink("Edit Presentation", "Editor", new { id = item.Id }) |
                     @Html.ActionLink("Edit Information", "Edit", new { id = item.Id }) |
                     @Html.ActionLink("Details", "Details", new { id = item.Id }) |

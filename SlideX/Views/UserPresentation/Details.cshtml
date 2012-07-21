@@ -27,12 +27,16 @@
         <ul>
             @foreach (var tag in Model.Tags)
             {
-               <li>@tag.Name</li>
+                <li>@tag.Name</li>
             }
         </ul>
     </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    <a href="javascript:history.go(-1)">Go back</a>
+    @if (User.Identity.Name == Model.User.Name)
+    {
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) 
+        
+    }
+    |    <a href="javascript:history.go(-1)">Go back</a>
 </p>

@@ -245,7 +245,6 @@
     <Content Include="Scripts\web\scripts\common\MapResolver.js" />
     <Content Include="Scripts\web\scripts\common\Math2.js" />
     <Content Include="Scripts\web\scripts\common\Queue.js" />
-    <Content Include="Scripts\web\scripts\common\RemoteStorageWrapper.js" />
     <Content Include="Scripts\web\scripts\common\Throttler.js" />
     <Content Include="Scripts\web\scripts\main.js" />
     <Content Include="Scripts\web\scripts\model\common_application\UndoHistory.js" />

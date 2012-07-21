@@ -3,8 +3,9 @@
     ViewBag.Title = "Search pesentions by name";
 }
 <h2>
-    SearchByPresention</h2>
-<legend>Presentation</legend>
+    SearchByPresention by tag
+</h2>
+<legend>Found presentation: </legend>
 @if ((Model != null) && (Model.Count() != 0))
 {
     <table>
@@ -29,6 +30,7 @@
                     @Html.DisplayFor(modelItem => item.Description)
                 </td>
                 <td>
+                    @Html.ActionLink("View Presentation", "Preview", "UserPresentation", new { id = item.Id }, new { target = "_blank" })|
                     @Html.ActionLink("Details", "Details", "UserPresentation", new { id = item.Id }, null)
                 </td>
             </tr>
