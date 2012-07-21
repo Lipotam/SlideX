@@ -1,5 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.Globalization;
+using System.Web.Helpers;
 using System.Web.Mvc;
+using SlideX.Localization;
 
 namespace SlideX.Models
 {
@@ -8,17 +11,17 @@ namespace SlideX.Models
     {
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Current password")]
+        [LocalizedDisplayName("CurrentPassword", NameResourceType = typeof(SlideX.Localization.PropertyNames))]
         public string OldPassword { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
-        [Display(Name = "New password")]
+        [LocalizedDisplayName("NewPassword", NameResourceType = typeof(SlideX.Localization.PropertyNames))]
         public string NewPassword { get; set; }
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm new password")]
+        [LocalizedDisplayName("ConfirmNewPassword", NameResourceType = typeof(SlideX.Localization.PropertyNames))]
         [Compare("NewPassword", ErrorMessage = "The new password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
     }
@@ -26,38 +29,43 @@ namespace SlideX.Models
     public class LogOnModel
     {
         [Required]
-        [Display(Name = "User name")]
+        [LocalizedDisplayName("UserName", NameResourceType = typeof(SlideX.Localization.PropertyNames))]
         public string UserName { get; set; }
 
         [Required]
         [DataType(DataType.Password)]
-        [Display(Name = "Password")]
+        [LocalizedDisplayName("Password", NameResourceType = typeof(SlideX.Localization.PropertyNames))]
         public string Password { get; set; }
 
-        [Display(Name = "Remember me?")]
+        [LocalizedDisplayName("RememberMe", NameResourceType = typeof(SlideX.Localization.PropertyNames))]
         public bool RememberMe { get; set; }
     }
 
+
     public class RegisterModel
     {
-        [Required]
-        [Display(Name = "User name")]
+        [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(ValidationStrings))]
+        [LocalizedDisplayName("UserName", NameResourceType = typeof(SlideX.Localization.PropertyNames))]
         public string UserName { get; set; }
 
-        [Required]
+        [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(ValidationStrings))]
         [DataType(DataType.EmailAddress)]
-        [Display(Name = "Email address")]
+        [LocalizedDisplayName("EmailAddress", NameResourceType = typeof(SlideX.Localization.PropertyNames))]
         public string Email { get; set; }
 
-        [Required]
-        [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
-        [DataType(DataType.Password)]
-        [Display(Name = "Password")]
-        public string Password { get; set; }
+        
+        [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(ValidationStrings))]
+        [StringLength(100,  ErrorMessageResourceName = "PasswordMinLength", ErrorMessageResourceType = typeof(ValidationStrings), MinimumLength = 6)]
+        
 
         [DataType(DataType.Password)]
-        [Display(Name = "Confirm password")]
-        [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
+        [LocalizedDisplayName("Password", NameResourceType = typeof(SlideX.Localization.PropertyNames))]
+        public string Password { get; set; }
+
+        [Required(ErrorMessageResourceName = "Required", ErrorMessageResourceType = typeof(ValidationStrings))]
+        [DataType(DataType.Password)]
+        [LocalizedDisplayName("ConfirmPassword", NameResourceType = typeof(SlideX.Localization.PropertyNames))]
+        [Compare("Password", ErrorMessageResourceName = "PasswordsMustMatch", ErrorMessageResourceType = typeof(ValidationStrings))]
         public string ConfirmPassword { get; set; }
     }
 }

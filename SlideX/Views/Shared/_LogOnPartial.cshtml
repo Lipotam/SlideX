@@ -1,10 +1,21 @@
-﻿@if(Request.IsAuthenticated) {
-    <text>Welcome <strong>@User.Identity.Name</strong>!
-    [ @Html.ActionLink("Log Off", "LogOff", "Account") |
-      @Html.ActionLink("Change password", "ChangePassword", "Account")    
-     ]</text>
-    
-}
-else {
-    @:[ @Html.ActionLink("Log On", "LogOn", "Account") ]
-}
+﻿<ul class="nav pull-right">
+  <li>  @Html.ActionLink("Welcome," + User.Identity.Name + "!", "Index", "Home")</li> 
+    @if (Request.IsAuthenticated)
+    {
+        <li> @Html.ActionLink("Log Off", "LogOff", "Account")</li> 
+        <li>@Html.ActionLink("Change password", "ChangePassword", "Account")</li> 
+    }
+    else
+    {
+        <li> @Html.ActionLink("Log On", "LogOn", "Account")</li>
+    }
+
+    @if (Session["Culture"].ToString() == "ru")
+    {
+        <li> @Html.ActionLink("English", "ChangeCulture", "Account", new { lang = "en", returnUrl = Request.RawUrl }, null)</li>
+    }
+    else
+    {
+   <li> @Html.ActionLink("Русский", "ChangeCulture", "Account", new { lang = "ru", returnUrl = Request.RawUrl }, null) </li>
+    }
+</ul>

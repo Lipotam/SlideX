@@ -4,39 +4,31 @@
 }
 <h2>
     Details</h2>
-<fieldset>
-    <legend>presentation</legend>
-    <div class="display-label">
-        UserId</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.UserId)
-    </div>
-    <div class="display-label">
-        Title</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Title)
-    </div>
-    <div class="display-label">
-        Description</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Description)
-    </div>
-    <div class="display-label">
-        Tags</div>
-    <div class="display-field">
-        <ul>
-            @foreach (var tag in Model.Tags)
-            {
-                <li>@tag.Name</li>
-            }
-        </ul>
-    </div>
-</fieldset>
+<h4>
+    Title
+</h4>
+<code>@Html.DisplayFor(model => model.Title) </code>
+<h4>
+    Description
+</h4>
+<blockquote>
+    @Html.DisplayFor(model => model.Description)
+</blockquote>
+<h4>
+    Tags
+</h4>
+<ul>
+    @foreach (var tag in Model.Tags)
+    {
+        <li>
+            @Html.ActionLink(tag.Name, "SearchByTag", "Search", new { id = tag.Name }, null)
+        </li>
+    }
+</ul>
 <p>
     @if (User.Identity.Name == Model.User.Name)
     {
-        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) 
-        
+        <a class="btn btn-warning" href="@Url.Action("Edit", new { id = Model.Id })">Edit</a>
     }
-    |    <a href="javascript:history.go(-1)">Go back</a>
+    <a class="btn" href="javascript:history.go(-1)">Go back</a>
 </p>

@@ -4,15 +4,18 @@
 }
 <h2>
     PresentationList</h2>
+
+
 @if (Request.IsAuthenticated)
 {
     <p>
-        @Html.ActionLink("Create New", "Create")
+        
+        <a class="btn btn-success btn-large" href="@Url.Action( "Create")" >Create</a>
     </p>
         
     
  
-    <table>
+    <table class="table">
         <tr>
             <th>
                 Title
@@ -28,17 +31,17 @@
         {
             <tr>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Title)
+              <code>      @Html.DisplayFor(modelItem => item.Title)</code>
                 </td>
                 <td>
-                    @Html.DisplayFor(modelItem => item.Description)
+                 <blockquote>   @Html.DisplayFor(modelItem => item.Description) </blockquote>
                 </td>
                 <td>
-                    @Html.ActionLink("View Presentation", "Preview", new { id = item.Id }, new { target = "_blank" })|
-                    @Html.ActionLink("Edit Presentation", "Editor", new { id = item.Id }) |
-                    @Html.ActionLink("Edit Information", "Edit", new { id = item.Id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                    <a class="btn btn-success" href="@Url.Action( "Preview", new { id = item.Id })" target = "_blank" >View</a>
+                   <a class="btn btn-warning" href="@Url.Action( "Editor", new { id = item.Id })">Edit</a>
+                    <a class="btn btn-primary" href="@Url.Action( "Edit", new { id = item.Id })">Change description</a>
+                    <a class="btn btn-info" href="@Url.Action( "Details", new { id = item.Id })">Details</a>
+                    <a class="btn btn-danger" href="@Url.Action( "Delete", new { id = item.Id })">Delete</a>
                 </td>
             </tr>
         }

@@ -1,20 +1,17 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-<link rel="stylesheet" type="text/css" href="/Content/jqcloud.css" />
-<h2>@ViewBag.Message</h2>
-<p>
-    Welcome!
-</p>
+
+
+<h2>@SlideX.Localization.ViewPhrases.Welcome  </h2>
+
+<link rel="stylesheet" type="text/css" href="/Content/jqcloud.css"/>
 <div id="tagsCloud" class="jqcloud" style="width: 550px; height: 350px; border: 1px solid #ccc;">
 </div>
 @section tagCloud
 {
     <script type="text/javascript">
-
         var word_list = @Html.Raw( @ViewBag.TagsCloudString) ;
-       
-      
         jQuery().ready(function () {
             jQuery("#tagsCloud").jQCloud(word_list);
         }); 

@@ -4,35 +4,27 @@
 }
 <h2>
     SearchByPresention</h2>
-<legend>Presentation</legend>
+
 @using (Html.BeginForm())
 {
     @Html.ValidationSummary(true)
-    <fieldset>
-        <legend>presentation</legend>
-        <div class="editor-field">
+    <div class="well form-search">
+        <div class=" input-medium search-query">
             @Html.EditorFor(model => model.SearchTemlate)
-        </div>
-        <p>
-            <input type="submit" value="Find" />
-        </p>
-    </fieldset>
+            <input type="submit" class="btn" value="Find" /></div>
+    </div>
+    
 }
 @if (Model.FoundUsers.Count() != 0)
 {
-    <table>
-        <tr>
-            <th>
-                User's name
-            </th>
-        </tr>
+    <h4>
+        User's name</h4>
+    <ul>
         @foreach (var item in Model.FoundUsers)
         {
-            <tr>
-                <td>
-                    @Html.ActionLink(item.Name, "Edit", new { id = item.Id })
-                </td>
-            </tr>
+            <li>
+                @Html.ActionLink(item.Name, "Edit", new { id = item.Id })
+            </li>
         }
-    </table>
+    </ul>
 }

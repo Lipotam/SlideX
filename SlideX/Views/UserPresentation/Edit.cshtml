@@ -7,37 +7,23 @@
 @using (Html.BeginForm())
 {
     @Html.ValidationSummary(true)
-    <fieldset>
-        <legend>presentation</legend>
-        <div class="editor-label">
-            @Html.LabelFor(model => model.CurrentPresentation.Title)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.CurrentPresentation.Title)
-            @Html.ValidationMessageFor(model => model.CurrentPresentation.Title)
-        </div>
-        <div class="editor-label">
-            @Html.LabelFor(model => model.CurrentPresentation.Description)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.CurrentPresentation.Description)
-            @Html.ValidationMessageFor(model => model.CurrentPresentation.Description)
-        </div>
-        <div class="editor-label">
-            Tags
-        </div>
-        <div class="editor-field">
-            <textarea id="textarea" name="TagsJson" rows="1"></textarea>
-        </div>
-        <p>
-            @Html.HiddenFor(model => model.CurrentPresentation.Id)
-            <input type="submit" value="Save" />
-        </p>
-    </fieldset>
+    <h4>
+        Title
+    </h4>
+    @Html.EditorFor(model => model.CurrentPresentation.Title)
+    <h4>
+        Description
+    </h4>
+    @Html.EditorFor(model => model.CurrentPresentation.Description)
+    <h4>
+        Tags
+    </h4>
+    <textarea id="textarea" name="TagsJson" rows="1"></textarea>
+    @Html.HiddenFor(model => model.CurrentPresentation.Id)
+    <input class="btn btn-success" type="submit" value="Save" />
 }
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+    <a class="btn " href="@Url.Action("Index")">Back to list</a>
+
 @section scripts
 {
     <script type="text/javascript">
@@ -52,10 +38,8 @@
             },
             tags: {
                 items: @Html.Raw(@Model.TagsJson)
-                
             }
         });
         });
     </script>
-
 }
