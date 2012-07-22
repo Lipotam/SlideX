@@ -95,5 +95,14 @@ namespace SlideX.Localization {
                 return ResourceManager.GetString("Required", resourceCulture);
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The user name or password provided is incorrect.
+        /// </summary>
+        internal static string UserOrPassIncorrect {
+            get {
+                return ResourceManager.GetString("UserOrPassIncorrect", resourceCulture);
+            }
+        }
     }
 }

@@ -61,11 +61,686 @@ namespace SlideX.Localization {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to This project is a course work of  Itransition Company courses. It was written by Arstiom Ponkratov..
+        /// </summary>
+        public static string AboutContent {
+            get {
+                return ResourceManager.GetString("AboutContent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About.
+        /// </summary>
+        public static string AboutLink {
+            get {
+                return ResourceManager.GetString("AboutLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to About SlideX.
+        /// </summary>
+        public static string AboutTitle {
+            get {
+                return ResourceManager.GetString("AboutTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Admin.
+        /// </summary>
+        public static string AdminAdminLabel {
+            get {
+                return ResourceManager.GetString("AdminAdminLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Banned.
+        /// </summary>
+        public static string AdminBannedLabel {
+            get {
+                return ResourceManager.GetString("AdminBannedLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User Edit.
+        /// </summary>
+        public static string AdminEditTitle {
+            get {
+                return ResourceManager.GetString("AdminEditTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Admin panel.
+        /// </summary>
+        public static string AdminPanelLink {
+            get {
+                return ResourceManager.GetString("AdminPanelLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Admin panel.
+        /// </summary>
+        public static string AdminPanelTitle {
+            get {
+                return ResourceManager.GetString("AdminPanelTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Back to list.
+        /// </summary>
+        public static string BackToList {
+            get {
+                return ResourceManager.GetString("BackToList", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Change password.
+        /// </summary>
+        public static string ChangePassLink {
+            get {
+                return ResourceManager.GetString("ChangePassLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The current password is incorrect or the new password is invalid..
+        /// </summary>
+        public static string ChangePasswordIncorrent {
+            get {
+                return ResourceManager.GetString("ChangePasswordIncorrent", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create.
+        /// </summary>
+        public static string CreateButton {
+            get {
+                return ResourceManager.GetString("CreateButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Create.
+        /// </summary>
+        public static string CreateTitle {
+            get {
+                return ResourceManager.GetString("CreateTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Details.
+        /// </summary>
+        public static string DetailsTitle {
+            get {
+                return ResourceManager.GetString("DetailsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to A user name for that e-mail address already exists. Please enter a different e-mail address..
+        /// </summary>
+        public static string DuplicateEmail {
+            get {
+                return ResourceManager.GetString("DuplicateEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to User name already exists. Please enter a different user name..
+        /// </summary>
+        public static string DuplicateUserName {
+            get {
+                return ResourceManager.GetString("DuplicateUserName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit.
+        /// </summary>
+        public static string EditTitle {
+            get {
+                return ResourceManager.GetString("EditTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email not confirmed..
+        /// </summary>
+        public static string EmailNotConfirmed {
+            get {
+                return ResourceManager.GetString("EmailNotConfirmed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please, check you email for futher authentification.
+        /// </summary>
+        public static string EmailNotConfirmedMessage {
+            get {
+                return ResourceManager.GetString("EmailNotConfirmedMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Error: .
+        /// </summary>
+        public static string ErrorTitle {
+            get {
+                return ResourceManager.GetString("ErrorTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Find.
+        /// </summary>
+        public static string FindButton {
+            get {
+                return ResourceManager.GetString("FindButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Home.
+        /// </summary>
+        public static string HomeLink {
+            get {
+                return ResourceManager.GetString("HomeLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Home page.
+        /// </summary>
+        public static string HomeTitle {
+            get {
+                return ResourceManager.GetString("HomeTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The password retrieval answer provided is invalid. Please check the value and try again..
+        /// </summary>
+        public static string InvalidAnswer {
+            get {
+                return ResourceManager.GetString("InvalidAnswer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The e-mail address provided is invalid. Please check the value and try again..
+        /// </summary>
+        public static string InvalidEmail {
+            get {
+                return ResourceManager.GetString("InvalidEmail", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The password provided is invalid. Please enter a valid password value..
+        /// </summary>
+        public static string InvalidPassword {
+            get {
+                return ResourceManager.GetString("InvalidPassword", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The password retrieval question provided is invalid. Please check the value and try again..
+        /// </summary>
+        public static string InvalidQuestion {
+            get {
+                return ResourceManager.GetString("InvalidQuestion", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The user name provided is invalid. Please check the value and try again..
+        /// </summary>
+        public static string InvalidUserName {
+            get {
+                return ResourceManager.GetString("InvalidUserName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Log off.
+        /// </summary>
+        public static string LogOffLink {
+            get {
+                return ResourceManager.GetString("LogOffLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Log On.
+        /// </summary>
+        public static string LogOnButton {
+            get {
+                return ResourceManager.GetString("LogOnButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please enter your user name and password..
+        /// </summary>
+        public static string LogOnInstruction {
+            get {
+                return ResourceManager.GetString("LogOnInstruction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Log On.
+        /// </summary>
+        public static string LogOnLink {
+            get {
+                return ResourceManager.GetString("LogOnLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Register if you don&apos;t have an account..
+        /// </summary>
+        public static string LogOnRegisterLink {
+            get {
+                return ResourceManager.GetString("LogOnRegisterLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Remember me.
+        /// </summary>
+        public static string LogOnRemember {
+            get {
+                return ResourceManager.GetString("LogOnRemember", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Log On.
+        /// </summary>
+        public static string LogOnTitle {
+            get {
+                return ResourceManager.GetString("LogOnTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Login was unsuccessful. Please correct the errors and try again..
+        /// </summary>
+        public static string LogOnUsuccesfulLogin {
+            get {
+                return ResourceManager.GetString("LogOnUsuccesfulLogin", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to My presentations.
+        /// </summary>
+        public static string MyPresentationLink {
+            get {
+                return ResourceManager.GetString("MyPresentationLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use the form below to change your password..
+        /// </summary>
+        public static string PasswordChangeInstruction {
+            get {
+                return ResourceManager.GetString("PasswordChangeInstruction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Your password has been changed successfully..
+        /// </summary>
+        public static string PasswordChangeSeccessfulMessage {
+            get {
+                return ResourceManager.GetString("PasswordChangeSeccessfulMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Change Password.
+        /// </summary>
+        public static string PasswordChangeTitle {
+            get {
+                return ResourceManager.GetString("PasswordChangeTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Password change was unsuccessful. Please correct the errors and try again..
+        /// </summary>
+        public static string PasswordValidationMessage {
+            get {
+                return ResourceManager.GetString("PasswordValidationMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Please, log in.
+        /// </summary>
+        public static string PleaseLogIn {
+            get {
+                return ResourceManager.GetString("PleaseLogIn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to My presentations.
+        /// </summary>
+        public static string PresentationListTitle {
+            get {
+                return ResourceManager.GetString("PresentationListTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Presentation not found..
+        /// </summary>
+        public static string PresentationNotFoundBadRequest {
+            get {
+                return ResourceManager.GetString("PresentationNotFoundBadRequest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Presentation wasn&apos;t found. May be it was deleted or bad request string..
+        /// </summary>
+        public static string PresentationNotFoundBadRequestMessage {
+            get {
+                return ResourceManager.GetString("PresentationNotFoundBadRequestMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Presentation not found..
+        /// </summary>
+        public static string PresentationNotFoundDelete {
+            get {
+                return ResourceManager.GetString("PresentationNotFoundDelete", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Presentation wasn&apos;t found. Do you want to delete another&apos;s prasentation ?.
+        /// </summary>
+        public static string PresentationNotFoundDeleteMessage {
+            get {
+                return ResourceManager.GetString("PresentationNotFoundDeleteMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Presentations not found..
+        /// </summary>
+        public static string PresentationNotFoundSearch {
+            get {
+                return ResourceManager.GetString("PresentationNotFoundSearch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Presentations were not found by this search string.
+        /// </summary>
+        public static string PresentationNotFoundSearchMessage {
+            get {
+                return ResourceManager.GetString("PresentationNotFoundSearchMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The authentication provider returned an error. Please verify your entry and try again. If the problem persists, please contact your system administrator..
+        /// </summary>
+        public static string ProviderError {
+            get {
+                return ResourceManager.GetString("ProviderError", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use the form below to create a new account..
+        /// </summary>
+        public static string RegisterInstruction {
+            get {
+                return ResourceManager.GetString("RegisterInstruction", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Register.
+        /// </summary>
+        public static string RegisterTitle {
+            get {
+                return ResourceManager.GetString("RegisterTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Account creation was unsuccessful. Please correct the errors and try again..
+        /// </summary>
+        public static string RegisterValidationMessage {
+            get {
+                return ResourceManager.GetString("RegisterValidationMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to save.
+        /// </summary>
+        public static string SaveButton {
+            get {
+                return ResourceManager.GetString("SaveButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search.
+        /// </summary>
+        public static string SearchButton {
+            get {
+                return ResourceManager.GetString("SearchButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search by presentation name.
+        /// </summary>
+        public static string SearchByPresentationTitle {
+            get {
+                return ResourceManager.GetString("SearchByPresentationTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search by presentation tags.
+        /// </summary>
+        public static string SearchByTagsTitle {
+            get {
+                return ResourceManager.GetString("SearchByTagsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search by presentation owner.
+        /// </summary>
+        public static string SearchByUserTitle {
+            get {
+                return ResourceManager.GetString("SearchByUserTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Search.
+        /// </summary>
+        public static string SearchLink {
+            get {
+                return ResourceManager.GetString("SearchLink", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Presentation Search.
+        /// </summary>
+        public static string SearchTitile {
+            get {
+                return ResourceManager.GetString("SearchTitile", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Change description.
+        /// </summary>
+        public static string TableChangeDescriptionButton {
+            get {
+                return ResourceManager.GetString("TableChangeDescriptionButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Delete.
+        /// </summary>
+        public static string TableDeleteButton {
+            get {
+                return ResourceManager.GetString("TableDeleteButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Description.
+        /// </summary>
+        public static string TableDescriptionLabel {
+            get {
+                return ResourceManager.GetString("TableDescriptionLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Details.
+        /// </summary>
+        public static string TableDetailsButton {
+            get {
+                return ResourceManager.GetString("TableDetailsButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit.
+        /// </summary>
+        public static string TableEditButton {
+            get {
+                return ResourceManager.GetString("TableEditButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Options.
+        /// </summary>
+        public static string TableOptionsLabel {
+            get {
+                return ResourceManager.GetString("TableOptionsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Title.
+        /// </summary>
+        public static string TableTitleLabel {
+            get {
+                return ResourceManager.GetString("TableTitleLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to View.
+        /// </summary>
+        public static string TableViewButton {
+            get {
+                return ResourceManager.GetString("TableViewButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Tags.
+        /// </summary>
+        public static string Tagslabel {
+            get {
+                return ResourceManager.GetString("Tagslabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to An unknown error occurred. Please verify your entry and try again. If the problem persists, please contact your system administrator..
+        /// </summary>
+        public static string UnknownMistake {
+            get {
+                return ResourceManager.GetString("UnknownMistake", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The user creation request has been canceled. Please verify your entry and try again. If the problem persists, please contact your system administrator..
+        /// </summary>
+        public static string UserRejected {
+            get {
+                return ResourceManager.GetString("UserRejected", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Users.
+        /// </summary>
+        public static string UsersLabel {
+            get {
+                return ResourceManager.GetString("UsersLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email verification successed.
+        /// </summary>
+        public static string VerificationMessage {
+            get {
+                return ResourceManager.GetString("VerificationMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Email Verification.
+        /// </summary>
+        public static string VerificationTitle {
+            get {
+                return ResourceManager.GetString("VerificationTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Welcome to SlideX !.
         /// </summary>
         public static string Welcome {
             get {
                 return ResourceManager.GetString("Welcome", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Welcome.
+        /// </summary>
+        public static string WelcomeLink {
+            get {
+                return ResourceManager.GetString("WelcomeLink", resourceCulture);
             }
         }
     }

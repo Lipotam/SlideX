@@ -1,29 +1,29 @@
 ﻿@model SlideX.Models.PresentationWithTagsModel
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = @SlideX.Localization.ViewPhrases.EditTitle;
 }
 <h2>
-    Edit</h2>
+    @SlideX.Localization.ViewPhrases.EditTitle
+</h2>
 @using (Html.BeginForm())
 {
     @Html.ValidationSummary(true)
     <h4>
-        Title
+        @SlideX.Localization.ViewPhrases.TableTitleLabel
     </h4>
     @Html.EditorFor(model => model.CurrentPresentation.Title)
     <h4>
-        Description
+        @SlideX.Localization.ViewPhrases.TableDescriptionLabel
     </h4>
     @Html.EditorFor(model => model.CurrentPresentation.Description)
     <h4>
-        Tags
+        @SlideX.Localization.ViewPhrases.Tagslabel
     </h4>
     <textarea id="textarea" name="TagsJson" rows="1"></textarea>
     @Html.HiddenFor(model => model.CurrentPresentation.Id)
-    <input class="btn btn-success" type="submit" value="Save" />
+    <input class="btn btn-success" type="submit" value=  "@SlideX.Localization.ViewPhrases.SaveButton" />
 }
-    <a class="btn " href="@Url.Action("Index")">Back to list</a>
-
+<a class="btn " href="@Url.Action("Index")">@SlideX.Localization.ViewPhrases.BackToList</a>
 @section scripts
 {
     <script type="text/javascript">

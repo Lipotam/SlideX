@@ -6,7 +6,6 @@ using System.Web.Mvc;
 using System.Web.Security;
 using SlideX.Models;
 
-
 namespace SlideX.Controllers
 {
     public class UserPresentationController : Controller
@@ -45,7 +44,12 @@ namespace SlideX.Controllers
             var foundPresentation = presentationData.GetPresentationByPresentationId(id);
             if (foundPresentation == null)
             {
-                return View("Error", new ErrorPageModels { Title = "Presentation not found.", Message = "Presentation wasn't found. May be it was deleted or bad request string.", ShowGotoBack = true });
+                return View("Error", new ErrorPageModels
+                                         {
+                                             Title = Localization.ViewPhrases.PresentationNotFoundBadRequest,
+                                             Message = Localization.ViewPhrases.PresentationNotFoundBadRequestMessage, 
+                                             ShowGotoBack = true
+                                         });
             }
             return View(new PresentationWithTagsModel { CurrentPresentation = foundPresentation });
         }
@@ -62,7 +66,12 @@ namespace SlideX.Controllers
                     var foundPresentation = presentationData.GetPresentationByCurrentUserIdAndByPreasentationId(model.CurrentPresentation.Id);
                     if (foundPresentation == null)
                     {
-                        return View("Error", new ErrorPageModels { Title = "Presentation not found.", Message = "Presentation wasn't found. Do you want to edit another's prasentation ?", ShowGotoBack = true });
+                        return View("Error", new ErrorPageModels
+                        {
+                            Title = Localization.ViewPhrases.PresentationNotFoundBadRequest,
+                            Message = Localization.ViewPhrases.PresentationNotFoundBadRequestMessage,
+                            ShowGotoBack = true
+                        });
                     }
                     foundPresentation.Title = model.CurrentPresentation.Title;
                     foundPresentation.Description = model.CurrentPresentation.Description;
@@ -91,7 +100,12 @@ namespace SlideX.Controllers
             var foundPresentation = presentationData.GetPresentationByPresentationId(id);
             if (foundPresentation == null)
             {
-                return View("Error", new ErrorPageModels { Title = "Presentation not found.", Message = "Presentation wasn't found. May be it was deleted or bad request string.", ShowGotoBack = true });
+                return View("Error", new ErrorPageModels
+                {
+                    Title = Localization.ViewPhrases.PresentationNotFoundBadRequest,
+                    Message = Localization.ViewPhrases.PresentationNotFoundBadRequestMessage,
+                    ShowGotoBack = true
+                });
             }
             return View(foundPresentation);
         }
@@ -107,7 +121,7 @@ namespace SlideX.Controllers
                 
                 return RedirectToAction("Index");
             }
-            return View("Error", new ErrorPageModels { Title = "Presentation not found.", Message = "Presentation wasn't found. Do you want to delete another's prasentation ?", ShowGotoBack = true });
+             return View("Error", new ErrorPageModels { Title = Localization.ViewPhrases.PresentationNotFoundDelete, Message = Localization.ViewPhrases.PresentationNotFoundDeleteMessage, ShowGotoBack = true });
         }
 
         [OutputCache(Duration = 300)]

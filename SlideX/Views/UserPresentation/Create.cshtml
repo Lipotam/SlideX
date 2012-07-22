@@ -1,22 +1,23 @@
 ﻿@model SlideX.Models.Presentation
 @{
-    ViewBag.Title = "Create";
+    ViewBag.Title = @SlideX.Localization.ViewPhrases.CreateTitle;
 }
 <h2>
-    Create</h2>
+    @SlideX.Localization.ViewPhrases.CreateTitle
+</h2>
 @using (Html.BeginForm())
 {
     @Html.ValidationSummary(true)
     <h4>
-        Title
+        @SlideX.Localization.ViewPhrases.TableTitleLabel
     </h4>
     @Html.EditorFor(model => model.Title) 
     <h4>
-        Description
+        @SlideX.Localization.ViewPhrases.TableDescriptionLabel
     </h4>
     @Html.EditorFor(model => model.Description) <br />
-    <input class="btn btn-success" type="submit" value="Create" />
+    <input class="btn btn-success" type="submit" value="@SlideX.Localization.ViewPhrases.CreateButton" />
 }
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink(@SlideX.Localization.ViewPhrases.BackToList, "Index")
 </div>

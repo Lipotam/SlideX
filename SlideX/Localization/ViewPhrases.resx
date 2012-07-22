@@ -117,7 +117,232 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AboutContent" xml:space="preserve">
+    <value>This project is a course work of  Itransition Company courses. It was written by Arstiom Ponkratov.</value>
+  </data>
+  <data name="AboutLink" xml:space="preserve">
+    <value>About</value>
+  </data>
+  <data name="AboutTitle" xml:space="preserve">
+    <value>About SlideX</value>
+  </data>
+  <data name="AdminAdminLabel" xml:space="preserve">
+    <value>Admin</value>
+  </data>
+  <data name="AdminBannedLabel" xml:space="preserve">
+    <value>Banned</value>
+  </data>
+  <data name="AdminEditTitle" xml:space="preserve">
+    <value>User Edit</value>
+  </data>
+  <data name="AdminPanelLink" xml:space="preserve">
+    <value>Admin panel</value>
+  </data>
+  <data name="AdminPanelTitle" xml:space="preserve">
+    <value>Admin panel</value>
+  </data>
+  <data name="BackToList" xml:space="preserve">
+    <value>Back to list</value>
+  </data>
+  <data name="ChangePassLink" xml:space="preserve">
+    <value>Change password</value>
+  </data>
+  <data name="ChangePasswordIncorrent" xml:space="preserve">
+    <value>The current password is incorrect or the new password is invalid.</value>
+  </data>
+  <data name="CreateButton" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="CreateTitle" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="DetailsTitle" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="DuplicateEmail" xml:space="preserve">
+    <value>A user name for that e-mail address already exists. Please enter a different e-mail address.</value>
+  </data>
+  <data name="DuplicateUserName" xml:space="preserve">
+    <value>User name already exists. Please enter a different user name.</value>
+  </data>
+  <data name="EditTitle" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="EmailNotConfirmed" xml:space="preserve">
+    <value>Email not confirmed.</value>
+  </data>
+  <data name="EmailNotConfirmedMessage" xml:space="preserve">
+    <value>Please, check you email for futher authentification</value>
+  </data>
+  <data name="ErrorTitle" xml:space="preserve">
+    <value>Error: </value>
+  </data>
+  <data name="FindButton" xml:space="preserve">
+    <value>Find</value>
+  </data>
+  <data name="HomeLink" xml:space="preserve">
+    <value>Home</value>
+  </data>
+  <data name="HomeTitle" xml:space="preserve">
+    <value>Home page</value>
+  </data>
+  <data name="InvalidAnswer" xml:space="preserve">
+    <value>The password retrieval answer provided is invalid. Please check the value and try again.</value>
+  </data>
+  <data name="InvalidEmail" xml:space="preserve">
+    <value>The e-mail address provided is invalid. Please check the value and try again.</value>
+  </data>
+  <data name="InvalidPassword" xml:space="preserve">
+    <value>The password provided is invalid. Please enter a valid password value.</value>
+  </data>
+  <data name="InvalidQuestion" xml:space="preserve">
+    <value>The password retrieval question provided is invalid. Please check the value and try again.</value>
+  </data>
+  <data name="InvalidUserName" xml:space="preserve">
+    <value>The user name provided is invalid. Please check the value and try again.</value>
+  </data>
+  <data name="LogOffLink" xml:space="preserve">
+    <value>Log off</value>
+  </data>
+  <data name="LogOnButton" xml:space="preserve">
+    <value>Log On</value>
+  </data>
+  <data name="LogOnInstruction" xml:space="preserve">
+    <value>Please enter your user name and password.</value>
+  </data>
+  <data name="LogOnLink" xml:space="preserve">
+    <value>Log On</value>
+  </data>
+  <data name="LogOnRegisterLink" xml:space="preserve">
+    <value>Register if you don't have an account.</value>
+  </data>
+  <data name="LogOnRemember" xml:space="preserve">
+    <value>Remember me</value>
+  </data>
+  <data name="LogOnTitle" xml:space="preserve">
+    <value>Log On</value>
+  </data>
+  <data name="LogOnUsuccesfulLogin" xml:space="preserve">
+    <value>Login was unsuccessful. Please correct the errors and try again.</value>
+  </data>
+  <data name="MyPresentationLink" xml:space="preserve">
+    <value>My presentations</value>
+  </data>
+  <data name="PasswordChangeInstruction" xml:space="preserve">
+    <value>Use the form below to change your password.</value>
+  </data>
+  <data name="PasswordChangeSeccessfulMessage" xml:space="preserve">
+    <value>Your password has been changed successfully.</value>
+  </data>
+  <data name="PasswordChangeTitle" xml:space="preserve">
+    <value>Change Password</value>
+  </data>
+  <data name="PasswordValidationMessage" xml:space="preserve">
+    <value>Password change was unsuccessful. Please correct the errors and try again.</value>
+  </data>
+  <data name="PleaseLogIn" xml:space="preserve">
+    <value>Please, log in</value>
+  </data>
+  <data name="PresentationListTitle" xml:space="preserve">
+    <value>My presentations</value>
+  </data>
+  <data name="PresentationNotFoundBadRequest" xml:space="preserve">
+    <value>Presentation not found.</value>
+  </data>
+  <data name="PresentationNotFoundBadRequestMessage" xml:space="preserve">
+    <value>Presentation wasn't found. May be it was deleted or bad request string.</value>
+  </data>
+  <data name="PresentationNotFoundDelete" xml:space="preserve">
+    <value>Presentation not found.</value>
+  </data>
+  <data name="PresentationNotFoundDeleteMessage" xml:space="preserve">
+    <value>Presentation wasn't found. Do you want to delete another's prasentation ?</value>
+  </data>
+  <data name="PresentationNotFoundSearch" xml:space="preserve">
+    <value>Presentations not found.</value>
+  </data>
+  <data name="PresentationNotFoundSearchMessage" xml:space="preserve">
+    <value>Presentations were not found by this search string</value>
+  </data>
+  <data name="ProviderError" xml:space="preserve">
+    <value>The authentication provider returned an error. Please verify your entry and try again. If the problem persists, please contact your system administrator.</value>
+  </data>
+  <data name="RegisterInstruction" xml:space="preserve">
+    <value>Use the form below to create a new account.</value>
+  </data>
+  <data name="RegisterTitle" xml:space="preserve">
+    <value>Register</value>
+  </data>
+  <data name="RegisterValidationMessage" xml:space="preserve">
+    <value>Account creation was unsuccessful. Please correct the errors and try again.</value>
+  </data>
+  <data name="SaveButton" xml:space="preserve">
+    <value>save</value>
+  </data>
+  <data name="SearchButton" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="SearchByPresentationTitle" xml:space="preserve">
+    <value>Search by presentation name</value>
+  </data>
+  <data name="SearchByTagsTitle" xml:space="preserve">
+    <value>Search by presentation tags</value>
+  </data>
+  <data name="SearchByUserTitle" xml:space="preserve">
+    <value>Search by presentation owner</value>
+  </data>
+  <data name="SearchLink" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="SearchTitile" xml:space="preserve">
+    <value>Presentation Search</value>
+  </data>
+  <data name="TableChangeDescriptionButton" xml:space="preserve">
+    <value>Change description</value>
+  </data>
+  <data name="TableDeleteButton" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="TableDescriptionLabel" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="TableDetailsButton" xml:space="preserve">
+    <value>Details</value>
+  </data>
+  <data name="TableEditButton" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="TableOptionsLabel" xml:space="preserve">
+    <value>Options</value>
+  </data>
+  <data name="TableTitleLabel" xml:space="preserve">
+    <value>Title</value>
+  </data>
+  <data name="TableViewButton" xml:space="preserve">
+    <value>View</value>
+  </data>
+  <data name="Tagslabel" xml:space="preserve">
+    <value>Tags</value>
+  </data>
+  <data name="UnknownMistake" xml:space="preserve">
+    <value>An unknown error occurred. Please verify your entry and try again. If the problem persists, please contact your system administrator.</value>
+  </data>
+  <data name="UserRejected" xml:space="preserve">
+    <value>The user creation request has been canceled. Please verify your entry and try again. If the problem persists, please contact your system administrator.</value>
+  </data>
+  <data name="UsersLabel" xml:space="preserve">
+    <value>Users</value>
+  </data>
+  <data name="VerificationMessage" xml:space="preserve">
+    <value>Email verification successed</value>
+  </data>
+  <data name="VerificationTitle" xml:space="preserve">
+    <value>Email Verification</value>
+  </data>
   <data name="Welcome" xml:space="preserve">
     <value>Welcome to SlideX !</value>
+  </data>
+  <data name="WelcomeLink" xml:space="preserve">
+    <value>Welcome</value>
   </data>
 </root>

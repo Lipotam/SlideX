@@ -8,7 +8,7 @@ namespace SlideX.Models
     {
         public Presentation CurrentPresentation { get; set; }
 
-        public string TagsJson 
+        public string TagsJson
         {
             get
             {
@@ -18,7 +18,7 @@ namespace SlideX.Models
                     if (tags.LongCount() != 0)
                     {
                         var tagsToJson = tags.Select(temp => temp.Name).ToList();
-                        return JsonConvert.SerializeObject(tagsToJson); 
+                        return JsonConvert.SerializeObject(tagsToJson);
                     }
                 }
                 return "[]";

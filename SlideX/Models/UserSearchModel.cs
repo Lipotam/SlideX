@@ -16,7 +16,7 @@ namespace SlideX.Models
                 }
                 return  presentationData.GetUsersByTemplate(SearchTemlate);
             }
-            set { FoundUsers = value; }
+            set { }
         }
     }
 }

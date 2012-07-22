@@ -27,7 +27,7 @@ namespace SlideX.Controllers
             var foundPresentations = (new PresentationDataAccessModel()).GetPresentationsByNameTemplate(id);
             if (foundPresentations.Count() == 0)
             {
-                return View("Error", new ErrorPageModels { Title = "Presentations not found.", Message = "Presentations were not found by this search string.", ShowGotoBack = true });
+                return View("Error", new ErrorPageModels { Title = Localization.ViewPhrases.PresentationNotFoundSearch, Message = Localization.ViewPhrases.PresentationNotFoundSearchMessage, ShowGotoBack = true });
             }
             return View(foundPresentations);
         }
@@ -35,9 +35,9 @@ namespace SlideX.Controllers
         public ActionResult SearchByTag(string id)
         {
             var foundPresentations = (new PresentationDataAccessModel()).GetPresentationsByTagTemplate(id);
-            if (foundPresentations.Count() == 0)
+            if (foundPresentations == null)
             {
-              return View("Error", new ErrorPageModels { Title = "Presentations not found.", Message = "Presentations were not found by this search string.", ShowGotoBack = true });
+                return View("Error", new ErrorPageModels { Title = Localization.ViewPhrases.PresentationNotFoundSearch, Message = Localization.ViewPhrases.PresentationNotFoundSearchMessage, ShowGotoBack = true });
             }
             return View(foundPresentations);
         }
@@ -45,9 +45,9 @@ namespace SlideX.Controllers
         public ActionResult SearchByUser(string id)
         {
             var foundPresentations = (new PresentationDataAccessModel()).GetPresentationsByUserNameTemplate(id);
-            if (foundPresentations.Count() == 0)
+            if (foundPresentations == null)
             {
-                return View("Error", new ErrorPageModels { Title = "Presentations not found.", Message = "Presentations were not found by this search string.", ShowGotoBack = true });
+                return View("Error", new ErrorPageModels { Title = Localization.ViewPhrases.PresentationNotFoundSearch, Message = Localization.ViewPhrases.PresentationNotFoundSearchMessage, ShowGotoBack = true });
             }
             return View(foundPresentations);
         }

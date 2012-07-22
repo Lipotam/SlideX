@@ -1,24 +1,24 @@
 ﻿@model SlideX.Models.UserSearchModel
 @{
-    ViewBag.Title = "Search Users by name";
+    ViewBag.Title = @SlideX.Localization.ViewPhrases.AdminPanelTitle;
 }
 <h2>
-    SearchByPresention</h2>
-
+    @SlideX.Localization.ViewPhrases.AdminPanelTitle
+</h2>
 @using (Html.BeginForm())
 {
     @Html.ValidationSummary(true)
     <div class="well form-search">
         <div class=" input-medium search-query">
             @Html.EditorFor(model => model.SearchTemlate)
-            <input type="submit" class="btn" value="Find" /></div>
+            <input type="submit" class="btn" value=@SlideX.Localization.ViewPhrases.FindButton /></div>
     </div>
     
 }
 @if (Model.FoundUsers.Count() != 0)
 {
     <h4>
-        User's name</h4>
+        @SlideX.Localization.ViewPhrases.UsersLabel</h4>
     <ul>
         @foreach (var item in Model.FoundUsers)
         {

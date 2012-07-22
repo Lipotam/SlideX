@@ -1,6 +1,6 @@
 ﻿@model SlideX.Models.ErrorPageModels
 @{
-    ViewBag.Title = "Error: " + Model.Title;
+    ViewBag.Title = @SlideX.Localization.ViewPhrases.ErrorTitle + Model.Title;
 }
 @if (!String.IsNullOrWhiteSpace(Model.Title))
 {
@@ -17,7 +17,7 @@
 <p>
     @if (Model.ShowGotoMain)
     {
-        @Html.ActionLink("Home page", "Index", "Home")
+        @Html.ActionLink(@SlideX.Localization.ViewPhrases.HomeLink, "Index", "Home")
     }
     @if (Model.ShowGotoBack)
     {

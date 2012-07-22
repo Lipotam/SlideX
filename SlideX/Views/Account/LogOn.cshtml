@@ -1,14 +1,16 @@
 ﻿@model SlideX.Models.LogOnModel
 @{
-    ViewBag.Title = "Log On";
+    ViewBag.Title = @SlideX.Localization.ViewPhrases.LogOnTitle;
 }
 <h2>
-    Log On</h2>
+    @SlideX.Localization.ViewPhrases.LogOnTitle
+</h2>
 <p>
-    Please enter your user name and password. @Html.ActionLink("Register", "Register")
-    if you don't have an account.
+    @SlideX.Localization.ViewPhrases.LogOnInstruction
+     @Html.ActionLink(@SlideX.Localization.ViewPhrases.LogOnRegisterLink, "Register")
+    
 </p>
-@Html.ValidationSummary(true, "Login was unsuccessful. Please correct the errors and try again.")
+@Html.ValidationSummary(true, @SlideX.Localization.ViewPhrases.LogOnUsuccesfulLogin)
 @using (Html.BeginForm())
 {
     @Html.LabelFor(m => m.UserName)
@@ -19,9 +21,9 @@
     @Html.ValidationMessageFor(m => m.Password)<br />
     <label class="checkbox">
         @Html.CheckBoxFor(m => m.RememberMe)
-        Check me out
+        @SlideX.Localization.ViewPhrases.LogOnRemember
     </label>
     <p>
-        <input type="submit" class="btn-success" value="Log On" />
+        <input type="submit" class="btn-success" value=@SlideX.Localization.ViewPhrases.LogOnButton />
     </p>
 }

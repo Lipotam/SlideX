@@ -129,4 +129,7 @@
   <data name="Required" xml:space="preserve">
     <value>{0} field is required</value>
   </data>
+  <data name="UserOrPassIncorrect" xml:space="preserve">
+    <value>The user name or password provided is incorrect</value>
+  </data>
 </root>

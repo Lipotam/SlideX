@@ -129,4 +129,7 @@
   <data name="Required" xml:space="preserve">
     <value>Поле {0} необходимо заполнить</value>
   </data>
+  <data name="UserOrPassIncorrect" xml:space="preserve">
+    <value>Имя пользователя или пароль неверны</value>
+  </data>
 </root>

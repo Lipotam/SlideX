@@ -18,7 +18,6 @@ namespace SlideX.Controllers
             var tagsForCloud = new PresentationDataAccessModel().GetAllTags().Select(tag => new TagCloudModel { Text = tag.Name, Link = url + tag.Name, Weight = randomNumber.Next(7).ToString() }).ToList();
             ViewBag.TagsCloudString = JsonConvert.SerializeObject(tagsForCloud, Formatting.Indented,
                                           new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
-
             return View();
         }
 

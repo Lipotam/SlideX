@@ -21,7 +21,7 @@ namespace SlideX.Models
             {
                 return null;
             }
-            List<Presentation> foundPresentations = new List<Presentation>();
+            var foundPresentations = new List<Presentation>();
             foreach (var user in foundUser)
             {
                 foreach (var presentation in DB.Presentations.Where(p => p.UserId == user.Id))
@@ -45,13 +45,10 @@ namespace SlideX.Models
                 return null;
             }
 
-            List<Presentation> foundPresentations = new List<Presentation>();
+            var foundPresentations = new List<Presentation>();
             foreach (var tag in foundTags)
             {
-                foreach (var presentation in tag.Presentations)
-                {
-                    foundPresentations.Add(presentation);
-                }
+                foundPresentations.AddRange(tag.Presentations);
             }
             return foundPresentations;
         }
@@ -150,6 +147,7 @@ namespace SlideX.Models
         {
             return DB.Users.ToArray();
         }
+
         public User GetUserById(Guid id)
         {
             return DB.Users.SingleOrDefault(u => u.Id == id);
@@ -160,14 +158,14 @@ namespace SlideX.Models
             return DB.Roles.SingleOrDefault(r => r.Name == roleName);
         }
 
-        public Guid GetUserIdByPresentationId(Guid PresentationId)
+        public Guid GetUserIdByPresentationId(Guid presentationId)
         {
-            Presentation foundPresentation = DB.Presentations.SingleOrDefault(p => p.Id == PresentationId);
+            Presentation foundPresentation = DB.Presentations.SingleOrDefault(p => p.Id == presentationId);
             if (foundPresentation != null)
             {
                 return foundPresentation.UserId;
             }
-            return PresentationId;
+            return presentationId;
         }
 
         public bool IsCurrentUserIsAdmin()

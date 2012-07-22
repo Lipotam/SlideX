@@ -1,19 +1,16 @@
 ﻿@model SlideX.Models.RegisterModel
 @{
-    ViewBag.Title = "Register";
+    ViewBag.Title = @SlideX.Localization.ViewPhrases.RegisterTitle;
 }
 <h2>
-    Create a New Account</h2>
+    @SlideX.Localization.ViewPhrases.RegisterTitle</h2>
 <p>
-    Use the form below to create a new account.
+    @SlideX.Localization.ViewPhrases.RegisterInstruction
 </p>
-<p>
-    Passwords are required to be a minimum of @Membership.MinRequiredPasswordLength
-    characters in length.
-</p>
+
 @using (Html.BeginForm())
 {
-    @Html.ValidationSummary(true, "Account creation was unsuccessful. Please correct the errors and try again.")
+    @Html.ValidationSummary(true,@SlideX.Localization.ViewPhrases.RegisterValidationMessage)
     @Html.LabelFor(m => m.UserName)
     @Html.TextBoxFor(m => m.UserName)
     @Html.ValidationMessageFor(m => m.UserName)

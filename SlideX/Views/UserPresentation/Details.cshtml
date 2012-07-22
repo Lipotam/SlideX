@@ -1,21 +1,21 @@
 ﻿@model SlideX.Models.Presentation
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = @SlideX.Localization.ViewPhrases.DetailsTitle;
 }
 <h2>
-    Details</h2>
+    @SlideX.Localization.ViewPhrases.DetailsTitle</h2>
 <h4>
-    Title
+   @SlideX.Localization.ViewPhrases.TableTitleLabel
 </h4>
 <code>@Html.DisplayFor(model => model.Title) </code>
 <h4>
-    Description
+   @SlideX.Localization.ViewPhrases.TableDescriptionLabel
 </h4>
 <blockquote>
     @Html.DisplayFor(model => model.Description)
 </blockquote>
 <h4>
-    Tags
+    @SlideX.Localization.ViewPhrases.Tagslabel
 </h4>
 <ul>
     @foreach (var tag in Model.Tags)
@@ -28,7 +28,7 @@
 <p>
     @if (User.Identity.Name == Model.User.Name)
     {
-        <a class="btn btn-warning" href="@Url.Action("Edit", new { id = Model.Id })">Edit</a>
+        <a class="btn btn-warning" href="@Url.Action("Edit", new { id = Model.Id })"> @SlideX.Localization.ViewPhrases.TableEditButton</a>
     }
     <a class="btn" href="javascript:history.go(-1)">Go back</a>
 </p>

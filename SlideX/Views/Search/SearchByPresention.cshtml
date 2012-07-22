@@ -1,42 +1,41 @@
 ﻿@model IEnumerable<SlideX.Models.Presentation>
 @{
-    ViewBag.Title = "Search pesentions by name";
+    ViewBag.Title = @SlideX.Localization.ViewPhrases.SearchByPresentationTitle;
 }
 <h2>
-    Search by presention name
+    @SlideX.Localization.ViewPhrases.SearchByPresentationTitle
 </h2>
-
 @if (Model != null)
 {
     <table class="table">
+        <tr>
+            <th>
+                @SlideX.Localization.ViewPhrases.TableTitleLabel
+            </th>
+            <th>
+                @SlideX.Localization.ViewPhrases.TableDescriptionLabel
+            </th>
+            <th>
+                @SlideX.Localization.ViewPhrases.TableOptionsLabel
+            </th>
+        </tr>
+        @foreach (var item in Model)
+        {
             <tr>
-                <th>
-                    Title
-                </th>
-                <th>
-                    Description
-                </th>
-                <th>
-                    Options
-                </th>
+                <td>
+                    <code>@Html.DisplayFor(modelItem => item.Title)</code>
+                </td>
+                <td>
+                    <blockquote>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </blockquote>
+                </td>
+                <td>
+                    <a class="btn btn-success" href="@Url.Action("Preview", "UserPresentation", new { id = item.Id })" target = "_blank" >
+                        @SlideX.Localization.ViewPhrases.TableViewButton </a><a class="btn btn-info" href="@Url.Action("Details", "UserPresentation", new { id = item.Id })">
+                            @SlideX.Localization.ViewPhrases.TableDetailsButton</a>
+                </td>
             </tr>
-             @foreach (var item in Model)
-             {
-                <tr>
-                    <td>
-                        <code>@Html.DisplayFor(modelItem => item.Title)</code>
-                    </td>
-                    <td>
-                        <blockquote>
-                            @Html.DisplayFor(modelItem => item.Description)
-                        </blockquote>
-                    </td>
-                    <td>
-                        <a class="btn btn-success" href="@Url.Action("Preview", "UserPresentation", new { id = item.Id })" target = "_blank" >
-                            View</a>  <a class="btn btn-info" href="@Url.Action("Details", "UserPresentation", new { id = item.Id })">
-                                        Details</a> 
-                    </td>
-                </tr>
-             }
-        </table>
+        }
+    </table>
 }

@@ -16,16 +16,16 @@
                 </a><a class="brand" href="#">SlideX</a>
                 <div class="btn-inverse temp">
                     <ul class="nav">
-                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                        <li>@Html.ActionLink("About", "About", "Home")</li>
-                        <li>@Html.ActionLink("Search", "Index", "Search")</li>
+                        <li>@Html.ActionLink(@SlideX.Localization.ViewPhrases.HomeLink, "Index", "Home")</li>
+                        <li>@Html.ActionLink(@SlideX.Localization.ViewPhrases.AboutLink, "About", "Home")</li>
+                        <li>@Html.ActionLink(@SlideX.Localization.ViewPhrases.SearchLink, "Index", "Search")</li>
                         @if (Request.IsAuthenticated)
                         {
-                            <li>@Html.ActionLink("My presentations", "Index", "UserPresentation")</li>               
+                            <li>@Html.ActionLink(@SlideX.Localization.ViewPhrases.MyPresentationLink, "Index", "UserPresentation")</li>               
                         }
                         @if (User.IsInRole("AdminUser"))
                         {
-                            <li>@Html.ActionLink("Admin panel", "Index", "AdminPanel")</li>               
+                            <li>@Html.ActionLink(@SlideX.Localization.ViewPhrases.AdminPanelLink, "Index", "AdminPanel")</li>               
                         }
                     </ul>
                     @Html.Partial("_LogOnPartial")
