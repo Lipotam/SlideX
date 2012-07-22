@@ -17,7 +17,7 @@
             @SlideX.Localization.ViewPhrases.AdminBannedLabel
         </label>
         @Html.HiddenFor(model => model.UserId)
-        <input class="btn" type="submit" value="Edit" />
+        <input class="btn" type="submit" value="@SlideX.Localization.ViewPhrases.EditButton" />
         @if (User.IsInRole("AdminUser"))
         {
             <table class="table">

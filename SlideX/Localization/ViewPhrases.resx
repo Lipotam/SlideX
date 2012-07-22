@@ -165,6 +165,9 @@
   <data name="DuplicateUserName" xml:space="preserve">
     <value>User name already exists. Please enter a different user name.</value>
   </data>
+  <data name="EditButton" xml:space="preserve">
+    <value>Edit</value>
+  </data>
   <data name="EditTitle" xml:space="preserve">
     <value>Edit</value>
   </data>

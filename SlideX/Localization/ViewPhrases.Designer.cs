@@ -207,6 +207,15 @@ namespace SlideX.Localization {
         /// <summary>
         ///   Looks up a localized string similar to Edit.
         /// </summary>
+        public static string EditButton {
+            get {
+                return ResourceManager.GetString("EditButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Edit.
+        /// </summary>
         public static string EditTitle {
             get {
                 return ResourceManager.GetString("EditTitle", resourceCulture);

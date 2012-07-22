@@ -217,7 +217,6 @@ namespace SlideX.Controllers
         [ValidateInput(false)]
         public ActionResult SavePresentationData(Presentation inputPresentation)
         {
-
             Presentation presentationToSave =
                 presentationData.GetPresentationByCurrentUserIdAndByPresentationId(inputPresentation.Id);
 

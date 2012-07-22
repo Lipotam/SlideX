@@ -20,19 +20,27 @@ namespace SlideX.Controllers
         {
             ViewBag.Message = "Welcome to ASP.NET MVC!";
 
-            Random randomNumber = new Random();
-            string url = Request.Url.GetLeftPart(UriPartial.Authority) + Request.ApplicationPath + "Search/SearchByTag/";
-            var tagsForCloud = new PresentationDataAccessModel().GetAllTags().Select(tag => new TagCloudModel
-                                                                                                {
-                                                                                                    Text = tag.Name,
-                                                                                                    Link = url + tag.Name,
-                                                                                                    Weight = randomNumber.Next(7).ToString()
-                                                                                                }).ToList();
-            ViewBag.TagsCloudString = JsonConvert.SerializeObject(tagsForCloud, Formatting.Indented,
-                                          new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
+           
             return View();
         }
 
+        /// <summary>
+        /// Gets the tags cloud string for ajax request
+        /// </summary>
+        /// <returns></returns>
+        public string GetTagsCloudString()
+        {
+            Random randomNumber = new Random();
+            string url = Request.Url.GetLeftPart(UriPartial.Authority) + Request.ApplicationPath + "Search/SearchByTag/";
+            var tagsForCloud = new PresentationDataAccessModel().GetAllTags().Select(tag => new TagCloudModel
+            {
+                Text = tag.Name,
+                Link = url + tag.Name,
+                Weight = randomNumber.Next(7).ToString()
+            }).ToList();
+            return JsonConvert.SerializeObject(tagsForCloud, Formatting.Indented,
+                                          new JsonSerializerSettings { ContractResolver = new CamelCasePropertyNamesContractResolver() });
+        }
         /// <summary>
         /// Abouts this project
         /// </summary>
