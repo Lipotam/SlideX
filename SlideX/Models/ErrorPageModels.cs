@@ -1,5 +1,8 @@
 ﻿namespace SlideX.Models
 {
+    /// <summary>
+    /// Model for error page
+    /// </summary>
    public class ErrorPageModels
     {
         /// <summary>

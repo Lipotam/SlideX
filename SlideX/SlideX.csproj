@@ -405,6 +405,7 @@
     <None Include="Scripts\web\preview_export\css\Ubuntu.woff" />
     <None Include="Scripts\web\res\jqplugins\colorpicker\images\Thumbs.db" />
     <Content Include="Views\UserPresentation\Preview.cshtml" />
+    <Content Include="Views\Shared\SearchResultTable.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="Models\PresentationModel.edmx">

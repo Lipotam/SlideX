@@ -4,10 +4,25 @@ using Newtonsoft.Json;
 
 namespace SlideX.Models
 {
+    /// <summary>
+    /// Provides presentation and its tags as JSON string
+    /// </summary>
     public class PresentationWithTagsModel
     {
+        /// <summary>
+        /// Gets or sets the current presentation.
+        /// </summary>
+        /// <value>
+        /// The current presentation.
+        /// </value>
         public Presentation CurrentPresentation { get; set; }
 
+        /// <summary>
+        /// Gets or sets tags json string.
+        /// </summary>
+        /// <value>
+        /// The tags json string.
+        /// </value>
         public string TagsJson
         {
             get

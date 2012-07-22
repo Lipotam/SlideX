@@ -7,8 +7,15 @@ using SlideX.Models;
 
 namespace SlideX.Controllers
 {
+    /// <summary>
+    /// Provides information about project
+    /// </summary>
     public class HomeController : Controller
     {
+        /// <summary>
+        /// Contains tagCloud
+        /// </summary>
+        /// <returns></returns>
         public ActionResult Index()
         {
             ViewBag.Message = "Welcome to ASP.NET MVC!";
@@ -21,6 +28,10 @@ namespace SlideX.Controllers
             return View();
         }
 
+        /// <summary>
+        /// Abouts this project
+        /// </summary>
+        /// <returns></returns>
         public ActionResult About()
         {
             return View();

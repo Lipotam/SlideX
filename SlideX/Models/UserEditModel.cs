@@ -5,11 +5,25 @@ using System.Web.Security;
 
 namespace SlideX.Models
 {
-    [Authorize(Roles = "AdminUser")]
+    /// <summary>
+    /// Provides model for admin to edit user activity
+    /// </summary>
     public class UserEditModel
     {
         private readonly PresentationDataAccessModel presentationData = new PresentationDataAccessModel();
+        /// <summary>
+        /// Gets or sets the user id.
+        /// </summary>
+        /// <value>
+        /// The user id.
+        /// </value>
         public Guid UserId { get; set; }
+        /// <summary>
+        /// Gets or sets a value indicating admin status.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if [admin status]; otherwise, <c>false</c>.
+        /// </value>
         public bool AdminStatus
         { 
             get 
@@ -24,6 +38,12 @@ namespace SlideX.Models
                 }
             }
         }
+        /// <summary>
+        /// Gets or sets a value indicating bann status.
+        /// </summary>
+        /// <value>
+        ///   <c>true</c> if [bann status]; otherwise, <c>false</c>.
+        /// </value>
         public bool BannStatus 
         {
             get

@@ -9,13 +9,23 @@ using SlideX.Models;
 
 namespace SlideX.Controllers
 {
+    /// <summary>
+    /// Let user get the project account
+    /// </summary>
     public class AccountController : Controller
     {
+        /// <summary>
+        /// Let user to log on .
+        /// </summary>
         public ActionResult LogOn()
         {
             return View();
         }
 
+        /// <summary>
+        /// Check log on parameters
+        /// </summary>
+        /// <param name="model">contain login and password</param>  
         [HttpPost]
         public ActionResult LogOn(LogOnModel model, string returnUrl)
         {
@@ -40,17 +50,27 @@ namespace SlideX.Controllers
             return View(model);
         }
 
+        /// <summary>
+        ///Let user get out of his account
+        /// </summary>
         public ActionResult LogOff()
         {
             FormsAuthentication.SignOut();
             return RedirectToAction("Index", "Home");
         }
 
+        /// <summary>
+        /// Lets user to get new acount
+        /// </summary>
         public ActionResult Register()
         {
             return View();
         }
 
+        /// <summary>
+        /// Check registry parameters
+        /// </summary>
+        /// <param name="model">contains login,password and email</param> 
         [HttpPost]
         public ActionResult Register(RegisterModel model)
         {
@@ -69,12 +89,19 @@ namespace SlideX.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// Lets user change his account password 
+        /// </summary>
         [Authorize]
         public ActionResult ChangePassword()
         {
             return View();
         }
 
+        /// <summary>
+        /// Check change password parametrs
+        /// </summary>
+        /// <param name="model">contains old and new password</param> 
         [Authorize]
         [HttpPost]
         public ActionResult ChangePassword(ChangePasswordModel model)
@@ -100,17 +127,30 @@ namespace SlideX.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// Show change password succees message
+        /// </summary>
         public ActionResult ChangePasswordSuccess()
         {
             return View();
         }
-        
+
+        /// <summary>
+        /// provide email check
+        /// </summary>
+        /// <param name="id">Ge user.</param> 
         public ActionResult Verification(Guid id)
         {
             new PresentationDataAccessModel().SetUserEmailConfirmed(id);
             return View();
         }
 
+        /// <summary>
+        /// Sends the mail.
+        /// </summary>
+        /// <param name="emailTosend">The email tosend.</param>
+        /// <param name="userName">Name of the user.</param>
+        /// <param name="userId">The user id.</param>
         private void SendMail(string emailTosend, string userName, Guid userId)
         {
             System.Configuration.Configuration config = WebConfigurationManager.OpenWebConfiguration(HttpContext.Request.ApplicationPath);
@@ -141,6 +181,11 @@ namespace SlideX.Controllers
             }
         }
 
+        /// <summary>
+        /// Change localization
+        /// </summary>
+        /// <param name="lang">The lang.</param>
+        /// <param name="returnUrl">The return URL.</param>
         public ActionResult ChangeCulture(string lang, string returnUrl)
         {
             Session["Culture"] = new CultureInfo(lang);

@@ -5,15 +5,28 @@ using System.Web.Security;
 
 namespace SlideX.Models
 {
+    /// <summary>
+    /// Provides getting data from DB using entity framework
+    /// </summary>
     public class PresentationDataAccessModel
     {
         private readonly SlideXDatabaseContext DB = new SlideXDatabaseContext();
 
+        /// <summary>
+        /// Gets the presentations in searching by presentation name. 
+        /// </summary>
+        /// <param name="name">Presentation name template.</param>
+        /// <returns></returns>
         public IEnumerable<Presentation> GetPresentationsByNameTemplate(string name)
         {
             return DB.Presentations.Where(p => p.Title.Contains(name));
         }
 
+        /// <summary>
+        /// Gets the presentations  in searching by user name.
+        /// </summary>
+        /// <param name="name">User name template.</param>
+        /// <returns></returns>
         public IEnumerable<Presentation> GetPresentationsByUserNameTemplate(string name)
         {
             var foundUser = DB.Users.Where(u => u.Name.Contains(name));
@@ -32,11 +45,21 @@ namespace SlideX.Models
             return foundPresentations;
         }
 
+        /// <summary>
+        /// Gets the presentations by user id.
+        /// </summary>
+        /// <param name="userId">user id.</param>
+        /// <returns></returns>
         public IEnumerable<Presentation> GetPresentationsByUserId(Guid userId)
         {
             return DB.Presentations.Where(p => p.UserId == userId);
         }
 
+        /// <summary>
+        /// Gets the presentations by in searching tag template.
+        /// </summary>
+        /// <param name="name">Tag name template</param>
+        /// <returns></returns>
         public IEnumerable<Presentation> GetPresentationsByTagTemplate(string name)
         {
             var foundTags = DB.Tags.Where(t => t.Name.Contains(name));
@@ -53,6 +76,13 @@ namespace SlideX.Models
             return foundPresentations;
         }
 
+        /// <summary>
+        /// Determines whether [is tag exist] [the specified tag name].
+        /// </summary>
+        /// <param name="tagName">Name of the tag.</param>
+        /// <returns>
+        ///   <c>true</c> if [is tag exist] [the specified tag name]; otherwise, <c>false</c>.
+        /// </returns>
         public bool IsTagExist(string tagName)
         {
             if (DB.Tags.SingleOrDefault(p => p.Name == tagName) == null)
@@ -62,18 +92,30 @@ namespace SlideX.Models
             return true;
         }
 
+        /// <summary>
+        /// Adds the tag to tag list
+        /// </summary>
+        /// <param name="tagName">Name of the tag.</param>
         public void AddTag(string tagName)
         {
             DB.Tags.AddObject(new Tag { Name = tagName });
             DB.SaveChanges();
         }
 
+        /// <summary>
+        /// Adds the presentation.
+        /// </summary>
+        /// <param name="newPresentation">The new presentation.</param>
         public void AddPresentation(Presentation newPresentation)
         {
             DB.Presentations.AddObject(newPresentation);
             DB.SaveChanges();
         }
 
+        /// <summary>
+        /// Deletes the presentation.
+        /// </summary>
+        /// <param name="deletePresentation">The  presentation to delete.</param>
         public void DeletePresentation(Presentation deletePresentation)
         {
             deletePresentation.Tags.Clear();
@@ -81,6 +123,11 @@ namespace SlideX.Models
             DB.SaveChanges();
         }
 
+        /// <summary>
+        /// Deletes the presentation by presentation id.
+        /// </summary>
+        /// <param name="presentationId">The presentation id.</param>
+        /// <returns></returns>
         public bool DeletePresentationById(Guid presentationId)
         {
             Presentation foundPresentation = GetPresentationByPresentationId(presentationId);
@@ -94,14 +141,22 @@ namespace SlideX.Models
             return true;
         }
 
-
-
+        /// <summary>
+        /// Gets the presentation by presentation id.
+        /// </summary>
+        /// <param name="id">The presentation id.</param>
+        /// <returns></returns>
         public Presentation GetPresentationByPresentationId(Guid id)
         {
             return DB.Presentations.SingleOrDefault(p => p.Id == id);
         }
 
-        public Presentation GetPresentationByCurrentUserIdAndByPreasentationId(Guid presentationId)
+        /// <summary>
+        /// Gets the presentation by current user id and by presentation id.
+        /// </summary>
+        /// <param name="presentationId">The presentation id.</param>
+        /// <returns></returns>
+        public Presentation GetPresentationByCurrentUserIdAndByPresentationId(Guid presentationId)
         {
             MembershipUser currentUser = Membership.GetUser();
             if (currentUser != null)
@@ -112,6 +167,10 @@ namespace SlideX.Models
             return null;
         }
 
+        /// <summary>
+        /// Gets the presentations by current user.
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<Presentation> GetPresentationsByCurrentUser()
         {
             MembershipUser currentUser = Membership.GetUser();
@@ -122,42 +181,79 @@ namespace SlideX.Models
             return null;
         }
 
+        /// <summary>
+        /// Gets the list if  tag names.
+        /// </summary>
+        /// <returns>List of string</returns>
         public Array GetTagNames()
         {
             return DB.Tags.Select(t => t.Name).ToArray();
         }
 
+        /// <summary>
+        /// Gets the tag  by name.
+        /// </summary>
+        /// <param name="tagName">Name of the tag.</param>
+        /// <returns></returns>
         public Tag GetTagByName(string tagName)
         {
             return DB.Tags.SingleOrDefault(p => p.Name == tagName);
         }
 
+        /// <summary>
+        /// Applies the presentation changes.
+        /// </summary>
+        /// <param name="newPresentation"> presentation.</param>
         public void ApplyPresentation(Presentation newPresentation)
         {
             DB.Presentations.ApplyCurrentValues(newPresentation);
             DB.SaveChanges();
         }
 
+        /// <summary>
+        /// Gets the users by template.
+        /// </summary>
+        /// <param name="userNameTemplate">The user name template.</param>
+        /// <returns></returns>
         public IEnumerable<User> GetUsersByTemplate(string userNameTemplate)
         {
             return DB.Users.Where(u => u.Name.Contains(userNameTemplate));
         }
 
+        /// <summary>
+        /// Gets all users.
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<User> GetAllUsers()
         {
             return DB.Users.ToArray();
         }
 
+        /// <summary>
+        /// Gets the user by user id.
+        /// </summary>
+        /// <param name="id">The id.</param>
+        /// <returns></returns>
         public User GetUserById(Guid id)
         {
             return DB.Users.SingleOrDefault(u => u.Id == id);
         }
 
+        /// <summary>
+        /// Gets the  role by name.
+        /// </summary>
+        /// <param name="roleName">Name of the role.</param>
+        /// <returns></returns>
         public Role GetRoleByName(string roleName)
         {
             return DB.Roles.SingleOrDefault(r => r.Name == roleName);
         }
 
+        /// <summary>
+        /// Gets the user id by presentation id.
+        /// </summary>
+        /// <param name="presentationId">The presentation id.</param>
+        /// <returns></returns>
         public Guid GetUserIdByPresentationId(Guid presentationId)
         {
             Presentation foundPresentation = DB.Presentations.SingleOrDefault(p => p.Id == presentationId);
@@ -168,6 +264,12 @@ namespace SlideX.Models
             return presentationId;
         }
 
+        /// <summary>
+        /// Determines whether [is current user is admin].
+        /// </summary>
+        /// <returns>
+        ///   <c>true</c> if [is current user is admin]; otherwise, <c>false</c>.
+        /// </returns>
         public bool IsCurrentUserIsAdmin()
         {
 
@@ -179,6 +281,11 @@ namespace SlideX.Models
             return false;
         }
 
+        /// <summary>
+        /// Sets the admin to user.
+        /// </summary>
+        /// <param name="userId">The user id.</param>
+        /// <param name="adminSet">if set to <c>true</c> [admin set],if set to <c>false</c> [admin unset].</param>
         public void SetAdminToUser(Guid userId, bool adminSet)
         {
             User adminCandidate = GetUserById(userId);
@@ -196,11 +303,23 @@ namespace SlideX.Models
             }
         }
 
+        /// <summary>
+        /// Gets the user id by user name.
+        /// </summary>
+        /// <param name="userName">Name of the user.</param>
+        /// <returns></returns>
         public Guid GetUserIdByUserName(string userName)
         {
             return DB.Users.SingleOrDefault(u => u.Name == userName).Id;
         }
 
+        /// <summary>
+        /// Determines whether [is user pass email confirm] [the specified user name].
+        /// </summary>
+        /// <param name="userName">Name of the user.</param>
+        /// <returns>
+        ///   <c>true</c> if [is user pass email confirm] [the specified user name]; otherwise, <c>false</c>.
+        /// </returns>
         public bool IsUserPassEmailConfirm(string userName)
         {
             MembershipUser currentUser = Membership.GetUser(userName);
@@ -211,6 +330,10 @@ namespace SlideX.Models
             return false;
         }
 
+        /// <summary>
+        /// Sets the user email confirmed.
+        /// </summary>
+        /// <param name="userId">The user id.</param>
         public void SetUserEmailConfirmed(Guid userId)
         {
             User user = GetUserById(userId);
@@ -222,6 +345,10 @@ namespace SlideX.Models
             }
         }
 
+        /// <summary>
+        /// Gets all tags.
+        /// </summary>
+        /// <returns></returns>
         public IEnumerable<Tag> GetAllTags()
         {
             return DB.Tags.AsEnumerable();
