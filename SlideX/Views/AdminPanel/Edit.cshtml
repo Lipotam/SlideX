@@ -4,60 +4,62 @@
 }
 <h2>
     PresentationList</h2>
-
 @using (Html.BeginForm())
 {
     <div class="well">
         @Html.ValidationSummary(true)
-        <h4>
+        <label class="checkbox">
+            @Html.CheckBoxFor(model => Model.AdminStatus)
             Admin
-        </h4>
-        @Html.CheckBoxFor(model => Model.AdminStatus)
-        <h4>
+        </label>
+        <label class="checkbox">
+            @Html.CheckBoxFor(model => Model.BannStatus)
             Banned
-        </h4>
-        @Html.CheckBoxFor(model => Model.BannStatus)
+        </label>
         @Html.HiddenFor(model => model.UserId)
         <input class="btn" type="submit" value="Edit" />
-        @if (User.IsInRole("AdminUser")) {
-        <table class="table">
-            <tr>
-                <th>
-                    Title
-                </th>
-                <th>
-                    Description
-                </th>
-                <th>
-                    Options
-                </th>
-            </tr>
-            @foreach (var item in Model.FoundPresentations)
-            {
+        @if (User.IsInRole("AdminUser"))
+        {
+            <table class="table">
                 <tr>
-                    <td>
-                        <code>@Html.DisplayFor(modelItem => item.Title)</code>
-                    </td>
-                    <td>
-                        <blockquote>
-                            @Html.DisplayFor(modelItem => item.Description)
-                        </blockquote>
-                    </td>
-                    <td>
-                        <a class="btn btn-success" href="@Url.Action("Preview", "UserPresentation", new { id = item.Id })" target = "_blank" >
-                            View</a> <a class="btn btn-warning" href="@Url.Action("Editor", "UserPresentation", new { id = item.Id })">
-                                Edit</a> <a class="btn btn-primary" href="@Url.Action("Edit", "UserPresentation", new { id = item.Id })">
-                                    Change description</a> <a class="btn btn-info" href="@Url.Action("Details", "UserPresentation", new { id = item.Id })">
-                                        Details</a> <a class="btn btn-danger" href="@Url.Action("Delete", new { id = item.Id })">
-                                            Delete</a>
-                    </td>
+                    <th>
+                        Title
+                    </th>
+                    <th>
+                        Description
+                    </th>
+                    <th>
+                        Options
+                    </th>
                 </tr>
-            }
-        </table>
-        } else {
-        <div>
-            Please, @Html.ActionLink("Log in", "LogOn", "Account")
-        </div>
+                @foreach (var item in Model.FoundPresentations)
+                {
+                    <tr>
+                        <td>
+                            <code>@Html.DisplayFor(modelItem => item.Title)</code>
+                        </td>
+                        <td>
+                            <blockquote>
+                                @Html.DisplayFor(modelItem => item.Description)
+                            </blockquote>
+                        </td>
+                        <td>
+                            <a class="btn btn-success" href="@Url.Action("Preview", "UserPresentation", new { id = item.Id })" target = "_blank" >
+                                View</a> <a class="btn btn-warning" href="@Url.Action("Editor", "UserPresentation", new { id = item.Id })">
+                                    Edit</a> <a class="btn btn-primary" href="@Url.Action("Edit", "UserPresentation", new { id = item.Id })">
+                                        Change description</a> <a class="btn btn-info" href="@Url.Action("Details", "UserPresentation", new { id = item.Id })">
+                                            Details</a> <a class="btn btn-danger" href="@Url.Action("Delete", new { id = item.Id })">
+                                                Delete</a>
+                        </td>
+                    </tr>
+                }
+            </table>
+        }
+        else
+        {
+            <div>
+                Please, @Html.ActionLink("Log in", "LogOn", "Account")
+            </div>
         }
     </div>
 }

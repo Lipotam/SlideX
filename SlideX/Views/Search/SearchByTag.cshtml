@@ -5,35 +5,38 @@
 <h2>
     SearchByPresention by tag
 </h2>
-<legend>Found presentation: </legend>
+
 @if ((Model != null) && (Model.Count() != 0))
 {
-    <table>
-        <tr>
-            <th>
-                Title
-            </th>
-            <th>
-                Description
-            </th>
-            <th>
-                Options
-            </th>
-        </tr>
-        @foreach (var item in Model)
-        {
+   <table class="table">
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Title)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Description)
-                </td>
-                <td>
-                    @Html.ActionLink("View Presentation", "Preview", "UserPresentation", new { id = item.Id }, new { target = "_blank" })|
-                    @Html.ActionLink("Details", "Details", "UserPresentation", new { id = item.Id }, null)
-                </td>
+                <th>
+                    Title
+                </th>
+                <th>
+                    Description
+                </th>
+                <th>
+                    Options
+                </th>
             </tr>
-        }
-    </table>
+             @foreach (var item in Model)
+             {
+                <tr>
+                    <td>
+                        <code>@Html.DisplayFor(modelItem => item.Title)</code>
+                    </td>
+                    <td>
+                        <blockquote>
+                            @Html.DisplayFor(modelItem => item.Description)
+                        </blockquote>
+                    </td>
+                    <td>
+                        <a class="btn btn-success" href="@Url.Action("Preview", "UserPresentation", new { id = item.Id })" target = "_blank" >
+                            View</a>  <a class="btn btn-info" href="@Url.Action("Details", "UserPresentation", new { id = item.Id })">
+                                        Details</a> 
+                    </td>
+                </tr>
+             }
+        </table>
 }

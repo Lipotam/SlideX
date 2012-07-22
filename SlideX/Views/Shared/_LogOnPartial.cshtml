@@ -1,7 +1,7 @@
 ﻿<ul class="nav pull-right">
-  <li>  @Html.ActionLink("Welcome," + User.Identity.Name + "!", "Index", "Home")</li> 
     @if (Request.IsAuthenticated)
     {
+        <li>  @Html.ActionLink("Welcome," + User.Identity.Name + "!", "Index", "Home")</li> 
         <li> @Html.ActionLink("Log Off", "LogOff", "Account")</li> 
         <li>@Html.ActionLink("Change password", "ChangePassword", "Account")</li> 
     }

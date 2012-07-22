@@ -1,5 +1,5 @@
 ﻿@using SlideX.Models
-@model SlideX.Models.SearchModel
+@model SearchModel
 @{
     ViewBag.Title = "Index";
 }
@@ -7,21 +7,13 @@
     Index</h2>
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
-    <fieldset>
-        <legend>presentation</legend>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.SearchString)
-        </div>
-        <div class = "editor-field">
+      <div class="well form-search">
+        @Html.EditorFor(model => model.SearchString)
          @Html.DropDownListFor(model => model.Type, Enum.GetValues(typeof(SearchType)).Cast<SearchType>().Select(v => new SelectListItem
                {
                    Text = v.ToString().Replace("_", " "),
                    Value = ((int)v).ToString()
-               }), "[Select Type]")
-        </div>
-                 
-        <p>
-            <input type="submit" value="Create" />
-        </p>
-    </fieldset>
+               }), "[Search Type]")
+            <input class="btn"  type="submit" value="Search" />
+     </div>
 }
