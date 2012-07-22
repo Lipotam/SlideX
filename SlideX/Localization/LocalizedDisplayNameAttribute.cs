@@ -4,42 +4,52 @@ using System.Reflection;
 
 namespace SlideX.Localization
 {
+    /// <summary>
+    /// Provides localization for Display attribute
+    /// </summary>
     public class LocalizedDisplayNameAttribute : DisplayNameAttribute
     {
-        private PropertyInfo _nameProperty;
-        private Type _resourceType;
+        private PropertyInfo nameProperty;
+        private Type resourceType;
 
         public LocalizedDisplayNameAttribute(string displayNameKey)
             : base(displayNameKey)
         {
-
+            //Do nothing
         }
 
+        /// <summary>
+        /// Gets or sets the type of the name resource.
+        /// </summary>
+        /// <value>
+        /// The type of the name resource.
+        /// </value>
         public Type NameResourceType
         {
             get
             {
-                return _resourceType;
+                return resourceType;
             }
             set
             {
-                _resourceType = value;
-                //инициализация nameProperty, когда тип свойства устанавливается set'ром
-                _nameProperty = _resourceType.GetProperty(base.DisplayName, BindingFlags.Static | BindingFlags.Public);
+                resourceType = value;
+                nameProperty = resourceType.GetProperty(base.DisplayName, BindingFlags.Static | BindingFlags.Public);
             }
         }
 
+        /// <summary>
+        /// Gets the display name for a property, event, or public void method that takes no arguments stored in this attribute.
+        /// </summary>
+        /// <returns>The display name.</returns>
         public override string DisplayName
         {
             get
             {
-                //проверяет,nameProperty null и возвращает исходный значения отображаемого имени
-                if (_nameProperty == null)
+                if (nameProperty == null)
                 {
                     return base.DisplayName;
                 }
-
-                return (string)_nameProperty.GetValue(_nameProperty.DeclaringType, null);
+                return (string)nameProperty.GetValue(nameProperty.DeclaringType, null);
             }
         }
     }

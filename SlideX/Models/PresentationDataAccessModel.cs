@@ -10,7 +10,7 @@ namespace SlideX.Models
     /// </summary>
     public class PresentationDataAccessModel
     {
-        private readonly SlideXDatabaseContext DB = new SlideXDatabaseContext();
+        private readonly SlideXDatabaseContext dbEntity = new SlideXDatabaseContext();
 
         /// <summary>
         /// Gets the presentations in searching by presentation name. 
@@ -19,7 +19,7 @@ namespace SlideX.Models
         /// <returns></returns>
         public IEnumerable<Presentation> GetPresentationsByNameTemplate(string name)
         {
-            return DB.Presentations.Where(p => p.Title.Contains(name));
+            return dbEntity.Presentations.Where(p => p.Title.Contains(name));
         }
 
         /// <summary>
@@ -29,7 +29,7 @@ namespace SlideX.Models
         /// <returns></returns>
         public IEnumerable<Presentation> GetPresentationsByUserNameTemplate(string name)
         {
-            var foundUser = DB.Users.Where(u => u.Name.Contains(name));
+            var foundUser = dbEntity.Users.Where(u => u.Name.Contains(name));
             if (foundUser.Count() == 0)
             {
                 return null;
@@ -37,7 +37,7 @@ namespace SlideX.Models
             var foundPresentations = new List<Presentation>();
             foreach (var user in foundUser)
             {
-                foreach (var presentation in DB.Presentations.Where(p => p.UserId == user.Id))
+                foreach (var presentation in dbEntity.Presentations.Where(p => p.UserId == user.Id))
                 {
                     foundPresentations.Add(presentation);
                 }
@@ -52,7 +52,7 @@ namespace SlideX.Models
         /// <returns></returns>
         public IEnumerable<Presentation> GetPresentationsByUserId(Guid userId)
         {
-            return DB.Presentations.Where(p => p.UserId == userId);
+            return dbEntity.Presentations.Where(p => p.UserId == userId);
         }
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace SlideX.Models
         /// <returns></returns>
         public IEnumerable<Presentation> GetPresentationsByTagTemplate(string name)
         {
-            var foundTags = DB.Tags.Where(t => t.Name.Contains(name));
+            var foundTags = dbEntity.Tags.Where(t => t.Name.Contains(name));
             if (foundTags.Count() == 0)
             {
                 return null;
@@ -85,7 +85,7 @@ namespace SlideX.Models
         /// </returns>
         public bool IsTagExist(string tagName)
         {
-            if (DB.Tags.SingleOrDefault(p => p.Name == tagName) == null)
+            if (dbEntity.Tags.SingleOrDefault(p => p.Name == tagName) == null)
             {
                 return false;
             }
@@ -98,8 +98,8 @@ namespace SlideX.Models
         /// <param name="tagName">Name of the tag.</param>
         public void AddTag(string tagName)
         {
-            DB.Tags.AddObject(new Tag { Name = tagName });
-            DB.SaveChanges();
+            dbEntity.Tags.AddObject(new Tag { Name = tagName });
+            dbEntity.SaveChanges();
         }
 
         /// <summary>
@@ -108,8 +108,8 @@ namespace SlideX.Models
         /// <param name="newPresentation">The new presentation.</param>
         public void AddPresentation(Presentation newPresentation)
         {
-            DB.Presentations.AddObject(newPresentation);
-            DB.SaveChanges();
+            dbEntity.Presentations.AddObject(newPresentation);
+            dbEntity.SaveChanges();
         }
 
         /// <summary>
@@ -119,8 +119,8 @@ namespace SlideX.Models
         public void DeletePresentation(Presentation deletePresentation)
         {
             deletePresentation.Tags.Clear();
-            DB.Presentations.DeleteObject(deletePresentation);
-            DB.SaveChanges();
+            dbEntity.Presentations.DeleteObject(deletePresentation);
+            dbEntity.SaveChanges();
         }
 
         /// <summary>
@@ -134,8 +134,8 @@ namespace SlideX.Models
             if (foundPresentation != null)
             {
                 foundPresentation.Tags.Clear();
-                DB.Presentations.DeleteObject(foundPresentation);
-                DB.SaveChanges();
+                dbEntity.Presentations.DeleteObject(foundPresentation);
+                dbEntity.SaveChanges();
                 return false;
             }
             return true;
@@ -148,7 +148,7 @@ namespace SlideX.Models
         /// <returns></returns>
         public Presentation GetPresentationByPresentationId(Guid id)
         {
-            return DB.Presentations.SingleOrDefault(p => p.Id == id);
+            return dbEntity.Presentations.SingleOrDefault(p => p.Id == id);
         }
 
         /// <summary>
@@ -162,7 +162,7 @@ namespace SlideX.Models
             if (currentUser != null)
             {
                 var currentUserId = (Guid)currentUser.ProviderUserKey;
-                return DB.Presentations.SingleOrDefault(p => p.UserId == currentUserId && p.Id == presentationId);
+                return dbEntity.Presentations.SingleOrDefault(p => p.UserId == currentUserId && p.Id == presentationId);
             }
             return null;
         }
@@ -176,7 +176,7 @@ namespace SlideX.Models
             MembershipUser currentUser = Membership.GetUser();
             if (currentUser != null)
             {
-                return DB.Presentations.Where(p => p.UserId == (Guid)currentUser.ProviderUserKey).AsEnumerable();
+                return dbEntity.Presentations.Where(p => p.UserId == (Guid)currentUser.ProviderUserKey).AsEnumerable();
             }
             return null;
         }
@@ -187,7 +187,7 @@ namespace SlideX.Models
         /// <returns>List of string</returns>
         public Array GetTagNames()
         {
-            return DB.Tags.Select(t => t.Name).ToArray();
+            return dbEntity.Tags.Select(t => t.Name).ToArray();
         }
 
         /// <summary>
@@ -197,7 +197,7 @@ namespace SlideX.Models
         /// <returns></returns>
         public Tag GetTagByName(string tagName)
         {
-            return DB.Tags.SingleOrDefault(p => p.Name == tagName);
+            return dbEntity.Tags.SingleOrDefault(p => p.Name == tagName);
         }
 
         /// <summary>
@@ -206,8 +206,8 @@ namespace SlideX.Models
         /// <param name="newPresentation"> presentation.</param>
         public void ApplyPresentation(Presentation newPresentation)
         {
-            DB.Presentations.ApplyCurrentValues(newPresentation);
-            DB.SaveChanges();
+            dbEntity.Presentations.ApplyCurrentValues(newPresentation);
+            dbEntity.SaveChanges();
         }
 
         /// <summary>
@@ -217,7 +217,7 @@ namespace SlideX.Models
         /// <returns></returns>
         public IEnumerable<User> GetUsersByTemplate(string userNameTemplate)
         {
-            return DB.Users.Where(u => u.Name.Contains(userNameTemplate));
+            return dbEntity.Users.Where(u => u.Name.Contains(userNameTemplate));
         }
 
         /// <summary>
@@ -226,7 +226,7 @@ namespace SlideX.Models
         /// <returns></returns>
         public IEnumerable<User> GetAllUsers()
         {
-            return DB.Users.ToArray();
+            return dbEntity.Users.ToArray();
         }
 
         /// <summary>
@@ -236,7 +236,7 @@ namespace SlideX.Models
         /// <returns></returns>
         public User GetUserById(Guid id)
         {
-            return DB.Users.SingleOrDefault(u => u.Id == id);
+            return dbEntity.Users.SingleOrDefault(u => u.Id == id);
         }
 
         /// <summary>
@@ -246,7 +246,7 @@ namespace SlideX.Models
         /// <returns></returns>
         public Role GetRoleByName(string roleName)
         {
-            return DB.Roles.SingleOrDefault(r => r.Name == roleName);
+            return dbEntity.Roles.SingleOrDefault(r => r.Name == roleName);
         }
 
         /// <summary>
@@ -256,7 +256,7 @@ namespace SlideX.Models
         /// <returns></returns>
         public Guid GetUserIdByPresentationId(Guid presentationId)
         {
-            Presentation foundPresentation = DB.Presentations.SingleOrDefault(p => p.Id == presentationId);
+            Presentation foundPresentation = dbEntity.Presentations.SingleOrDefault(p => p.Id == presentationId);
             if (foundPresentation != null)
             {
                 return foundPresentation.UserId;
@@ -272,7 +272,6 @@ namespace SlideX.Models
         /// </returns>
         public bool IsCurrentUserIsAdmin()
         {
-
             MembershipUser currentUser = Membership.GetUser();
             if (currentUser != null && GetUserById((Guid)currentUser.ProviderUserKey).Roles.Contains(GetRoleByName("AdminUser")))
             {
@@ -293,13 +292,13 @@ namespace SlideX.Models
             if (adminSet && (!adminCandidate.Roles.Contains(adminRole)))
             {
                 adminCandidate.Roles.Add(adminRole);
-                DB.SaveChanges();
+                dbEntity.SaveChanges();
                 return;
             }
             if ((!adminSet) && adminCandidate.Roles.Contains(adminRole))
             {
                 adminCandidate.Roles.Remove(adminRole);
-                DB.SaveChanges();
+                dbEntity.SaveChanges();
             }
         }
 
@@ -310,7 +309,7 @@ namespace SlideX.Models
         /// <returns></returns>
         public Guid GetUserIdByUserName(string userName)
         {
-            return DB.Users.SingleOrDefault(u => u.Name == userName).Id;
+            return dbEntity.Users.SingleOrDefault(u => u.Name == userName).Id;
         }
 
         /// <summary>
@@ -341,7 +340,7 @@ namespace SlideX.Models
             if (!user.Roles.Contains(role))
             {
                 user.Roles.Add(role);
-                DB.SaveChanges();
+                dbEntity.SaveChanges();
             }
         }
 
@@ -351,7 +350,7 @@ namespace SlideX.Models
         /// <returns></returns>
         public IEnumerable<Tag> GetAllTags()
         {
-            return DB.Tags.AsEnumerable();
+            return dbEntity.Tags.AsEnumerable();
         }
     }
 }

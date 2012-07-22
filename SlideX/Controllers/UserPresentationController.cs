@@ -32,12 +32,12 @@ namespace SlideX.Controllers
         [HttpPost]
         public ActionResult Create(Presentation model)
         {
-            var newPresentation = new Presentation
+            Presentation newPresentation = new Presentation
                 {
                     Title = model.Title,
                     Description = model.Description,
                     UserId = (Guid)Membership.GetUser().ProviderUserKey,
-                    Data =  new StreamReader(Server.MapPath("/Content/DefaultPresentationData.txt")).ReadToEnd()
+                    Data = new StreamReader(Server.MapPath("/Content/DefaultPresentationData.txt")).ReadToEnd()
                 };
             newPresentation.Data = newPresentation.Data.Replace("<%Title%>", model.Title);
             presentationData.AddPresentation(newPresentation);
@@ -68,7 +68,7 @@ namespace SlideX.Controllers
                 return View("Error", new ErrorPageModels
                                          {
                                              Title = Localization.ViewPhrases.PresentationNotFoundBadRequest,
-                                             Message = Localization.ViewPhrases.PresentationNotFoundBadRequestMessage, 
+                                             Message = Localization.ViewPhrases.PresentationNotFoundBadRequestMessage,
                                              ShowGotoBack = true
                                          });
             }
@@ -93,16 +93,17 @@ namespace SlideX.Controllers
                     if (foundPresentation == null)
                     {
                         return View("Error", new ErrorPageModels
-                        {
-                            Title = Localization.ViewPhrases.PresentationNotFoundBadRequest,
-                            Message = Localization.ViewPhrases.PresentationNotFoundBadRequestMessage,
-                            ShowGotoBack = true
-                        });
+                                                 {
+                                                     Title = Localization.ViewPhrases.PresentationNotFoundBadRequest,
+                                                     Message = Localization.ViewPhrases.PresentationNotFoundBadRequestMessage,
+                                                     ShowGotoBack = true
+                                                 });
                     }
                     foundPresentation.Title = model.CurrentPresentation.Title;
                     foundPresentation.Description = model.CurrentPresentation.Description;
-                    
-                    var nonExistingTags = foundPresentation.Tags.AsEnumerable().Where(temp => model.CurrentPresentation.Tags.SingleOrDefault(p => p.Name == temp.Name) == null).ToList();
+
+                    var nonExistingTags = foundPresentation.Tags.AsEnumerable()
+                        .Where(temp => model.CurrentPresentation.Tags.SingleOrDefault(p => p.Name == temp.Name) == null).ToList();
 
                     foreach (var temp in nonExistingTags)
                     {
@@ -154,10 +155,14 @@ namespace SlideX.Controllers
             {
                 foundPresentation.Tags.Clear();
                 presentationData.DeletePresentation(foundPresentation);
-                
                 return RedirectToAction("Index");
             }
-             return View("Error", new ErrorPageModels { Title = Localization.ViewPhrases.PresentationNotFoundDelete, Message = Localization.ViewPhrases.PresentationNotFoundDeleteMessage, ShowGotoBack = true });
+            return View("Error", new ErrorPageModels
+                                     {
+                                         Title = Localization.ViewPhrases.PresentationNotFoundDelete,
+                                         Message = Localization.ViewPhrases.PresentationNotFoundDeleteMessage,
+                                         ShowGotoBack = true
+                                     });
         }
 
         /// <summary>
@@ -212,11 +217,11 @@ namespace SlideX.Controllers
         [ValidateInput(false)]
         public ActionResult SavePresentationData(Presentation inputPresentation)
         {
-         
+
             Presentation presentationToSave =
                 presentationData.GetPresentationByCurrentUserIdAndByPresentationId(inputPresentation.Id);
-            
-            if(presentationToSave != null)
+
+            if (presentationToSave != null)
             {
                 presentationToSave.Data = inputPresentation.Data;
                 presentationData.ApplyPresentation(presentationToSave);

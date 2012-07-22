@@ -28,10 +28,14 @@ namespace SlideX.Controllers
         {
             switch (id.Type)
             {
-                case SearchType.Presentations: return RedirectToAction("SearchByPresention", new { id = id.SearchString });
-                case SearchType.Tags: return RedirectToAction("SearchByTag", new { id = id.SearchString });
-                case SearchType.Users: return RedirectToAction("SearchByUser", new { id = id.SearchString });
-                default: return View(id);
+                case SearchType.Presentations:
+                    return RedirectToAction("SearchByPresention", new { id = id.SearchString });
+                case SearchType.Tags:
+                    return RedirectToAction("SearchByTag", new { id = id.SearchString });
+                case SearchType.Users:
+                    return RedirectToAction("SearchByUser", new { id = id.SearchString });
+                default:
+                    return View(id);
             }
         }
 
@@ -45,7 +49,12 @@ namespace SlideX.Controllers
             var foundPresentations = (new PresentationDataAccessModel()).GetPresentationsByNameTemplate(id);
             if (foundPresentations.Count() == 0)
             {
-                return View("Error", new ErrorPageModels { Title = Localization.ViewPhrases.PresentationNotFoundSearch, Message = Localization.ViewPhrases.PresentationNotFoundSearchMessage, ShowGotoBack = true });
+                return View("Error", new ErrorPageModels
+                                         {
+                                             Title = Localization.ViewPhrases.PresentationNotFoundSearch,
+                                             Message = Localization.ViewPhrases.PresentationNotFoundSearchMessage,
+                                             ShowGotoBack = true
+                                         });
             }
             return View(foundPresentations);
         }
@@ -60,7 +69,12 @@ namespace SlideX.Controllers
             var foundPresentations = (new PresentationDataAccessModel()).GetPresentationsByTagTemplate(id);
             if (foundPresentations == null)
             {
-                return View("Error", new ErrorPageModels { Title = Localization.ViewPhrases.PresentationNotFoundSearch, Message = Localization.ViewPhrases.PresentationNotFoundSearchMessage, ShowGotoBack = true });
+                return View("Error", new ErrorPageModels
+                                         {
+                                             Title = Localization.ViewPhrases.PresentationNotFoundSearch,
+                                             Message = Localization.ViewPhrases.PresentationNotFoundSearchMessage,
+                                             ShowGotoBack = true
+                                         });
             }
             return View(foundPresentations);
         }
@@ -75,7 +89,12 @@ namespace SlideX.Controllers
             var foundPresentations = (new PresentationDataAccessModel()).GetPresentationsByUserNameTemplate(id);
             if (foundPresentations == null)
             {
-                return View("Error", new ErrorPageModels { Title = Localization.ViewPhrases.PresentationNotFoundSearch, Message = Localization.ViewPhrases.PresentationNotFoundSearchMessage, ShowGotoBack = true });
+                return View("Error", new ErrorPageModels
+                                         {
+                                             Title = Localization.ViewPhrases.PresentationNotFoundSearch, 
+                                             Message = Localization.ViewPhrases.PresentationNotFoundSearchMessage, 
+                                             ShowGotoBack = true
+                                         });
             }
             return View(foundPresentations);
         }

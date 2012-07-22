@@ -25,7 +25,8 @@ namespace SlideX.Controllers
         /// <summary>
         /// Check log on parameters
         /// </summary>
-        /// <param name="model">contain login and password</param>  
+        /// <param name="model">contain login and password</param>
+        /// <param name="returnUrl"></param>  
         [HttpPost]
         public ActionResult LogOn(LogOnModel model, string returnUrl)
         {
@@ -43,9 +44,14 @@ namespace SlideX.Controllers
                         }
                         return RedirectToAction("Index", "Home");
                     }
-                    return View("Error", new ErrorPageModels { Title = Localization.ViewPhrases.EmailNotConfirmed, Message = Localization.ViewPhrases.EmailNotConfirmedMessage, ShowGotoBack = true });
+                    return View("Error", new ErrorPageModels
+                                             {
+                                                 Title = Localization.ViewPhrases.EmailNotConfirmed, 
+                                                 Message = Localization.ViewPhrases.EmailNotConfirmedMessage,
+                                                 ShowGotoBack = true
+                                             });
                 }
-                ModelState.AddModelError("",Localization.ValidationStrings.UserOrPassIncorrect);
+                ModelState.AddModelError("", Localization.ValidationStrings.UserOrPassIncorrect);
             }
             return View(model);
         }
@@ -108,17 +114,7 @@ namespace SlideX.Controllers
         {
             if (ModelState.IsValid)
             {
-                bool changePasswordSucceeded;
-                try
-                {
-                    MembershipUser currentUser = Membership.GetUser(User.Identity.Name, true);
-                    changePasswordSucceeded = currentUser.ChangePassword(model.OldPassword, model.NewPassword);
-                }
-                catch (Exception)
-                {
-                    changePasswordSucceeded = false;
-                }
-                if (changePasswordSucceeded)
+                if (Membership.GetUser(User.Identity.Name, true).ChangePassword(model.OldPassword, model.NewPassword))
                 {
                     return RedirectToAction("ChangePasswordSuccess");
                 }
@@ -162,8 +158,7 @@ namespace SlideX.Controllers
                                   {
                                       BodyEncoding = System.Text.Encoding.GetEncoding("KOI8-R"),
                                       SubjectEncoding = System.Text.Encoding.GetEncoding("KOI8-R"),
-                                      Subject =
-                                          (new StreamReader(Server.MapPath("/Content/EmailSubjectText.txt"))).ReadToEnd(),
+                                      Subject =(new StreamReader(Server.MapPath("/Content/EmailSubjectText.txt"))).ReadToEnd(),
                                       Body = new StreamReader(Server.MapPath("/Content/EmailBodyText.txt")).ReadToEnd(),
                                       IsBodyHtml = true
                                   };

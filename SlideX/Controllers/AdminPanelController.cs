@@ -64,7 +64,12 @@ namespace SlideX.Controllers
             
             if (presentationData.DeletePresentationById(id) || userEditId == id)
             {
-                return View("Error", new ErrorPageModels { Title = Localization.ViewPhrases.PresentationNotFoundDelete, Message = Localization.ViewPhrases.PresentationNotFoundDeleteMessage, ShowGotoBack = true });
+                return View("Error", new ErrorPageModels
+                                         {
+                                             Title = Localization.ViewPhrases.PresentationNotFoundDelete,
+                                             Message = Localization.ViewPhrases.PresentationNotFoundDeleteMessage,
+                                             ShowGotoBack = true
+                                         });
             }
             return RedirectToAction("Edit",new {id = userEditId});
         }
