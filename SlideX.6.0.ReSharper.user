@@ -1,45 +1,38 @@
 <Configuration>
   <RecentFiles>
     <RecentFiles>
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/f:_ViewStart.cshtml" caret="0" fromTop="0" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:Shared/f:Error.cshtml" caret="454" fromTop="19" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:UserPresentation/f:Create.cshtml" caret="377" fromTop="15" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:UserPresentation/f:Details.cshtml" caret="452" fromTop="17" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:UserPresentation/f:Index.cshtml" caret="2161" fromTop="50" />
       <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:Shared/f:SearchResultTable.cshtml" caret="360" fromTop="11" />
       <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:Search/f:SearchByUser.cshtml" caret="0" fromTop="0" />
       <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:Search/f:SearchByPresention.cshtml" caret="275" fromTop="9" />
       <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:Search/f:SearchByTag.cshtml" caret="253" fromTop="10" />
       <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:Shared/f:_Layout.cshtml" caret="1749" fromTop="30" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:AccountController.cs" caret="7531" fromTop="21" />
       <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:AdminPanelController.cs" caret="2382" fromTop="49" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:SearchController.cs" caret="3292" fromTop="34" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:ErrorPageModels.cs" caret="0" fromTop="0" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:PresentationDataAccessModel.cs" caret="9724" fromTop="0" />
       <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:PresentationWithTagsModel.cs" caret="0" fromTop="0" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:SearchModel.cs" caret="0" fromTop="0" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:UserEditModel.cs" caret="0" fromTop="0" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:AccountModels.cs" caret="0" fromTop="0" />
       <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:Account/f:ChangePassword.cshtml" caret="636" fromTop="8" />
       <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Scripts/f:jquery-1.7.2.js" caret="101523" fromTop="10" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Localization/f:LocalizedDisplayNameAttribute.cs" caret="1128" fromTop="1" />
       <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:TagCloudModel.cs" caret="0" fromTop="0" />
       <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:AdminPanel/f:Edit.cshtml" caret="755" fromTop="19" />
       <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:UserSearchModel.cs" caret="0" fromTop="0" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:UserPresentation/f:Edit.cshtml" caret="1165" fromTop="13" />
       <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:UserPresentation/f:Editor.cshtml" caret="894" fromTop="23" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:HomeController.cs" caret="837" fromTop="31" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Content/f:DefaultPresentationData.txt" caret="44" fromTop="0" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Content/f:EmailBodyText.txt" caret="0" fromTop="0" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:SearchController.cs" caret="3923" fromTop="80" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Localization/f:LocalizedDisplayNameAttribute.cs" caret="341" fromTop="0" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:AccountModels.cs" caret="0" fromTop="0" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:UserPresentationController.cs" caret="297" fromTop="12" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:SearchModel.cs" caret="143" fromTop="9" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:AccountController.cs" caret="7309" fromTop="26" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:ErrorPageModels.cs" caret="0" fromTop="0" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:UserEditModel.cs" caret="1700" fromTop="24" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:PresentationModel.edmx.sql" caret="412" fromTop="0" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/f:Web.config" caret="0" fromTop="0" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/f:Web.config" caret="0" fromTop="0" />
       <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:Home/f:Index.cshtml" caret="635" fromTop="14" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:UserPresentationController.cs" caret="7683" fromTop="22" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:HomeController.cs" caret="1457" fromTop="21" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:UserPresentation/f:Edit.cshtml" caret="1165" fromTop="13" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:PresentationDataAccessModel.cs" caret="1342" fromTop="16" />
     </RecentFiles>
     <RecentEdits>
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:SearchController.cs" caret="2972" fromTop="48" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:SearchController.cs" caret="3904" fromTop="56" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:UserPresentationController.cs" caret="1000" fromTop="19" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:UserPresentationController.cs" caret="4061" fromTop="44" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:UserPresentationController.cs" caret="4438" fromTop="45" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:UserPresentationController.cs" caret="6621" fromTop="43" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:UserPresentationController.cs" caret="7021" fromTop="49" />
       <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:PresentationDataAccessModel.cs" caret="337" fromTop="12" />
       <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:PresentationDataAccessModel.cs" caret="9724" fromTop="13" />
       <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Localization/f:LocalizedDisplayNameAttribute.cs" caret="499" fromTop="14" />
@@ -49,20 +42,27 @@
       <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Localization/f:LocalizedDisplayNameAttribute.cs" caret="177" fromTop="7" />
       <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Localization/f:LocalizedDisplayNameAttribute.cs" caret="1284" fromTop="25" />
       <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Localization/f:LocalizedDisplayNameAttribute.cs" caret="705" fromTop="14" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:UserPresentationController.cs" caret="8893" fromTop="19" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:UserPresentationController.cs" caret="8940" fromTop="19" />
       <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:AdminPanel/f:Edit.cshtml" caret="755" fromTop="7" />
       <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:UserPresentation/f:Edit.cshtml" caret="1398" fromTop="27" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:HomeController.cs" caret="1457" fromTop="31" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:HomeController.cs" caret="543" fromTop="7" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:HomeController.cs" caret="1457" fromTop="25" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:HomeController.cs" caret="1442" fromTop="31" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:HomeController.cs" caret="1442" fromTop="25" />
       <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:UserPresentation/f:Edit.cshtml" caret="1398" fromTop="22" />
       <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:Home/f:Index.cshtml" caret="637" fromTop="13" />
       <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:Home/f:Index.cshtml" caret="635" fromTop="16" />
       <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:Home/f:Index.cshtml" caret="616" fromTop="13" />
       <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:Home/f:Index.cshtml" caret="363" fromTop="7" />
       <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Views/d:Home/f:Index.cshtml" caret="635" fromTop="14" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:HomeController.cs" caret="664" fromTop="15" />
-      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:HomeController.cs" caret="1457" fromTop="12" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:HomeController.cs" caret="649" fromTop="15" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:HomeController.cs" caret="1442" fromTop="12" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:HomeController.cs" caret="541" fromTop="21" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:AccountController.cs" caret="7452" fromTop="24" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:UserPresentationController.cs" caret="600" fromTop="19" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Controllers/f:UserPresentationController.cs" caret="344" fromTop="12" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/f:Web.config" caret="4397" fromTop="23" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/f:Web.config" caret="0" fromTop="0" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:PresentationDataAccessModel.cs" caret="12434" fromTop="12" />
+      <File id="9E91E2A2-5B01-4375-8E45-1CA64E88B02A/d:Models/f:PresentationDataAccessModel.cs" caret="1342" fromTop="16" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
